@@ -10,9 +10,9 @@
     </div>
     <div class="container">
         <h3>People who have already signed up!</h3>
-        <ul>
+        <ul class="list-group">
             @foreach($event->users as $user)
-              <li> {{$user->name}} </li>
+              <li class="list-group-item"> {{$user->name}} </li>
             @endforeach
         </ul>
     </div>

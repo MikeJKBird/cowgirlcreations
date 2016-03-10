@@ -26,6 +26,12 @@ Route::get('photos', 'PagesController@photos');
 
 Route::get('contact', 'PagesController@contact');
 
+Route::get('admin/event', function() {
+    return view('admin.addEvent');
+});
+
+Route::post('events', 'EventsController@store');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

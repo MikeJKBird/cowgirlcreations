@@ -40,7 +40,14 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event;
+
+        $event->create([
+            'name' => $request->name,
+            'maxNumberParticipants' => $request->maxNumberParticipants,
+            'location' => $request->location
+        ]);
+        return back();
     }
 
     /**
