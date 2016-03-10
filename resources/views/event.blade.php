@@ -10,6 +10,10 @@
     </div>
     <div class="container">
         <h3>People who have already signed up!</h3>
-
+        <ul>
+            @foreach($event->users as $user)
+              <li> {{$user->name}} </li>
+            @endforeach
+        </ul>
     </div>
 @stop
