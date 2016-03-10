@@ -11,9 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@home');
+
+Route::get('calendar', 'PagesController@calendar');
+
+Route::get('standings', 'PagesController@standings');
+
+Route::get('hats', 'PagesController@hats');
+
+Route::get('artwork', 'PagesController@artwork');
+
+Route::get('photos', 'PagesController@photos');
+
+Route::get('contact', 'PagesController@contact');
 
 /*
 |--------------------------------------------------------------------------
