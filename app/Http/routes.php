@@ -13,7 +13,8 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::get('calendar', 'PagesController@calendar');
+Route::get('calendar', 'EventsController@index');
+Route::get('calendar/{event}', 'EventsController@show');
 
 Route::get('standings', 'PagesController@standings');
 

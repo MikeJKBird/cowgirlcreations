@@ -11,7 +11,11 @@
     <div class="container">
 
 
-        <h3>Stuff!</h3>
+        <h3>Events</h3>
+        @foreach ($events as $event)
+            <a href="calendar/{{$event->id}}">{{ $event->name }}</a>
+            <hr>
+        @endforeach
     </div>
 
 @stop

@@ -2,9 +2,10 @@
 
 
 @section('content')
-
-    <h1>This is an event page</h1>
-    <p>This is the event's info</p>
-    <button>Sign up now!</button>
-
+    <div class="container">
+        <h1>{{ $event->name }}</h1>
+        <p>Located at: {{$event->location}}</p>
+        <p>There is room for {{$event->maxNumberParticipants}} racers</p>
+        <button>Sign up now!</button>
+    </div>
 @stop
