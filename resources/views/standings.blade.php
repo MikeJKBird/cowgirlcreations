@@ -11,7 +11,7 @@
     <div class="container">
         <ol>
             @foreach($racers as $racer)
-                <li>{{ $racer }}</li>
+                <li>{{ $racer->name }}: {{$racer->points}} points</li>
             @endforeach
         </ol>
     </div>

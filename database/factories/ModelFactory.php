@@ -16,6 +16,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->safeEmail,
         'password' => bcrypt(str_random(10)),
+        'points' => $faker->randomDigit,
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Event::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->lexify('????? race'),
+        'maxNumberParticipants' => $faker->numberBetween($min = 25, $max = 200),
+        'location' => $faker->city
     ];
 });

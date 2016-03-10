@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -20,7 +21,7 @@ class PagesController extends Controller
 
     public function standings()
     {
-        $racers = ['cowboy', 'cowgirl', 'Mike'];
+        $racers = User::orderBy('points', 'DESC')->get();
         return view('standings', compact('racers'));
     }
 
