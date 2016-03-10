@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 
 @section('content')
     <div class="container">
-
 
         <h3>Events</h3>
         @foreach ($events as $event)

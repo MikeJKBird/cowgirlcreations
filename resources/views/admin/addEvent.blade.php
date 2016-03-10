@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 
 @section('content')
     <div class="container">
-        <h1>Admin Page!</h1>
         <h2>Add an event</h2>
 
         <form method="POST" action="/events">
