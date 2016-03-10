@@ -9,10 +9,12 @@
         </div>
     </div>
     <div class="container">
-        <ol>
-            @foreach($racers as $racer)
-                <li>{{ $racer->name }}: {{$racer->points}} points</li>
-            @endforeach
-        </ol>
+        <div class="row col-md-6 col-md-offset-3">
+            <ol class="list-group">
+                @foreach($racers as $racer)
+                    <li class="list-group-item">{{ $racer->name }}: {{$racer->points}} points</li>
+                @endforeach
+            </ol>
+        </div>
     </div>
 @stop

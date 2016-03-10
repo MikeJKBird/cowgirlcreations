@@ -26,11 +26,16 @@ Route::get('photos', 'PagesController@photos');
 
 Route::get('contact', 'PagesController@contact');
 
-Route::get('admin/event', function() {
-    return view('admin.addEvent');
-});
+
+
+//Admin
+Route::get('admin/event', 'AdminController@event');
 
 Route::post('events', 'EventsController@store');
+
+Route::get('admin/calendar', 'AdminController@calendar');
+
+Route::get('admin/calendar/{event}', 'AdminController@results');
 
 /*
 |--------------------------------------------------------------------------

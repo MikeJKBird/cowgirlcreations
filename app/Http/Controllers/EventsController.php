@@ -47,7 +47,7 @@ class EventsController extends Controller
             'maxNumberParticipants' => $request->maxNumberParticipants,
             'location' => $request->location
         ]);
-        return back();
+        return redirect('calendar');
     }
 
     /**
