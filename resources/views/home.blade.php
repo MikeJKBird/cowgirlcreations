@@ -19,7 +19,7 @@
             </ul>
         </div>
         <div class="row col-md-5">
-            <p class="lead text-center">This is Corgirl Creations. stuff stuff stuff</p>
+            <p class="lead text-center">This is Cowgirl Creations. stuff stuff stuff</p>
         </div>
         <div class="row col-md-3  col-md-offset-1">
             <h3 class="">Our Upcoming events</h3>

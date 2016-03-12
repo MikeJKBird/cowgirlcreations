@@ -12,7 +12,9 @@
         <div class="row col-md-6 col-md-offset-3">
             <ol class="list-group">
                 @foreach($racers as $racer)
-                    <li class="list-group-item">{{ $racer->name }}: {{$racer->points}} points</li>
+                    @if($racer->points > 0)
+                        <li class="list-group-item">{{ $racer->name }}: {{$racer->points}} points</li>
+                    @endif
                 @endforeach
             </ol>
         </div>
