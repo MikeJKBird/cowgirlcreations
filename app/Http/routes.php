@@ -18,10 +18,6 @@ Route::get('calendar/{event}', 'EventsController@show');
 
 Route::get('standings', 'PagesController@standings');
 
-Route::get('hats', 'PagesController@hats');
-
-Route::get('artwork', 'PagesController@artwork');
-
 Route::get('photos', 'PagesController@photos');
 
 Route::get('contact', 'PagesController@contact');
