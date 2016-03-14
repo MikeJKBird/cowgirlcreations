@@ -20,6 +20,10 @@
                     <input type="text" name='location' id='location' class='form-control' value=''>
                 </div>
                 <div class="form-group">
+                    <label for='date'>Date</label>
+                    <input type="datetime" name='date' id='date' class='form-control' value=''>
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Event</button>
                 </div>
             </form>

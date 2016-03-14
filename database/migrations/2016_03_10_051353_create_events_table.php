@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->integer('maxNumberParticipants');
             $table->string('location');
+            $table->date('date');
             $table->timestamps();
         });
     }
