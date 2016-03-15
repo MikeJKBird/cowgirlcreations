@@ -2,6 +2,7 @@
 
 
 @section('content')
+
     <div class="container">
         <div class="row col-sm-6 col-sm-offset-3">
             <h2>Add an event</h2>
@@ -21,13 +22,23 @@
                 </div>
                 <div class="form-group">
                     <label for='date'>Date</label>
-                    <input type="datetime" name='date' id='date' class='form-control' value=''>
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type="text" name='date' id='date' class='form-control' value=''>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
                 </div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Event</button>
                 </div>
             </form>
         </div>
     </div>
-
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
 @stop
