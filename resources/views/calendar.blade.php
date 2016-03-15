@@ -13,7 +13,7 @@
 
         <h3>Events</h3>
         @foreach ($events as $event)
-            <a href="calendar/{{$event->id}}">{{ $event->name }}</a>
+            <a href="calendar/{{$event->id}}">{{ $event->name }}</a> : {{$event->date}}
             <hr>
         @endforeach
     </div>

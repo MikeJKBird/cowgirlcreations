@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Http\Requests;
@@ -41,11 +42,13 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         $event = new Event;
+        $date = Carbon::createFromFormat('m/d/Y H:i A', $request->date)->toDateTimeString();
 
         $event->create([
             'name' => $request->name,
             'maxNumberParticipants' => $request->maxNumberParticipants,
-            'location' => $request->location
+            'location' => $request->location,
+            'date' => $date
         ]);
         return redirect('calendar');
     }
