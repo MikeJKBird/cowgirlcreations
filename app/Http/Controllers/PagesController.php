@@ -2,19 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Sponsor;
 use Illuminate\Http\Request;
 use App\Event;
 use App\User;
 use App\Http\Requests;
 
+/**
+ * PagesController
+ *
+ * Mike Bird <mike.bird@outlook.com>
+ **/
 class PagesController extends Controller
 {
 
     public function home()
     {
         $events = Event::all();
+        $sponsors = Sponsor::all();
 
-        return view('home', compact('events'));
+        return view('home', compact('events', 'sponsors'));
     }
     public function calendar()
     {

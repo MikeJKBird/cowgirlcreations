@@ -21,6 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/admin/event">Add New Event</a></li>
                 <li><a href="/admin/calendar">Calendar of Events</a></li>
+                <li><a href="/admin/sponsors">List of Sponsors</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

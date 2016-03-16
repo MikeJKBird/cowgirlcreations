@@ -29,6 +29,10 @@ Route::get('admin/event', 'AdminController@event');
 
 Route::post('events', 'EventsController@store');
 
+Route::get('admin/sponsors', 'AdminController@sponsors');
+
+Route::post('sponsors', 'SponsorController@store');
+
 Route::get('admin/calendar', 'AdminController@calendar');
 
 Route::get('admin/calendar/{event}', 'AdminController@results');

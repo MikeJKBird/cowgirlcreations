@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sponsor;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,5 +26,12 @@ class AdminController extends Controller
     public function results(Event $event)
     {
         return view('admin/addResults', compact('event'));
+    }
+
+    public function sponsors()
+    {
+        $sponsors = Sponsor::all();
+
+        return view('admin.editSponsors', compact('sponsors'));
     }
 }

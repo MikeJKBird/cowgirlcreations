@@ -12,10 +12,9 @@
         <div class="row col-md-3">
             <h3>Our Sponsors</h3>
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">First</a></li>
-                <li class="list-group-item"><a href="#">Second</a></li>
-                <li class="list-group-item"><a href="#">Third</a></li>
-                <li class="list-group-item"><a href="#">Fourth</a></li>
+                @foreach ($sponsors as $sponsor)
+                    <li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="row col-md-5">
