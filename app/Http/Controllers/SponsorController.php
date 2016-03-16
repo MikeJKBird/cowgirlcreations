@@ -19,4 +19,12 @@ class SponsorController extends Controller
         ]);
         return redirect()->back();
     }
+
+
+    public function destroy($id)
+    {
+        Sponsor::findOrFail($id)->delete();
+
+        return back();
+    }
 }

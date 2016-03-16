@@ -30,8 +30,8 @@ Route::get('admin/event', 'AdminController@event');
 Route::post('events', 'EventsController@store');
 
 Route::get('admin/sponsors', 'AdminController@sponsors');
-
 Route::post('sponsors', 'SponsorController@store');
+Route::delete('sponsors/{id}', 'SponsorController@destroy');
 
 Route::get('admin/calendar', 'AdminController@calendar');
 

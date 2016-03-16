@@ -24,7 +24,14 @@
             <h3>Current Sponsors</h3>
             <ul class="list-group">
                 @foreach ($sponsors as $sponsor)
-                    <li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a></li>
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <form method="POST" action="/sponsors/{{$sponsor->id}}"><input type="hidden" name="_method" value="DELETE"><button type="submit" class="btn btn-danger">Delete</button></form></li>
+                        </div>
+                    </div>
                 @endforeach
             </ul>
         </div>

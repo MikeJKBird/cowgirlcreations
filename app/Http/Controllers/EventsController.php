@@ -50,7 +50,7 @@ class EventsController extends Controller
             'location' => $request->location,
             'date' => $date
         ]);
-        return redirect('calendar');
+        return redirect('admin/calendar');
     }
 
     /**
