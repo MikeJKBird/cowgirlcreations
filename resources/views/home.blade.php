@@ -25,7 +25,6 @@
             <ul class="list-group">
                 @foreach ($events as $event)
                     <li class="list-group-item"><a href="calendar/{{$event->id}}">{{$event->date->toFormattedDateString()}} - {{ $event->name }}</a></li>
-                    <hr>
                 @endforeach
             </ul>
         </div>

@@ -10,6 +10,13 @@ use App\Event;
 
 class AdminController extends Controller
 {
+
+    public function main()
+    {
+        return view('admin.main');
+    }
+
+
     public function calendar()
     {
         $events = Event::all();
@@ -25,7 +32,7 @@ class AdminController extends Controller
 
     public function results(Event $event)
     {
-        return view('admin/addResults', compact('event'));
+        return view('admin/eventDetails', compact('event'));
     }
 
     public function sponsors()

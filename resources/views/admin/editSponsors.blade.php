@@ -29,7 +29,10 @@
                             <li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a>
                         </div>
                         <div class="col-sm-2">
-                            <form method="POST" action="/sponsors/{{$sponsor->id}}"><input type="hidden" name="_method" value="DELETE"><button type="submit" class="btn btn-danger">Delete</button></form></li>
+                            <form method="POST" action="/sponsors/{{$sponsor->id}}">
+                                <input type="hidden" name="_method" value="DELETE"><button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                            </li>
                         </div>
                     </div>
                 @endforeach
