@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Event;
 use App\User;
 use App\Http\Requests;
 
@@ -12,7 +12,9 @@ class PagesController extends Controller
 
     public function home()
     {
-        return view('home');
+        $events = Event::all();
+
+        return view('home', compact('events'));
     }
     public function calendar()
     {

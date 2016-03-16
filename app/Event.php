@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Event
+ *
+ * Mike Bird <mike.bird@outlook.com>
+ **/
 class Event extends Model
 {
     protected $fillable = [

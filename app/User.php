@@ -3,7 +3,11 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+/**
+ * Class User
+ *
+ * Mike Bird <mike.bird@outlook.com>
+ **/
 class User extends Authenticatable
 {
     /**

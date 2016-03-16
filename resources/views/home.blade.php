@@ -24,10 +24,10 @@
         <div class="row col-md-3  col-md-offset-1">
             <h3 class="">Our Upcoming events</h3>
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">First event</a></li>
-                <li class="list-group-item"><a href="#">Second event</a></li>
-                <li class="list-group-item"><a href="#">Third event</a></li>
-                <li class="list-group-item"><a href="#">Fourth event</a></li>
+                @foreach ($events as $event)
+                    <li class="list-group-item"><a href="calendar/{{$event->id}}">{{$event->date->toFormattedDateString()}} - {{ $event->name }}</a></li>
+                    <hr>
+                @endforeach
             </ul>
         </div>
     </div>
