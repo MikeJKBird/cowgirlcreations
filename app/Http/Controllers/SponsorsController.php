@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Sponsor;
 use App\Http\Requests;
 
-class SponsorController extends Controller
+class SponsorsController extends Controller
 {
     public function store(Request $request)
     {
@@ -28,3 +28,4 @@ class SponsorController extends Controller
         return back();
     }
 }
+

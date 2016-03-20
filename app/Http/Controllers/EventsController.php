@@ -46,10 +46,23 @@ class EventsController extends Controller
 
         $event->create([
             'name' => $request->name,
-            'maxNumberParticipants' => $request->maxNumberParticipants,
             'location' => $request->location,
+            'cosanction' => $request->cosanction,
+            'deadline' => $request->deadline,
+            'producer' => $request->producer,
+            'notes' => $request->notes,
+            'dresscode' => $request->dresscode,
+            'option' => $request->option,
+            'timeonly' => $request->timeonly,
+            'latefee' => $request->latefee,
+            'arenafee' => $request->arenafee,
+            'campingfee' => $request->campingfee,
+            'stallfee' => $request->stallfee,
+            'divisions' => $request->divisions,
+            'bbq' => $request->bbq,
             'date' => $date
         ]);
+
         return redirect('admin/calendar');
     }
 
