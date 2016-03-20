@@ -14,8 +14,12 @@
         <p>Time Only: {{$event->timeonly}}</p>
         <p>Late Fee: {{$event->latefee}}</p>
         <p>Arena Fee: {{$event->arenafee}}</p>
+        @if( $event->campingfee != null)
         <p>Camping Fee: {{$event->campingfee}}</p>
+        @endif
+        @if( $event->stallfee != null)
         <p>Stall Fee: {{$event->stallfee}}</p>
+        @endif
         <p>Divisions: {{$event->divisions}}</p>
         <p>BBQ: {{$event->bbq}}</p>
         <p>Notes: {{$event->notes}}</p>
