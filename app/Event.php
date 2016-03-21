@@ -12,8 +12,11 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'name', 'maxNumberParticipants', 'location', 'date'
+        'name', 'location', 'cosanction', 'deadline', 'producer',
+        'notes', 'dresscode', 'option', 'timeonly', 'latefee',
+        'arenafee', 'campingfee', 'stallfee', 'divisions', 'bbq', 'date'
     ];
+
 
     protected $dates = ['created_at', 'updated_at', 'date'];
 

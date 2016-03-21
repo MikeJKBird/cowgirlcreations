@@ -28,3 +28,4 @@ class SponsorsController extends Controller
         return back();
     }
 }
+

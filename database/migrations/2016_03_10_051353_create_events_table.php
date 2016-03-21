@@ -15,8 +15,20 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('maxNumberParticipants');
             $table->string('location');
+            $table->string('cosanction');
+            $table->string('deadline');
+            $table->string('producer');
+            $table->longText('notes');
+            $table->string('dresscode');
+            $table->string('option');
+            $table->integer('timeonly');
+            $table->integer('latefee');
+            $table->string('arenafee');
+            $table->string('campingfee')->nullable();
+            $table->string('stallfee')->nullable();
+            $table->string('divisions');
+            $table->integer('bbq')->nullable();
             $table->date('date');
             $table->timestamps();
         });
