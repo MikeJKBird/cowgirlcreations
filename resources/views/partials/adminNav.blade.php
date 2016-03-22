@@ -22,6 +22,7 @@
                 <li><a href="/admin/event">Add New Event</a></li>
                 <li><a href="/admin/calendar">Calendar of Events</a></li>
                 <li><a href="/admin/sponsors">List of Sponsors</a></li>
+                <li><a href="/admin/photos">Photos</a></li>
             </ul>
         </div>
     </div>

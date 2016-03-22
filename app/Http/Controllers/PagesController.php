@@ -6,6 +6,7 @@ use App\Sponsor;
 use Illuminate\Http\Request;
 use App\Event;
 use App\User;
+use App\Photo;
 use App\Http\Requests;
 
 /**
@@ -46,7 +47,9 @@ class PagesController extends Controller
 
     public function photos()
     {
-        return view('photos');
+        $photos = Photo::all();
+
+        return view('photos', compact('photos'));
     }
 
     public function contact()
