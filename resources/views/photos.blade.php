@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             @foreach($photos as $photo)
-                <img src="/img/{{$photo->name}}" >
+                <a href="/img/{{$photo->name}}" data-lightbox="gallery"><img src="/img/{{$photo->name}}" class="col-xs-12 col-sm-6 col-md-3" /></a>
             @endforeach
 
             <a href="img/cowboy_01.jpg" data-lightbox="gallery"><img src="img/cowboy_01.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>

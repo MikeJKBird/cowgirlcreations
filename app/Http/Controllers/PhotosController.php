@@ -43,4 +43,12 @@ class PhotosController extends Controller
         return 'Done';
 
     }
+
+    public function update(Request $request, Photo $photo)
+    {
+        $photo->update($request->all());
+
+        return back();
+    }
+
 }

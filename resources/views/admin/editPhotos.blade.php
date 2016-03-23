@@ -15,26 +15,25 @@
             <h3>Current Photos</h3>
             @foreach($photos as $photo)
                 <img src="/img/{{$photo->name}}" >
+                <form method="POST" action="/photo/{{$photo->id}}">
+                    {{method_field('PATCH')}}
+                    {{ csrf_field() }}
+
+                    <div class="form-group">
+                        <label for='caption'>Photo caption:</label>
+                        <input type="text" name='caption' id='caption' class='form-control' value='' required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update Photo</button>
+                    </div>
+                </form>
             @endforeach
 
 
 
-            <h3>Add A New Photo</h3>
-            <form method="POST" action="/photos">
-                <div class="form-group">
-                    <label for='name'>Photo name:</label>
-                    <input type="text" name='name' id='name' class='form-control' value='' required>
-                </div>
-                <div class="form-group">
-                    <label for='caption'>Photo caption:</label>
-                    <input type="text" name='caption' id='caption' class='form-control' value='' required>
-                </div>
 
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Add Sponsor</button>
-                </div>
-            </form>
 
             {{--<h3>Current Sponsors</h3>--}}
             {{--<ul class="list-group">--}}

@@ -1,0 +1,22 @@
+add caption to photo
+resize photo
+    -->possibly create thumbnail as well
+
+layout for event page
+
+create profile page
+    -->need to have user add information before being able to sign up for race (horse, etc)
+    -->option data can be input on profile
+
+
+Implement Auth
+    -->admin and normal user
+
+Sign up for race will associate race with user
+    -->pass data to document for admin
+
+Have this list done by next meeting: Approx April 7th
+
+
+Styling
+

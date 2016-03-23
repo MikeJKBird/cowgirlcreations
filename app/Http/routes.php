@@ -38,6 +38,7 @@ Route::get('admin/calendar/{event}', 'AdminController@results');
 
 Route::get('admin/photos', 'PhotosController@edit');
 Route::post('admin/photos', 'PhotosController@add');
+Route::patch('photo/{photo}', 'PhotosController@update');
 
 /*
 |--------------------------------------------------------------------------
