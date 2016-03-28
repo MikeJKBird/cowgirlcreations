@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Event;
+use App\User;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EventsController extends Controller
@@ -74,8 +76,8 @@ class EventsController extends Controller
      */
     public function show(Event $event)
     {
-
-        return view('event',compact('event'));
+        $user = Auth::user();
+        return view('event',compact('event', 'user'));
     }
 
     /**
@@ -110,5 +112,18 @@ class EventsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function signup(Request $request)
+    {
+        $userID = $request->userID;
+        $eventID = $request->eventID;
+
+        $user = User::where('id', $userID)->first();
+        $event = Event::where('id', $eventID)->first();
+
+        $user->events()->save($event);
+
+        return back();
     }
 }

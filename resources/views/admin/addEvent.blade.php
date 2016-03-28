@@ -8,6 +8,7 @@
             <h2>Add an event</h2>
 
             <form method="POST" action="/events">
+                {{csrf_field()}}
                 <div class="row col-sm-4 col-sm-offset-1">
                     <div class="form-group">
                         <label for='name'>Event Name:</label>
