@@ -40,26 +40,26 @@
                         <input type="text" name='option' id='option' class='form-control' value=''>
                     </div>
                     <div class="form-group">
-                        <label for='timeonly'>Time Only</label>
+                        <label for='timeonly'>Time Only ($)</label>
                         <input type="text" name='timeonly' id='timeonly' class='form-control' value=''>
                     </div>
                 </div>
                 <div class="row col-sm-4 col-sm-offset-1">
 
                     <div class="form-group">
-                        <label for='latefee'>Late Fee</label>
+                        <label for='latefee'>Late Fee ($)</label>
                         <input type="text" name='latefee' id='latefee' class='form-control' value=''>
                     </div>
                     <div class="form-group">
-                        <label for='arenafee'>Arena Fee</label>
+                        <label for='arenafee'>Arena Fee ($)</label>
                         <input type="text" name='arenafee' id='arenafee' class='form-control' value=''>
                     </div>
                     <div class="form-group">
-                        <label for='campingfee'>Camping Fee</label>
+                        <label for='campingfee'>Camping Fee ($)</label>
                         <input type="text" name='campingfee' id='campingfee' class='form-control' value=''>
                     </div>
                     <div class="form-group">
-                        <label for='stallfee'>Stall Fee</label>
+                        <label for='stallfee'>Stall Fee ($)</label>
                         <input type="text" name='stallfee' id='stallfee' class='form-control' value=''>
                     </div>
                     <div class="form-group">
@@ -67,7 +67,7 @@
                         <input type="text" name='divisions' id='divisions' class='form-control' value=''>
                     </div>
                     <div class="form-group">
-                        <label for='bbq'>BBQ</label>
+                        <label for='bbq'>BBQ ($)</label>
                         <input type="text" name='bbq' id='bbq' class='form-control' value=''>
                     </div>
                     <div class="form-group">

@@ -7,6 +7,7 @@
             <h2>Sponsors</h2>
             <h3>New Sponsor</h3>
             <form method="POST" action="/sponsors">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for='name'>Sponsor Name:</label>
                     <input type="text" name='name' id='name' class='form-control' value='' required>
@@ -30,6 +31,7 @@
                         </div>
                         <div class="col-sm-2">
                             <form method="POST" action="/sponsors/{{$sponsor->id}}">
+                                {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE"><button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                             </li>

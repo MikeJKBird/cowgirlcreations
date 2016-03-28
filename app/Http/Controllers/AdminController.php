@@ -25,12 +25,17 @@ class AdminController extends Controller
         return view('admin.calendar', compact('events'));
     }
 
+    /**
+     * View to add a new event
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function event()
     {
         return view('admin.addEvent');
     }
 
-    public function results(Event $event)
+    public function eventdetails(Event $event)
     {
         return view('admin/eventDetails', compact('event'));
     }

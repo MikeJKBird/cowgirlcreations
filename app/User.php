@@ -33,4 +33,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Event::class)->withTimestamps();
     }
+
+    public function horses()
+    {
+        return $this->hasMany(Horse::class);
+    }
 }

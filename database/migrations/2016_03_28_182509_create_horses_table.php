@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventUserTable extends Migration
+class CreateHorsesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class CreateEventUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_user', function (Blueprint $table) {
+        Schema::create('horses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('event_id');
-            $table->interger('horse_id');
-            $table->boolean('camping')->default(0);
-            $table->boolean('stall')->default(0);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateEventUserTable extends Migration
      */
     public function down()
     {
-        Schema::drop('event_user');
+        Schema::drop('horses');
     }
 }

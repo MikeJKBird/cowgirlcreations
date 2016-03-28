@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Horse;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Event;
@@ -118,9 +119,11 @@ class EventsController extends Controller
     {
         $userID = $request->userID;
         $eventID = $request->eventID;
+        $horseID = $request->horse;
 
         $user = User::where('id', $userID)->first();
         $event = Event::where('id', $eventID)->first();
+        $horse = Horse::where('id', $horseID)->first();
 
         $user->events()->save($event);
 

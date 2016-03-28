@@ -1,3 +1,11 @@
+When users sign up for events, need to add extra information to event/user relationship (ex. camping fee, stall fee, etc)
+-->How can horse selection be passed along?
+    -->add information that can change to event/user schema
+    -->Add checkbox to form for each piece of data that user can add on
+    -->Checkboxes work for multiple divisions, but what about for different horses?
+
+
+
 add caption to photo
 resize photo
     -->possibly create thumbnail as well
@@ -12,8 +20,6 @@ create profile page
 Implement Auth
     -->admin and normal user
 
-Sign up for race will associate race with user
-    -->pass data to document for admin
 
 Have this list done by next meeting: Approx April 7th
 

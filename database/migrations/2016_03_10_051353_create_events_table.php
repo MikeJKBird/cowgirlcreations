@@ -24,9 +24,9 @@ class CreateEventsTable extends Migration
             $table->string('option');
             $table->integer('timeonly');
             $table->integer('latefee');
-            $table->string('arenafee')->nullable();
-            $table->string('campingfee')->nullable();
-            $table->string('stallfee')->nullable();
+            $table->integer('arenafee')->nullable();
+            $table->integer('campingfee')->nullable();
+            $table->integer('stallfee')->nullable();
             $table->string('divisions');
             $table->integer('bbq')->nullable();
             $table->date('date');

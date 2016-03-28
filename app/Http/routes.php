@@ -6,6 +6,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', 'PagesController@home');
     Route::get('/profile', 'UsersController@showprofile');
 
+    Route::post('/newhorse', 'HorsesController@store');
+
     Route::get('calendar', 'EventsController@index');
     Route::get('calendar/{event}', 'EventsController@show');
     Route::post('/eventsignup', 'EventsController@signup');
@@ -28,7 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('admin/event', 'AdminController@event');
     Route::post('events', 'EventsController@store');
     Route::get('admin/calendar', 'AdminController@calendar');
-    Route::get('admin/calendar/{event}', 'AdminController@results');
+    Route::get('admin/calendar/{event}', 'AdminController@eventdetails');
 
     Route::get('admin/photos', 'PhotosController@edit');
     Route::post('admin/photos', 'PhotosController@add');
