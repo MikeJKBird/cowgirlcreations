@@ -4,10 +4,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'PagesController@home');
+    Route::get('/profile', 'UsersController@showprofile');
 
     Route::get('calendar', 'EventsController@index');
     Route::get('calendar/{event}', 'EventsController@show');
-    Route::post('/signup', 'EventsController@signup');
+    Route::post('/eventsignup', 'EventsController@signup');
 
     Route::get('standings', 'PagesController@standings');
 
