@@ -23,6 +23,8 @@ Route::group(['middleware' => 'web'], function () {
 //Admin
     Route::get('admin', 'AdminController@main');
 
+    Route::get('admin/members', 'AdminController@members');
+
     Route::get('admin/sponsors', 'AdminController@sponsors');
     Route::post('sponsors', 'SponsorsController@store');
     Route::delete('sponsors/{id}', 'SponsorsController@destroy');

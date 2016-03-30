@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Sponsor;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -45,5 +46,12 @@ class AdminController extends Controller
         $sponsors = Sponsor::all();
 
         return view('admin.editSponsors', compact('sponsors'));
+    }
+
+    public function members()
+    {
+        $users = User::all();
+
+        return view('admin.members', compact('users'));
     }
 }
