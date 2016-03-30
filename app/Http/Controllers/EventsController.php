@@ -63,7 +63,8 @@ class EventsController extends Controller
             'stallfee' => $request->stallfee,
             'divisions' => $request->divisions,
             'bbq' => $request->bbq,
-            'date' => $date
+            'date' => $date,
+            'multipler' => $request->multiplier
         ]);
 
         return redirect('admin/calendar');

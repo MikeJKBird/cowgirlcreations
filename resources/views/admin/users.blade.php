@@ -12,12 +12,14 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Points</th>
+                <th>Edit Member</th>
             </tr>
         @foreach ($users as $user)
             <tr>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->points }}</td>
+                <td><a href="/admin/editmember/{{$user->id}}">Edit</a></td>
             </tr>
         @endforeach
         </table>

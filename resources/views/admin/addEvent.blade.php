@@ -83,6 +83,10 @@
                         </span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for='multiplier'>Points Multiplier</label>
+                        <input type="number" name='multiplier' id='multiplier' class='form-control' value=''>
+                    </div>
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add Event</button>

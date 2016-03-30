@@ -14,7 +14,7 @@ class Event extends Model
     protected $fillable = [
         'name', 'location', 'cosanction', 'deadline', 'producer',
         'notes', 'dresscode', 'option', 'timeonly', 'latefee',
-        'arenafee', 'campingfee', 'stallfee', 'divisions', 'bbq', 'date'
+        'arenafee', 'campingfee', 'stallfee', 'divisions', 'bbq', 'date', 'multiplier'
     ];
 
 

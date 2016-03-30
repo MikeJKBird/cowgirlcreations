@@ -48,10 +48,5 @@ class AdminController extends Controller
         return view('admin.editSponsors', compact('sponsors'));
     }
 
-    public function members()
-    {
-        $users = User::all();
 
-        return view('admin.members', compact('users'));
-    }
 }

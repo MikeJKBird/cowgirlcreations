@@ -23,7 +23,9 @@ Route::group(['middleware' => 'web'], function () {
 //Admin
     Route::get('admin', 'AdminController@main');
 
-    Route::get('admin/members', 'AdminController@members');
+    Route::get('admin/members', 'UsersController@index');
+    Route::get('admin/editmember/{user}', 'UsersController@edit');
+    Route::patch('admin/updatemember/{user}', 'UsersController@update');
 
     Route::get('admin/sponsors', 'AdminController@sponsors');
     Route::post('sponsors', 'SponsorsController@store');
