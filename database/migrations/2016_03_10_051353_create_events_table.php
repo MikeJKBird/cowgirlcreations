@@ -30,7 +30,7 @@ class CreateEventsTable extends Migration
             $table->string('divisions');
             $table->integer('bbq')->nullable();
             $table->date('date');
-            $table->int('multiplier');
+            $table->integer('multiplier');
             $table->timestamps();
         });
     }

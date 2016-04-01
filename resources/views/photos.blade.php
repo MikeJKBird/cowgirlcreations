@@ -12,18 +12,8 @@
     <div class="container">
         <div class="row">
             @foreach($photos as $photo)
-                <a href="/img/{{$photo->name}}" data-lightbox="gallery"><img src="/img/{{$photo->name}}" class="col-xs-12 col-sm-6 col-md-3" /></a>
+                <a href="/img/{{$photo->name}}" data-lightbox="gallery" data-title="{{$photo->caption}}"><img src="/img/{{$photo->name}}" class="col-xs-12 col-sm-6 col-md-3" /></a>
             @endforeach
-
-            <a href="img/cowboy_01.jpg" data-lightbox="gallery"><img src="img/cowboy_01.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/horses_01.jpg" data-lightbox="gallery"><img src="img/horses_01.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/horses_02.jpg" data-lightbox="gallery"><img src="img/horses_02.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/cowboy_02.jpg" data-lightbox="gallery"><img src="img/cowboy_02.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/horses_03.jpg" data-lightbox="gallery"><img src="img/horses_03.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/horses_04.jpg" data-lightbox="gallery"><img src="img/horses_04.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/cowboy_03.jpg" data-lightbox="gallery"><img src="img/cowboy_03.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/horses_05.jpg" data-lightbox="gallery"><img src="img/horses_05.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
-            <a href="img/horses_06.jpg" data-lightbox="gallery"><img src="img/horses_06.jpg" class="col-xs-12 col-sm-6 col-md-3" /></a>
         </div>
     </div>
 @stop

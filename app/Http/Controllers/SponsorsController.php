@@ -15,7 +15,8 @@ class SponsorsController extends Controller
 
         $sponsor->create([
             'name' => $request->name,
-            'website' => $request->website
+            'website' => $request->website,
+            'value' => $request->value
         ]);
         return redirect()->back();
     }

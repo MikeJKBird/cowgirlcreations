@@ -20,7 +20,7 @@ class PagesController extends Controller
     public function home()
     {
         $events = Event::all();
-        $sponsors = Sponsor::all();
+        $sponsors = Sponsor::orderby('value', 'desc')->get();
 
         return view('home', compact('events', 'sponsors'));
     }

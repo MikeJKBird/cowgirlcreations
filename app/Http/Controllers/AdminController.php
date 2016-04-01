@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     public function sponsors()
     {
-        $sponsors = Sponsor::all();
+        $sponsors = Sponsor::orderby('value', 'desc')->get();
 
         return view('admin.editSponsors', compact('sponsors'));
     }

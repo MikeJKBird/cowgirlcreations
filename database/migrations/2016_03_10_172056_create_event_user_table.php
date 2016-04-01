@@ -16,7 +16,7 @@ class CreateEventUserTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('event_id');
-            $table->interger('horse_id');
+            $table->integer('horse_id');
             $table->boolean('camping')->default(0);
             $table->boolean('stall')->default(0);
             $table->timestamps();

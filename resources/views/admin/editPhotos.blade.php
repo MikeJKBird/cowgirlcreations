@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-
+{{-- ONCE AUTH IS IN PLACE, ADD old('caption')TO VALUE --}}
 
 @section('content')
 

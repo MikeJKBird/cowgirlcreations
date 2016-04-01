@@ -16,7 +16,10 @@
                     <label for='website'>Website:</label>
                     <input type="text" name='website' id='website' class='form-control' value='' required>
                 </div>
-
+                <div class="form-group">
+                    <label for='value'>Value</label>
+                    <input type="number" name='value' id='value' class='form-control' value=''>
+                </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Sponsor</button>
                 </div>
@@ -27,7 +30,7 @@
                 @foreach ($sponsors as $sponsor)
                     <div class="row">
                         <div class="col-sm-10">
-                            <li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a>
+                            <li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}: {{$sponsor->value}}</a>
                         </div>
                         <div class="col-sm-2">
                             <form method="POST" action="/sponsors/{{$sponsor->id}}">
