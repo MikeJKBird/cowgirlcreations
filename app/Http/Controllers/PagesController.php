@@ -17,6 +17,11 @@ use App\Http\Requests;
 class PagesController extends Controller
 {
 
+    /**
+     * Loads the home page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function home()
     {
         $events = Event::all();
@@ -24,27 +29,33 @@ class PagesController extends Controller
 
         return view('home', compact('events', 'sponsors'));
     }
+
+    /**
+     * Loads the calendar of events
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function calendar()
     {
         return view('calendar');
     }
 
+    /**
+     * Loads the standings of the members
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function standings()
     {
         $racers = User::orderBy('points', 'DESC')->get();
         return view('standings', compact('racers'));
     }
 
-    public function hats()
-    {
-        return view('hats');
-    }
-
-    public function artwork()
-    {
-        return view('artwork');
-    }
-
+    /**
+     * Loads the photo gallery
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function photos()
     {
         $photos = Photo::all();
@@ -52,6 +63,11 @@ class PagesController extends Controller
         return view('photos', compact('photos'));
     }
 
+    /**
+     * Loads the contact page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function contact()
     {
         return view('contact');
