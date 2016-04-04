@@ -6,12 +6,7 @@
     <div class="container">
         <h1>{{$event->name}}</h1>
         <h3>People who have signed up!</h3>
-        @foreach($tables as $table)
-            {{--<h6>User: {{$enrollment->users->name}}</h6>--}}
-            <h6>Horse: {{$table->horse_id}}</h6>
-            <h6>Event: {{$table->event_id}}</h6>
-            <h6>User: {{$table->name}}</h6>
-        @endforeach
+
         <table class="table table-striped">
             <tr>
                 <th>Racer</th>
@@ -26,7 +21,29 @@
                 <th>Total</th>
             </tr>
 
+            @foreach($tables as $table)
+                <tr>
 
+                    <td>{{$table->name}}</td>
+                    <td>Member number</td>
+                    <td>{{$table->horse_name}}</td>
+                    @if($table->camping)
+                        <td>Yes</td>
+                    @else
+                        <td>No</td>
+                    @endif
+                    @if($table->stall)
+                        <td>Yes</td>
+                    @else
+                        <td>No</td>
+                    @endif
+                    @if($table->bbq > 0)
+                        <td>{{$table->bbq}}</td>
+                    @else
+                        <td>No</td>
+                    @endif
+                </tr>
+            @endforeach
             {{--@foreach($users as $user)--}}
                 {{--<tr>--}}
                     {{--<td>{{$user->name}} </td>--}}

@@ -131,15 +131,15 @@ class EventsController extends Controller
 
     public function signup(Request $request)
     {
-        $userID = $request->userID;
-        $eventID = $request->eventID;
-        $horseID = $request->horse;
-
-        $user = User::where('id', $userID)->first();
-        $event = Event::where('id', $eventID)->first();
-        $horse = Horse::where('id', $horseID)->first();
-
-        $user->events()->save($event);
+        $enrollment = new Enrollment();
+        $enrollment->create([
+            'user_id' => $request->userID,
+            'event_id' => $request->eventID,
+            'horse_id' => $request->horse,
+            'camping' => $request->camping,
+            'stall' => $request->stall,
+            'bbq' => $request->bbq
+        ]);
 
         return back();
     }

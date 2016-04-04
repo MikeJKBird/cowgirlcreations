@@ -50,22 +50,22 @@
 
                 <select name="horse">
                     @foreach($user->horses as $horse)
-                        <option value="{{$horse->id}}">{{$horse->name}}</option>
+                        <option value="{{$horse->id}}">{{$horse->horse_name}}</option>
                     @endforeach
                 </select>
 
 
                 @if( $event->campingfee != null)
                     <label for="camping">Add Camping</label>
-                    <input type="checkbox" name="campingfee" id="camping">
+                    <input type="checkbox" name="camping" id="camping">
                 @endif
                 @if( $event->stallfee != null)
                     <label for="stall">Add Stall</label>
-                    <input type="checkbox" name="stallfee" id="stall">
+                    <input type="checkbox" name="stall" id="stall">
                 @endif
                 @if( $event->bbq != null)
                     <label for="bbq">BBQ Tickets</label>
-                    <input type="number" name="bbqfee" id="bbq" value="0">
+                    <input type="number" name="bbq" id="bbq" value="0">
                 @endif
                 <input type="submit" value="Sign Up For Race">
             </form>

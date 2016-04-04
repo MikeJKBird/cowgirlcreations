@@ -16,7 +16,7 @@
         @if(count($user->horses)>0)
         <h3>Horses:</h3>
             @foreach($user->horses as $horse)
-                {{$horse->name}}
+                {{$horse->horse_name}}
                 <br>
             @endforeach
         @endif
@@ -27,8 +27,8 @@
                 {{csrf_field()}}
                 <input type="hidden" name="user_id" value="{{$user->id}}">
                 <div class="form-group">
-                    <label for='name'>Horse Name:</label>
-                    <input type="text" name='name' id='name' class='form-control' value='' required>
+                    <label for='horse_name'>Horse Name:</label>
+                    <input type="text" name='horse_name' id='horse_name' class='form-control' value='' required>
                 </div>
 
                 <div class="form-group">

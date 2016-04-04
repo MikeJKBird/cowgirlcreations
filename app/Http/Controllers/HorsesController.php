@@ -14,7 +14,7 @@ class HorsesController extends Controller
         $horse = new Horse;
 
         $horse->create([
-            'name' => $request->name,
+            'horse_name' => $request->horse_name,
             'user_id' => $request->user_id
         ]);
 

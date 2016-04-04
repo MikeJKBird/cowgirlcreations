@@ -48,8 +48,9 @@ class AdminController extends Controller
 //                ->from('enrollments')
 //                ->whereRaw('enrollments.user_id = users.id');
 //        })->get();
-        $tables = Enrollment::join('users', 'enrollments.user_id', '=', 'users.id')->where('event_id', $event->id)->get();
-
+        $tables = Enrollment::join('users', 'enrollments.user_id', '=', 'users.id')
+            ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
+            ->where('event_id', $event->id)->get();
 
         return view('admin/eventDetails', compact('event', 'enrollments', 'users', 'tables'));
     }

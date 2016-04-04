@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Horse extends Model
 {
     protected $fillable = [
-        'name', 'user_id'
+        'horse_name', 'user_id'
     ];
 
     public function users()
