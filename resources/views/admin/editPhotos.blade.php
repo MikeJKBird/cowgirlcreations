@@ -5,31 +5,39 @@
 @section('content')
 
     <div class="container">
-        <div class="row col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
             <h2>Photos</h2>
 
             <form action="photos" method="POST" class="dropzone" id="addPhotosForm">
                 {{csrf_field()}}
             </form>
-
-            <h3>Current Photos</h3>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="text-center">Current Photos</h3>
+            <hr>
             @foreach($photos as $photo)
-                <img src="/img/{{$photo->name}}" >
-                <form method="POST" action="/photo/{{$photo->id}}">
-                    {{method_field('PATCH')}}
-                    {{ csrf_field() }}
+                <div class="col-md-3">
+                    <img src="/img/{{$photo->name}}" class="thumb">
+                    <form method="POST" action="/photo/{{$photo->id}}">
+                        {{method_field('PATCH')}}
+                        {{ csrf_field() }}
 
-                    <div class="form-group">
-                        <label for='caption'>Photo caption:</label>
-                        <input type="text" name='caption' id='caption' class='form-control' value='' required>
-                    </div>
+                        <div class="form-group">
+                            <label for='caption'>Photo caption:</label>
+                            <input type="text" name='caption' id='caption' class='form-control thumb' value='' required>
+                        </div>
 
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Update Photo</button>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Update Photo</button>
+                        </div>
+                    </form>
+                </div>
+
             @endforeach
+        </div>
 
 
 

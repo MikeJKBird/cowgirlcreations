@@ -21,7 +21,7 @@ class CreateEnrollmentsTable extends Migration
             $table->integer('horse_id');
             $table->boolean('camping')->default(0);
             $table->boolean('stall')->default(0);
-            $table->integer('bbq');
+            $table->integer('bbqtickets');
             $table->timestamps();
         });
     }

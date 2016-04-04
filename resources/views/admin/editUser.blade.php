@@ -25,7 +25,7 @@
         <h3>Horses</h3>
         @if(count($user->horses) == 0) <h4> No horses listed </h4> @endif
         @foreach($user->horses as $horse)
-            <li>{{$horse->name}}</li>
+            <li>{{$horse->horse_name}}</li>
         @endforeach
         {{--<form action="/admin/updatemember/{{$user->id}}" method="POST">--}}
             {{--{{csrf_field()}}--}}

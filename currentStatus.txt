@@ -1,11 +1,3 @@
-When users sign up for events, need to add extra information to event/user relationship (ex. camping fee, stall fee, etc)
--->How can horse selection be passed along?
-    -->add information that can change to event/user schema
-    -->Add checkbox to form for each piece of data that user can add on
-    -->Checkboxes work for multiple divisions, but what about for different horses?
-
-On admin event details, need to display horse with enrollment
-    -->feels like a gross hack to get the user to display, try to get info from the enrollment, so the horse can be displayed through the same loop
 
 
 add caption to photo
@@ -14,17 +6,31 @@ resize photo
 
 layout for event page
 
-create profile page
-    -->need to have user add information before being able to sign up for race (horse, etc)
-    -->option data can be input on profile
-
 
 Implement Auth
-    -->admin and normal user
+    -->migrate use table to get isadmin field
+    -->admin middleware for all admin pages
 
 
-Have this list done by next meeting: Approx April 7th
 
+
+User needs to be able to edit profile info
+
+Need to get divison checkboxes, that will be passed along
+    -->figure out implementation, this one will be tough
+    -->model might again make sense. Careful though, don't want too many connections
+
+User should be able to sign up twice with a new horse
+    -->event page should show which horse they've already signed up with
+
+Users need to be able to drop out of races
+    -->Just delete enrollment instance
+    -->Place in both event page and profile
+
+Need to start adding math
+    -->add total field to enrollment
+    -->select camping/stall/etc adds fee to total
+    -->refamiliarize yourself with payment logic
 
 Styling
 

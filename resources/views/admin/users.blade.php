@@ -11,6 +11,7 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Member Number</th>
                 <th>Points</th>
                 <th>Edit Member</th>
             </tr>
@@ -18,6 +19,7 @@
             <tr>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
+                <td>{{ $user->memberNumber }}</td>
                 <td>{{ $user->points }}</td>
                 <td><a href="/admin/editmember/{{$user->id}}">Edit</a></td>
             </tr>

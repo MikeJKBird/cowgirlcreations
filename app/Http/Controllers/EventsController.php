@@ -138,7 +138,7 @@ class EventsController extends Controller
             'horse_id' => $request->horse,
             'camping' => $request->camping,
             'stall' => $request->stall,
-            'bbq' => $request->bbq
+            'bbqtickets' => $request->bbqtickets
         ]);
 
         return back();

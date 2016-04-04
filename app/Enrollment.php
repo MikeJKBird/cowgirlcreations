@@ -8,7 +8,7 @@ class Enrollment extends Model
 {
 
     protected $fillable = [
-        'user_id', 'event_id', 'horse_id', 'camping', 'stall', 'bbq'
+        'user_id', 'event_id', 'horse_id', 'camping', 'stall', 'bbqtickets'
     ];
 
     /**

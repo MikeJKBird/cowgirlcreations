@@ -18,6 +18,9 @@
                 @if( $event->stallfee != null)
                     <th>Stall</th>
                 @endif
+                @if( $event->bbq != null)
+                    <th>BBQ Tickets</th>
+                @endif
                 <th>Total</th>
             </tr>
 

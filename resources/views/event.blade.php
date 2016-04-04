@@ -64,8 +64,8 @@
                     <input type="checkbox" name="stall" id="stall">
                 @endif
                 @if( $event->bbq != null)
-                    <label for="bbq">BBQ Tickets</label>
-                    <input type="number" name="bbq" id="bbq" value="0">
+                    <label for="bbqtickets">BBQ Tickets</label>
+                    <input type="number" name="bbqtickets" id="bbqtickets" value="0">
                 @endif
                 <input type="submit" value="Sign Up For Race">
             </form>
