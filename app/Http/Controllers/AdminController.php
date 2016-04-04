@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enrollment;
 use App\Sponsor;
 use App\User;
 use Illuminate\Http\Request;
@@ -39,17 +40,18 @@ class AdminController extends Controller
 
     public function eventdetails(Event $event)
     {
-        $eventID = $event->id;
-        $enrollments = DB::table('enrollments')->where('event_id', $eventID)->get();
-        $users = [];
 
-        foreach($enrollments as $enrollment) {
-            $userID = $enrollment->user_id;
-            $user = DB::table('users')->where('id', $userID)->first();
-            array_push($users, $user);
-        }
+//        $enrollments = DB::table('enrollments')->where('event_id', $event->id)->get();
+//
+//        $users = User::whereExists(function ($query) {
+//            $query->select(DB::raw(1))
+//                ->from('enrollments')
+//                ->whereRaw('enrollments.user_id = users.id');
+//        })->get();
+        $tables = Enrollment::join('users', 'enrollments.user_id', '=', 'users.id')->where('event_id', $event->id)->get();
 
-        return view('admin/eventDetails', compact('event', 'enrollments', 'users'));
+
+        return view('admin/eventDetails', compact('event', 'enrollments', 'users', 'tables'));
     }
 
     public function sponsors()

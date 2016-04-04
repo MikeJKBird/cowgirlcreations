@@ -5,15 +5,21 @@
     <div class="container text-center">
         <h1>Welcome {{$user->name}}!</h1>
 
-        <p>Your member number is: {{$user->memberNumber}}</p>
+        @if($user->memberNumber != null)
+            <p>Your member number is: {{$user->memberNumber}}</p>
+        @else
+            <p>Still waiting to have your member number assigned!</p>
+        @endif
         <p>Your email is: {{$user->email}}</p>
         <p>Your points are: {{$user->points}}</p>
 
+        @if(count($user->horses)>0)
         <h3>Horses:</h3>
             @foreach($user->horses as $horse)
                 {{$horse->name}}
                 <br>
             @endforeach
+        @endif
 
         <h4>Add a new Horse</h4>
         <div class="row">
@@ -34,9 +40,12 @@
 
         <h3>The races you've signed up for:</h3>
         <ul>
-        @foreach($user->events as $event)
-            <li><a href="/calendar/{{$event->id}}">{{$event->name}}</a></li>
-        @endforeach
+            @foreach($events as $event)
+                <li>{{$event[0]->name}}</li>
+            @endforeach
+        {{--@foreach($user->events as $event)--}}
+            {{--<li><a href="/calendar/{{$event->id}}">{{$event->name}}</a></li>--}}
+        {{--@endforeach--}}
         </ul>
     </div>
 @stop

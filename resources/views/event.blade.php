@@ -6,7 +6,7 @@
         <div class="text-center">
             <h1>{{ $event->name }}</h1>
             <hr>
-            @if(Auth::check() && $user->events->contains($event->id))
+            @if(Auth::check() && $signedup)
                 <h3>Signed up!</h3>
                 <hr>
             @endif
@@ -38,7 +38,8 @@
         </div>
         <div class="text-center">
             <hr>
-            @if(Auth::check() && !$user->events->contains($event->id))
+            {{--@if(Auth::check() && !$user->events->contains($event->id))--}}
+            @if(Auth::check() && !$signedup)
                 @if( count($user->horses) != 0)
 
             <form action="/eventsignup" method="POST">

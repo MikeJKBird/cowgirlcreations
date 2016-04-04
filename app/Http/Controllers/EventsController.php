@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enrollment;
 use App\Horse;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -79,7 +80,19 @@ class EventsController extends Controller
     public function show(Event $event)
     {
         $user = Auth::user();
-        return view('event',compact('event', 'user'));
+        $signedup = false;
+
+        if($user != null) {
+            $match = ['user_id' => $user->id, 'event_id' => $event->id];
+
+            if(Enrollment::where($match)->exists()){
+                $signedup = true;
+            }
+        }
+
+
+
+        return view('event',compact('event', 'user', 'signedup'));
     }
 
     /**

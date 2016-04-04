@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Enrollment;
+use App\Event;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -18,8 +20,14 @@ class UsersController extends Controller
     public function showprofile()
     {
         $user = Auth::user();
+        $enrollments = Enrollment::where('user_id', $user->id)->get();
+        $events = [];
+        foreach($enrollments as $enrollment) {
+            $eventID = $enrollment->event_id;
+            array_push($events, Event::where('id', $eventID)->get());
+        }
 
-        return view('profile', compact('user'));
+        return view('profile', compact('user', 'enrollments', 'events'));
     }
 
 
