@@ -5,6 +5,7 @@
     <div class="container text-center">
         <h1>Welcome {{$user->name}}!</h1>
 
+        <p>Your member number is: {{$user->memberNumber}}</p>
         <p>Your email is: {{$user->email}}</p>
         <p>Your points are: {{$user->points}}</p>
 

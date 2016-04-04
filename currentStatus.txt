@@ -6,7 +6,6 @@ When users sign up for events, need to add extra information to event/user relat
 ** What if a normal pivot table was replaced with an Enrollment model? Where it had the pivot info plus more? Then can treat like an
 object instead of just a mapping. Yes, do this. Smart! Make the relationship 1 event->many enrollments and 1 user->many enrollments
 
-On edit user page, adding a new horse needs a new horse to be created and then assigned to user.
 
 add caption to photo
 resize photo

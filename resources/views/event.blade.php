@@ -39,16 +39,20 @@
         <div class="text-center">
             <hr>
             @if(Auth::check() && !$user->events->contains($event->id))
+                @if( count($user->horses) != 0)
+
             <form action="/eventsignup" method="POST">
                 {{csrf_field()}}
                 <input type="hidden" name="userID" value="{{$user->id}}">
                 <input type="hidden" name="eventID" value="{{$event->id}}">
+
 
                 <select name="horse">
                     @foreach($user->horses as $horse)
                         <option value="{{$horse->id}}">{{$horse->name}}</option>
                     @endforeach
                 </select>
+
 
                 @if( $event->campingfee != null)
                     <label for="camping">Add Camping</label>
@@ -58,8 +62,15 @@
                     <label for="stall">Add Stall</label>
                     <input type="checkbox" name="stallfee" id="stall">
                 @endif
+                @if( $event->bbq != null)
+                    <label for="bbq">BBQ Tickets</label>
+                    <input type="number" name="bbqfee" id="bbq" value="0">
+                @endif
                 <input type="submit" value="Sign Up For Race">
             </form>
+                @else
+                    <a href="/profile">Please add a horse to your profile to sign up</a>
+                @endif
             @endif
             @if(!Auth::check())
                 <h4><a href="/login">Log in</a> or <a href="/register">register</a> to sign up for the race</h4>

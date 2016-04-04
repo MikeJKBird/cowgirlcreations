@@ -9,6 +9,7 @@
         <table class="table table-striped">
             <tr>
                 <th>Racer</th>
+                <th>Member Number</th>
                 <th>Horse</th>
                 @if( $event->campingfee != null)
                     <th>Camping</th>
@@ -21,6 +22,7 @@
             @foreach($event->users as $user)
                 <tr>
                     <td>{{$user->name}} </td>
+                    <td>{{$user->memberNumber}}</td>
                     <td>{{$user->horses}}</td>
                 </tr>
             @endforeach

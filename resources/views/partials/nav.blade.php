@@ -21,7 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/calendar">Events</a></li>
                 <li><a href="/standings">Standings</a></li>
-                <li><a href="/photos">Photo Gallery</a></li>
+                <li><a href="/photos">Hats and Artwork</a></li>
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
 

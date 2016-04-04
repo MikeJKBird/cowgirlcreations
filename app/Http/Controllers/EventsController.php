@@ -64,7 +64,7 @@ class EventsController extends Controller
             'divisions' => $request->divisions,
             'bbq' => $request->bbq,
             'date' => $date,
-            'multipler' => $request->multiplier
+            'multiplier' => $request->multiplier
         ]);
 
         return redirect('admin/calendar');
