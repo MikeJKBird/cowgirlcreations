@@ -29,13 +29,23 @@ class User extends Authenticatable
     ];
 
 
-    public function events()
-    {
-        return $this->belongsToMany(Event::class)->withTimestamps();
-    }
-
+    /**
+     * Horses that belong to the user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function horses()
     {
         return $this->hasMany(Horse::class);
+    }
+
+    /**
+     * Enrollments that the user has
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function enrollment()
+    {
+        return $this->hasMany(Enrollment::class);
     }
 }

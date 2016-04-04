@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Event;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -38,7 +39,17 @@ class AdminController extends Controller
 
     public function eventdetails(Event $event)
     {
-        return view('admin/eventDetails', compact('event'));
+        $eventID = $event->id;
+        $enrollments = DB::table('enrollments')->where('event_id', $eventID)->get();
+        $users = [];
+
+        foreach($enrollments as $enrollment) {
+            $userID = $enrollment->user_id;
+            $user = DB::table('users')->where('id', $userID)->first();
+            array_push($users, $user);
+        }
+
+        return view('admin/eventDetails', compact('event', 'enrollments', 'users'));
     }
 
     public function sponsors()

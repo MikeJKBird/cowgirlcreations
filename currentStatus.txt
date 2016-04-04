@@ -3,8 +3,10 @@ When users sign up for events, need to add extra information to event/user relat
     -->add information that can change to event/user schema
     -->Add checkbox to form for each piece of data that user can add on
     -->Checkboxes work for multiple divisions, but what about for different horses?
-** What if a normal pivot table was replaced with an Enrollment model? Where it had the pivot info plus more? Then can treat like an
-object instead of just a mapping. Yes, do this. Smart! Make the relationship 1 event->many enrollments and 1 user->many enrollments
+
+On admin event details, need to display horse with enrollment
+    -->feels like a gross hack to get the user to display, try to get info from the enrollment, so the horse can be displayed through the same loop
+    
 
 
 add caption to photo

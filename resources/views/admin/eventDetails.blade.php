@@ -19,11 +19,12 @@
                 @endif
                 <th>Total</th>
             </tr>
-            @foreach($event->users as $user)
-                <tr>
+
+
+            @foreach($users as $user)
+                <p>{{$user->name}}</p>
                     <td>{{$user->name}} </td>
                     <td>{{$user->memberNumber}}</td>
-                    <td>{{$user->horses}}</td>
                 </tr>
             @endforeach
         </table>

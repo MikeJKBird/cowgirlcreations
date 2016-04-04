@@ -20,8 +20,13 @@ class Event extends Model
 
     protected $dates = ['created_at', 'updated_at', 'date'];
 
-    public function users()
+    /**
+     * Enrollments for the event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function enrollment()
     {
-        return $this->belongsToMany(User::class)->withTimestamps();
+        return $this->hasMany(Enrollment::class);
     }
 }
