@@ -38,7 +38,6 @@
         </div>
         <div class="text-center">
             <hr>
-            {{--@if(Auth::check() && !$user->events->contains($event->id))--}}
             @if(Auth::check() && !$signedup)
                 @if( count($user->horses) != 0)
 
@@ -72,6 +71,17 @@
                 @else
                     <a href="/profile">Please add a horse to your profile to sign up</a>
                 @endif
+            @endif
+            @if(Auth::check() && $signedup)
+                <div class="pull-right">
+                    <form method="POST" action="/removeevent/{{$event->id}}" class="col-md-4">
+                        {{csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="user" value="{{$user->id}}">
+                        <button type="submit" class="btn btn-danger">Drop Race</button>
+                    </form>
+                </div>
+
             @endif
             @if(!Auth::check())
                 <h4><a href="/login">Log in</a> or <a href="/register">register</a> to sign up for the race</h4>

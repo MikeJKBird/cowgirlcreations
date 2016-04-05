@@ -17,10 +17,10 @@ class MustBeAdmin
     {
         $user = $request->user();
 
-        if($user && $user->isAdmin)
+        if($user && $user->isadmin)
         {
             return $next($request);
         }
-        abort(404,'Admin Only');
+        return redirect('/');
     }
 }

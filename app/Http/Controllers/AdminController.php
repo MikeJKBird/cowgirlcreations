@@ -14,12 +14,21 @@ use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
 
+    /**
+     * Loads the main admin page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function main()
     {
         return view('admin.main');
     }
 
-
+    /**
+     * Loads the page with all of the events
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function calendar()
     {
         $events = Event::all();
@@ -41,13 +50,6 @@ class AdminController extends Controller
     public function eventdetails(Event $event)
     {
 
-//        $enrollments = DB::table('enrollments')->where('event_id', $event->id)->get();
-//
-//        $users = User::whereExists(function ($query) {
-//            $query->select(DB::raw(1))
-//                ->from('enrollments')
-//                ->whereRaw('enrollments.user_id = users.id');
-//        })->get();
         $tables = Enrollment::join('users', 'enrollments.user_id', '=', 'users.id')
             ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
             ->where('event_id', $event->id)->get();

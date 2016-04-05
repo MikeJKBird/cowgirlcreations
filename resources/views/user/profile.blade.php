@@ -21,14 +21,14 @@
                 @if(count($user->horses)>0)
                     <h3>Horses:</h3>
                     @foreach($user->horses as $horse)
-                        <div class="col-md-10">
+                        <div class="col-md-6 col-md-offset-2">
                             {{$horse->horse_name}}
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <form method="POST" action="/horses/{{$horse->id}}">
                                 {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-xs btn-danger">Remove Horse</button>
                             </form>
                         </div>
                         <br>
@@ -53,11 +53,16 @@
             </div>
             <div class="col-md-4">
                 <h3>The races you've signed up for:</h3>
-                <ul>
                     @foreach($events as $event)
-                        <li><a href="/calendar/{{$event[0]->id}}">{{$event[0]->name}}</a></li>
+                        <div class="row">
+                            <a href="/calendar/{{$event[0]->id}}" class="col-md-5 col-md-offset-3">{{$event[0]->name}}</a>
+                            <form method="POST" action="/removeevent/{{$event[0]->id}}" class="col-md-4">
+                                {{csrf_field()}}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
+                            </form>
+                        </div>
                     @endforeach
-                </ul>
             </div>
         </div>
     </div>

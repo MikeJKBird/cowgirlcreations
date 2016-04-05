@@ -1,20 +1,8 @@
-Move signup method in EventsController to create method in EnrollmentsController
-
-
-
 create thumbnail for photo
 
 layout for event page
 
 
-Implement Auth
-    -->migrate use table to get isadmin field
-    -->admin middleware for all admin pages
-
-
-
-
-User needs to be able to edit profile info
 
 Need to get divison checkboxes, that will be passed along
     -->figure out implementation, this one will be tough

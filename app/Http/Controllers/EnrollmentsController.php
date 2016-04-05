@@ -30,9 +30,15 @@ class EnrollmentsController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        Enrollment::findOrFail($id)->delete();
+        $userID = $request->user;
+        $eventID = $id;
+        $match = ['user_id' => $userID, 'event_id' => $eventID];
+
+        $enrollment = Enrollment::where($match)->first();
+        $enrollmentID = $enrollment->id;
+        Enrollment::findOrFail($enrollmentID)->delete();
 
         return back();
     }

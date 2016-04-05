@@ -39,6 +39,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/profile">Your Profile</a></li>
+                            <li><a href="/editprofile">Edit Profile</a></li>
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>

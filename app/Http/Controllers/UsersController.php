@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     /**
-     * Load the user's profile
+     * Load the user's profile page
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -27,7 +27,33 @@ class UsersController extends Controller
             array_push($events, Event::where('id', $eventID)->get());
         }
 
-        return view('profile', compact('user', 'enrollments', 'events'));
+        return view('user.profile', compact('user', 'enrollments', 'events'));
+    }
+
+    /**
+     * Loads the page for the user to update their profile
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editprofile()
+    {
+        $user = Auth::user();
+
+        return view ('user.editprofile', compact('user'));
+    }
+
+    /**
+     * User updates their profile information
+     *
+     * @param Request $request
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function updateprofile(Request $request, User $user)
+    {
+        $user->update($request->all());
+
+        return redirect("/profile");
     }
 
 

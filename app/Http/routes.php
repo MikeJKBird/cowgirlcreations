@@ -5,6 +5,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', 'PagesController@home');
     Route::get('/profile', 'UsersController@showprofile');
+    Route::get('/editprofile', 'UsersController@editprofile');
+    Route::patch('profile/{user}','UsersController@updateprofile');
 
     Route::post('/newhorse', 'HorsesController@store');
     Route::delete('horses/{id}', 'HorsesController@destroy');
@@ -12,6 +14,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('calendar', 'EventsController@index');
     Route::get('calendar/{event}', 'EventsController@show');
     Route::post('/eventsignup', 'EnrollmentsController@create');
+    Route::delete('/removeevent/{id}', 'EnrollmentsController@destroy');
 
     Route::get('standings', 'PagesController@standings');
 
@@ -19,9 +22,10 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('contact', 'PagesController@contact');
 
-
+});
 
 //Admin
+Route::group(['middleware' => ['web', 'admin']], function () {
     Route::get('admin', 'AdminController@main');
 
     Route::get('admin/members', 'UsersController@index');
