@@ -1,8 +1,8 @@
+Move signup method in EventsController to create method in EnrollmentsController
 
 
-add caption to photo
-resize photo
-    -->possibly create thumbnail as well
+
+create thumbnail for photo
 
 layout for event page
 

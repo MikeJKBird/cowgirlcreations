@@ -35,7 +35,8 @@
                         <div class="col-sm-2">
                             <form method="POST" action="/sponsors/{{$sponsor->id}}">
                                 {{csrf_field()}}
-                                <input type="hidden" name="_method" value="DELETE"><button type="submit" class="btn btn-danger">Delete</button>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                             </li>
                         </div>

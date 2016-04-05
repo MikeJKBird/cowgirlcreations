@@ -129,18 +129,5 @@ class EventsController extends Controller
         //
     }
 
-    public function signup(Request $request)
-    {
-        $enrollment = new Enrollment();
-        $enrollment->create([
-            'user_id' => $request->userID,
-            'event_id' => $request->eventID,
-            'horse_id' => $request->horse,
-            'camping' => $request->camping,
-            'stall' => $request->stall,
-            'bbqtickets' => $request->bbqtickets
-        ]);
 
-        return back();
-    }
 }

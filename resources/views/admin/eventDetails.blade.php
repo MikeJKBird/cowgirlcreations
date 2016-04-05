@@ -40,8 +40,8 @@
                     @else
                         <td>No</td>
                     @endif
-                    @if($table->bbq > 0)
-                        <td>{{$table->bbq}}</td>
+                    @if($table->bbqtickets > 0)
+                        <td>{{$table->bbqtickets}}</td>
                     @else
                         <td>No</td>
                     @endif

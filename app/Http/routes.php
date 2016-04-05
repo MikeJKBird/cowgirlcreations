@@ -7,10 +7,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile', 'UsersController@showprofile');
 
     Route::post('/newhorse', 'HorsesController@store');
+    Route::delete('horses/{id}', 'HorsesController@destroy');
 
     Route::get('calendar', 'EventsController@index');
     Route::get('calendar/{event}', 'EventsController@show');
-    Route::post('/eventsignup', 'EventsController@signup');
+    Route::post('/eventsignup', 'EnrollmentsController@create');
 
     Route::get('standings', 'PagesController@standings');
 

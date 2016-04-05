@@ -9,6 +9,12 @@ use App\Http\Requests;
 
 class HorsesController extends Controller
 {
+    /**
+     * Save a new horse
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $horse = new Horse;
@@ -19,5 +25,18 @@ class HorsesController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    /**
+     * Delete a given horse
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        Horse::findOrFail($id)->delete();
+
+        return back();
     }
 }

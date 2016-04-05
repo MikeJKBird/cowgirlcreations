@@ -21,10 +21,21 @@
                 @if(count($user->horses)>0)
                     <h3>Horses:</h3>
                     @foreach($user->horses as $horse)
-                        {{$horse->horse_name}}
+                        <div class="col-md-10">
+                            {{$horse->horse_name}}
+                        </div>
+                        <div class="col-md-2">
+                            <form method="POST" action="/horses/{{$horse->id}}">
+                                {{csrf_field()}}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                            </form>
+                        </div>
                         <br>
                     @endforeach
                 @endif
+                <hr>
+
                 <h4>Add a new Horse</h4>
                 <form method="POST" action="/newhorse">
                     {{csrf_field()}}
