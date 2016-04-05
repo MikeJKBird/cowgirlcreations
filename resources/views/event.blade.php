@@ -20,25 +20,25 @@
                 <p>Producer: {{$event->producer}}</p>
                 <p>Dress Code: {{$event->dresscode}}</p>
                 <p>Option: {{$event->option}}</p>
-                <p>Time Only: {{$event->timeonly}}</p>
+                <p>Time Only: ${{$event->timeonly}}</p>
             </div>
             <div class="col-md-4 col-md-offset-1">
-                <p>Late Fee: {{$event->latefee}}</p>
-                <p>Arena Fee: {{$event->arenafee}}</p>
+                <p>Late Fee: ${{$event->latefee}}</p>
+                <p>Arena Fee: ${{$event->arenafee}}</p>
                 @if( $event->campingfee != null)
-                <p>Camping Fee: {{$event->campingfee}}</p>
+                <p>Camping Fee: ${{$event->campingfee}}</p>
                 @endif
                 @if( $event->stallfee != null)
-                <p>Stall Fee: {{$event->stallfee}}</p>
+                <p>Stall Fee: ${{$event->stallfee}}</p>
                 @endif
                 <p>Divisions: {{$event->divisions}}</p>
-                <p>BBQ: {{$event->bbq}}</p>
+                <p>BBQ: ${{$event->bbq}}</p>
                 <p>Notes: {{$event->notes}}</p>
             </div>
         </div>
         <div class="text-center">
             <hr>
-            @if(Auth::check() && !$signedup)
+            @if(Auth::check())
                 @if( count($user->horses) != 0)
 
             <form action="/eventsignup" method="POST">
@@ -74,12 +74,9 @@
             @endif
             @if(Auth::check() && $signedup)
                 <div class="pull-right">
-                    <form method="POST" action="/removeevent/{{$event->id}}" class="col-md-4">
-                        {{csrf_field()}}
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" name="user" value="{{$user->id}}">
-                        <button type="submit" class="btn btn-danger">Drop Race</button>
-                    </form>
+
+                        <a href="/profile" type="submit" class="btn btn-danger">Drop Race</a>
+
                 </div>
 
             @endif

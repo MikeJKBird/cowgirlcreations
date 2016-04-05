@@ -55,14 +55,15 @@
                 <h3>The races you've signed up for:</h3>
                     @foreach($events as $event)
                         <div class="row">
-                            <a href="/calendar/{{$event[0]->id}}" class="col-md-5 col-md-offset-3">{{$event[0]->name}}</a>
-                            <form method="POST" action="/removeevent/{{$event[0]->id}}" class="col-md-4">
+                            <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$event->id}}">{{$event->name}}</a> with  {{$event->horse_name}}</p>
+                            <form method="POST" action="/removeevent/{{$event->id}}" class="col-md-2">
                                 {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
                             </form>
                         </div>
                     @endforeach
+
             </div>
         </div>
     </div>

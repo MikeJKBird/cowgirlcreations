@@ -3,21 +3,25 @@ create thumbnail for photo
 layout for event page
 
 
-
 Need to get divison checkboxes, that will be passed along
-    -->figure out implementation, this one will be tough
-    -->model might again make sense. Careful though, don't want too many connections
+-admin should be able to create divisions (open, youth, senior, etc)
+-these will appear as checkboxes on create event page
+-when user enters race, they will select the boxes, which will be passed to the enrollment object
+-backend math can count how many and multiply by race cost accordingly
+-do different divisions cost different prices?
+
 
 User should be able to sign up twice with a new horse
-    -->event page should show which horse they've already signed up with
+    -->event page and profile should show which horse they've already signed up with
 
-Users need to be able to drop out of races
-    -->Just delete enrollment instance
-    -->Place in both event page and profile
 
 Need to start adding math
-    -->add total field to enrollment
+    -->add total cost field to enrollment
     -->select camping/stall/etc adds fee to total
+        -->all costs are on event object, will need to use event_id from enrollment object to find these
+        values (can search only if they are selected to reduce db hits).
+        -->need to have a cumulative total cost
+
     -->refamiliarize yourself with payment logic
 
 Styling
