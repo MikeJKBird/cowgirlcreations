@@ -2,18 +2,12 @@ create thumbnail for photo
 
 layout for event page
 
-
 Need to get divison checkboxes, that will be passed along
 -admin should be able to create divisions (open, youth, senior, etc)
 -these will appear as checkboxes on create event page
 -when user enters race, they will select the boxes, which will be passed to the enrollment object
 -backend math can count how many and multiply by race cost accordingly
 -do different divisions cost different prices?
-
-
-User should be able to sign up twice with a new horse
-    -->event page and profile should show which horse they've already signed up with
-
 
 Need to start adding math
     -->add total cost field to enrollment

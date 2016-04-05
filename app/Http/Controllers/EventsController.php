@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 class EventsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Loads the calendar page with all of the events
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +38,7 @@ class EventsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Creates a new event
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -72,7 +72,7 @@ class EventsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Loads the page for the event
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

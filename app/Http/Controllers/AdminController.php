@@ -47,6 +47,12 @@ class AdminController extends Controller
         return view('admin.addEvent');
     }
 
+    /**
+     * Loads the specified event page
+     *
+     * @param Event $event
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function eventdetails(Event $event)
     {
 
@@ -57,6 +63,11 @@ class AdminController extends Controller
         return view('admin/eventDetails', compact('event', 'enrollments', 'users', 'tables'));
     }
 
+    /**
+     * Loads the page to view and edit sponsors
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function sponsors()
     {
         $sponsors = Sponsor::orderby('value', 'desc')->get();

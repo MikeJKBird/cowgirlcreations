@@ -85,6 +85,13 @@ class UsersController extends Controller
     }
 
 
+    /**
+     * Updates a member's information
+     *
+     * @param Request $request
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
