@@ -95,10 +95,19 @@ class EventsController extends Controller
         return view('event',compact('event', 'user', 'signedup'));
     }
 
+    /**
+     * Load the page to view the results of a given event
+     *
+     * @param Event $event
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function results(Event $event)
     {
         return view('results', compact('event'));
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

@@ -4,8 +4,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'PagesController@home');
-    Route::get('/profile', 'UsersController@showprofile');
-    Route::get('/editprofile', 'UsersController@editprofile');
+    Route::get('profile', 'UsersController@showprofile');
+    Route::get('editprofile', 'UsersController@editprofile');
     Route::patch('profile/{user}','UsersController@updateprofile');
 
     Route::post('/newhorse', 'HorsesController@store');
@@ -13,7 +13,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('calendar', 'EventsController@index');
     Route::get('calendar/{event}', 'EventsController@show');
-    Route::get('/results/{event}', 'EventsController@results');
+    Route::get('results/{event}', 'EventsController@results');
     Route::post('/eventsignup', 'EnrollmentsController@create');
     Route::delete('/removeevent/{id}', 'EnrollmentsController@destroy');
 

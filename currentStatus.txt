@@ -1,16 +1,3 @@
-
-create thumbnail for photo
-
-layout for event page
-
-
-For displaying results
-    -->event should have boolean for if results input
-        -->allows user views to be dynamically changed, and allows admin to keep track of whats been uploaded
-    -->
-
-
-
 Need to get divison checkboxes, that will be passed along
 -admin should be able to create divisions (open, youth, senior, etc)
 -these will appear as checkboxes on create event page
@@ -24,8 +11,12 @@ Need to start adding math
         -->all costs are on event object, will need to use event_id from enrollment object to find these
         values (can search only if they are selected to reduce db hits).
         -->need to have a cumulative total cost
-
     -->refamiliarize yourself with payment logic
+
+
+create thumbnail for photo
+
+layout for event page
 
 Styling
 

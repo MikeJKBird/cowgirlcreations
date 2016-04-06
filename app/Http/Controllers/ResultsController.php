@@ -57,7 +57,7 @@ class ResultsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Loads the page for the given event results
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
