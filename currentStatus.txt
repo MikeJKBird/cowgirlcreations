@@ -1,6 +1,15 @@
+
 create thumbnail for photo
 
 layout for event page
+
+
+For displaying results
+    -->event should have boolean for if results input
+        -->allows user views to be dynamically changed, and allows admin to keep track of whats been uploaded
+    -->
+
+
 
 Need to get divison checkboxes, that will be passed along
 -admin should be able to create divisions (open, youth, senior, etc)

@@ -29,17 +29,18 @@
 </head>
 <body id="app-layout">
 @include('partials.adminNav')
-<h1>Admin!</h1>
+
 @yield('content')
 
 
 <!-- JavaScripts -->
-@yield('javascripts')
+
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/lightbox.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment-with-locales.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+@yield('javascripts')
 </body>
 </html>

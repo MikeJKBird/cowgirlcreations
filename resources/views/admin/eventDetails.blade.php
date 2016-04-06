@@ -47,12 +47,13 @@
                     @endif
                 </tr>
             @endforeach
-            {{--@foreach($users as $user)--}}
-                {{--<tr>--}}
-                    {{--<td>{{$user->name}} </td>--}}
-                    {{--<td>{{$user->memberNumber}}</td>--}}
-                {{--</tr>--}}
-            {{--@endforeach--}}
         </table>
+        <hr>
+        @if(!$event->uploadedresults)
+        <a href="/admin/addresults/{{$event->id}}"><h3>Add Results</h3></a>
+        @else
+        <a href="/admin/addresults/{{$event->id}}"><h3>Change Results</h3></a>
+        <a href="/admin/showresults/{{$event->id}}"><h3>View Results</h3></a>
+        @endif
     </div>
 @stop

@@ -31,6 +31,8 @@ class CreateEventsTable extends Migration
             $table->integer('bbq')->nullable();
             $table->date('date');
             $table->integer('multiplier');
+            $table->string('resultspath')->nullable();
+            $table->boolean('uploadedresults')->default(0);
             $table->timestamps();
         });
     }

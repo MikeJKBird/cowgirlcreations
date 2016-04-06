@@ -40,6 +40,9 @@ Route::group(['middleware' => ['web', 'admin']], function () {
     Route::post('events', 'EventsController@store');
     Route::get('admin/calendar', 'AdminController@calendar');
     Route::get('admin/calendar/{event}', 'AdminController@eventdetails');
+    Route::get('admin/addresults/{event}', 'ResultsController@create');
+    Route::patch('admin/results/{event}', 'ResultsController@store');
+    Route::get('admin/showresults/{event}', 'ResultsController@show');
 
     Route::get('admin/photos', 'PhotosController@edit');
     Route::post('admin/photos', 'PhotosController@add');
