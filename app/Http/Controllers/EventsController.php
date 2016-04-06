@@ -95,6 +95,11 @@ class EventsController extends Controller
         return view('event',compact('event', 'user', 'signedup'));
     }
 
+    public function results(Event $event)
+    {
+        return view('results', compact('event'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

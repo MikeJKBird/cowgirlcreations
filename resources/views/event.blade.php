@@ -10,6 +10,9 @@
                 <h3>Signed up!</h3>
                 <hr>
             @endif
+            @if($event->uploadedresults)
+                <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
+            @endif
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-2">

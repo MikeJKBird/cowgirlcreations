@@ -5762,6 +5762,13 @@ body {
 img {
   max-width: 100%; }
 
+iframe {
+  display: block;
+  width: 80%;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto; }
+
 .thumb {
   max-width: 200px;
   max-height: 200px; }

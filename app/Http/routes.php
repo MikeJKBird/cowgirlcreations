@@ -13,6 +13,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('calendar', 'EventsController@index');
     Route::get('calendar/{event}', 'EventsController@show');
+    Route::get('/results/{event}', 'EventsController@results');
     Route::post('/eventsignup', 'EnrollmentsController@create');
     Route::delete('/removeevent/{id}', 'EnrollmentsController@destroy');
 
