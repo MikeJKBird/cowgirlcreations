@@ -34,9 +34,9 @@
                 @if( $event->stallfee != null)
                 <p>Stall Fee: ${{$event->stallfee}}</p>
                 @endif
-                <p>Divisions: {{$event->divisions}}</p>
                 <p>BBQ: ${{$event->bbq}}</p>
                 <p>Notes: {{$event->notes}}</p>
+
             </div>
         </div>
         <div class="text-center">
@@ -69,6 +69,11 @@
                     <label for="bbqtickets">BBQ Tickets</label>
                     <input type="number" name="bbqtickets" id="bbqtickets" value="0">
                 @endif
+                <br>
+                @foreach($entries as $entry)
+                    <input type="checkbox" name="entry[]" value="{{$entry->id}}"> {{$entry->name}} : ${{$entry->price}}
+                @endforeach
+                <br>
                 <input type="submit" value="Sign Up For Race">
             </form>
                 @else

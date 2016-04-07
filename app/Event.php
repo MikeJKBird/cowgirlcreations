@@ -36,7 +36,7 @@ class Event extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function entry()
+    public function entries()
     {
         return $this->hasMany(Entry::class);
     }

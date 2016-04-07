@@ -91,10 +91,10 @@ class EventsController extends Controller
                 $signedup = true;
             }
         }
+        $entries = $event->entries()->get();
 
 
-
-        return view('event',compact('event', 'user', 'signedup'));
+        return view('event',compact('event', 'user', 'signedup', 'entries'));
     }
 
     /**

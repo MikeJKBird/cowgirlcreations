@@ -17,7 +17,7 @@ class EntriesController extends Controller
         return view('admin.addEntries', compact('event', 'entries'));
     }
 
-    public function store(Event $event, Request $request)
+    public function store(Request $request)
     {
         $entry = new Entry();
 
@@ -28,6 +28,11 @@ class EntriesController extends Controller
         ]);
 
         return back();
+    }
+
+    public function update()
+    {
+        //
     }
 
     public function destroy($id)

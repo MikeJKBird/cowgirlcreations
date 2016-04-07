@@ -1,13 +1,12 @@
 Entries
         -->if enough time, make a selectable list of previous used names
-    -->when user is signing up for event, all entries will be listed with a corresponding checkbox
-    -->when checkbox is selected, it will add enrollment_id to the entry
     -->enrollment object will add all of these price values together and to the total cost (behind the scenes math)
+    -->should show user on event page which entries they have
 
 Potential sign up issues
-    -->adding entry will cause page to refresh, but save info, or require before adding other stuff
-    -->should display running total, should be easy since page reloads
+    -->display running total? -needs javascript
 
+Need to be able to edit events
 
 Sponsors method on admin controller should move to sponsorscontroller
 

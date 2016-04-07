@@ -59,6 +59,7 @@
                             <form method="POST" action="/removeevent/{{$event->id}}" class="col-md-2">
                                 {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="user_id" value="{{$user->id}}">
                                 <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
                             </form>
                         </div>

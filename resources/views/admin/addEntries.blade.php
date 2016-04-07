@@ -43,7 +43,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+        <a href="/admin/calendar">Finished!</a>
     </div>
 
 @stop
