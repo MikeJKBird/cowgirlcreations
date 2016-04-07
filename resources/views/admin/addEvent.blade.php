@@ -63,10 +63,6 @@
                         <input type="text" name='stallfee' id='stallfee' class='form-control' value=''>
                     </div>
                     <div class="form-group">
-                        <label for='divisions'>Divisions</label>
-                        <input type="text" name='divisions' id='divisions' class='form-control' value=''>
-                    </div>
-                    <div class="form-group">
                         <label for='bbq'>BBQ ($)</label>
                         <input type="text" name='bbq' id='bbq' class='form-control' value=''>
                     </div>

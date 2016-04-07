@@ -14,7 +14,7 @@ class Event extends Model
     protected $fillable = [
         'name', 'location', 'cosanction', 'deadline', 'producer',
         'notes', 'dresscode', 'option', 'timeonly', 'latefee',
-        'arenafee', 'campingfee', 'stallfee', 'divisions', 'bbq', 'date', 'multiplier',
+        'arenafee', 'campingfee', 'stallfee', 'bbq', 'date', 'multiplier',
         'resultspath', 'uploadedresults'
     ];
 
@@ -29,5 +29,15 @@ class Event extends Model
     public function enrollment()
     {
         return $this->hasMany(Enrollment::class);
+    }
+
+    /**
+     * Entries for the event
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function entry()
+    {
+        return $this->hasMany(Entry::class);
     }
 }

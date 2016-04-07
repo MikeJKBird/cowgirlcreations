@@ -68,7 +68,9 @@ class EventsController extends Controller
             'multiplier' => $request->multiplier
         ]);
 
-        return redirect('admin/calendar');
+        $eventID = $event->id;
+
+        return redirect('admin/calendar', compact('eventID'));
     }
 
     /**
