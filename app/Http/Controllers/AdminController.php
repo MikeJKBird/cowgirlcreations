@@ -63,17 +63,6 @@ class AdminController extends Controller
         return view('admin/eventDetails', compact('event', 'enrollments', 'users', 'tables'));
     }
 
-    /**
-     * Loads the page to view and edit sponsors
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function sponsors()
-    {
-        $sponsors = Sponsor::orderby('value', 'desc')->get();
-
-        return view('admin.editSponsors', compact('sponsors'));
-    }
 
 
 }

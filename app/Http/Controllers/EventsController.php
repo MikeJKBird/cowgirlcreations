@@ -112,37 +112,43 @@ class EventsController extends Controller
 
 
     /**
-     * Show the form for editing the specified resource.
+     * Load the page to edit the given event
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
-        //
+        return view('admin/editEvent', compact('event'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Updates an event's information
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
-        //
+        $event->update($request->all());
+
+        $eventID = $event->id;
+
+        return redirect("/admin/calendar/$eventID");
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Deletes a given event
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        Event::findOrFail($id)->delete();
+
+        return back();
     }
 
 

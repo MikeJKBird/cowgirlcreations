@@ -6,9 +6,8 @@ Entries
 Potential sign up issues
     -->display running total? -needs javascript
 
-Need to be able to edit events
+Need to display events on a calendar
 
-Sponsors method on admin controller should move to sponsorscontroller
 
 Need to start adding math
     -->add total cost field to enrollment

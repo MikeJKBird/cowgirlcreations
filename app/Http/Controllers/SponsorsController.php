@@ -9,6 +9,20 @@ use App\Http\Requests;
 
 class SponsorsController extends Controller
 {
+
+    /**
+     * Loads the admin page to add and edit sponsors
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit()
+    {
+        $sponsors = Sponsor::orderby('value', 'desc')->get();
+
+        return view('admin.editSponsors', compact('sponsors'));
+    }
+
+
     public function store(Request $request)
     {
         $sponsor = new Sponsor;
@@ -22,6 +36,12 @@ class SponsorsController extends Controller
     }
 
 
+    /**
+     * Deletes a given sponsor
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         Sponsor::findOrFail($id)->delete();
