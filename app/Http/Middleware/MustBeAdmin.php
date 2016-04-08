@@ -21,6 +21,6 @@ class MustBeAdmin
         {
             return $next($request);
         }
-        return redirect('/');
+        return redirect('/home');
     }
 }

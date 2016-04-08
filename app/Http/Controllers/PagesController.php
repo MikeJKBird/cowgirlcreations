@@ -17,6 +17,11 @@ use App\Http\Requests;
 class PagesController extends Controller
 {
 
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     /**
      * Loads the home page
      *
