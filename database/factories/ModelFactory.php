@@ -46,7 +46,6 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'arenafee' => $faker->randomDigit,
         'campingfee' => $faker->randomDigit,
         'stallfee' => $faker->randomDigit,
-        'divisions' => 'Youth, Open, Senior',
         'bbq' => $faker->randomDigit,
         'multiplier' => $faker->randomDigit,
         'date' => $faker->dateTime

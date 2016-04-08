@@ -1,3 +1,7 @@
+When click on add event, it makes an event object
+    -->needs to redirect to add entries page
+
+
 Entries
         -->if enough time, make a selectable list of previous used names
     -->enrollment object will add all of these price values together and to the total cost (behind the scenes math)

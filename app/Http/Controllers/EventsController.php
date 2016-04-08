@@ -45,10 +45,11 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
+
         $event = new Event;
         $date = Carbon::createFromFormat('m/d/Y H:i A', $request->date)->toDateTimeString();
 
-        $event->create([
+        $event = Event::create([
             'name' => $request->name,
             'location' => $request->location,
             'cosanction' => $request->cosanction,
@@ -70,7 +71,7 @@ class EventsController extends Controller
 
         $eventID = $event->id;
 
-        return redirect('admin/calendar', compact('eventID'));
+        return redirect("admin/entries/$eventID");
     }
 
     /**
