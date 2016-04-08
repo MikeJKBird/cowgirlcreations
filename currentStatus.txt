@@ -1,9 +1,4 @@
-When click on add event, it makes an event object
-    -->needs to redirect to add entries page
-
-
 Entries
-        -->if enough time, make a selectable list of previous used names
     -->enrollment object will add all of these price values together and to the total cost (behind the scenes math)
     -->should show user on event page which entries they have
 
@@ -12,6 +7,12 @@ Potential sign up issues
 
 Need to display events on a calendar
 
+Need to make adding points to users after a race easier
+    -->list of users who signed up would be easier, but need to add users who might not sign up online
+    -->have points multiplier displayed
+    -->participation gets added for every participant
+-->one strategy, list all enrolled users, and put 1,2,3 representing the position they finished. Backend math the correct score to add to existing
+    -->problem, people in multiple entries? Can just input one entry at a time?
 
 Need to start adding math
     -->add total cost field to enrollment
@@ -28,3 +29,4 @@ layout for event page
 
 Styling
 
+efficient-ize

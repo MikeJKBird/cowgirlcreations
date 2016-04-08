@@ -10,9 +10,7 @@
                 <h3>Signed up!</h3>
                 <hr>
             @endif
-            @if($event->uploadedresults)
-                <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
-            @endif
+
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
@@ -41,58 +39,73 @@
         </div>
         <div class="text-center">
             <hr>
-            @if(Auth::check())
-                @if( count($user->horses) != 0)
+            @if(!$event->uploadedresults)
+                @if(Auth::check())
+                    @if( count($user->horses) != 0)
 
-            <form action="/eventsignup" method="POST">
-                {{csrf_field()}}
-                <input type="hidden" name="userID" value="{{$user->id}}">
-                <input type="hidden" name="eventID" value="{{$event->id}}">
+                <form action="/eventsignup" method="POST">
+                    {{csrf_field()}}
+                    <input type="hidden" name="userID" value="{{$user->id}}">
+                    <input type="hidden" name="eventID" value="{{$event->id}}">
 
 
-                <select name="horse">
-                    @foreach($user->horses as $horse)
-                        <option value="{{$horse->id}}">{{$horse->horse_name}}</option>
+                    <select name="horse">
+                        @foreach($user->horses as $horse)
+                            <option value="{{$horse->id}}">{{$horse->horse_name}}</option>
+                        @endforeach
+                    </select>
+
+
+                    @if( $event->campingfee != null)
+                        <label for="camping">Add Camping</label>
+                        <input type="checkbox" name="camping" id="camping">
+                    @endif
+                    @if( $event->stallfee != null)
+                        <label for="stall">Add Stall</label>
+                        <input type="checkbox" name="stall" id="stall">
+                    @endif
+                    @if( $event->bbq != null)
+                        <label for="bbqtickets">BBQ Tickets</label>
+                        <input type="number" name="bbqtickets" id="bbqtickets" value="0">
+                    @endif
+                    <br>
+                    @foreach($entries as $entry)
+                        <input type="checkbox" name="entry[]" value="{{$entry->id}}"> {{$entry->name}} : ${{$entry->price}}
                     @endforeach
-                </select>
-
-
-                @if( $event->campingfee != null)
-                    <label for="camping">Add Camping</label>
-                    <input type="checkbox" name="camping" id="camping">
+                    <br>
+                    <input type="submit" value="Sign Up For Race" id="signup">
+                </form>
+                    @else
+                        <a href="/profile">Please add a horse to your profile to sign up</a>
+                    @endif
                 @endif
-                @if( $event->stallfee != null)
-                    <label for="stall">Add Stall</label>
-                    <input type="checkbox" name="stall" id="stall">
-                @endif
-                @if( $event->bbq != null)
-                    <label for="bbqtickets">BBQ Tickets</label>
-                    <input type="number" name="bbqtickets" id="bbqtickets" value="0">
-                @endif
-                <br>
-                @foreach($entries as $entry)
-                    <input type="checkbox" name="entry[]" value="{{$entry->id}}"> {{$entry->name}} : ${{$entry->price}}
-                @endforeach
-                <br>
-                <input type="submit" value="Sign Up For Race">
-            </form>
-                @else
-                    <a href="/profile">Please add a horse to your profile to sign up</a>
-                @endif
-            @endif
-            @if(Auth::check() && $signedup)
-                <div class="pull-right">
+                @if(Auth::check() && $signedup)
+                    <div class="pull-right">
 
-                        <a href="/profile" type="submit" class="btn btn-danger">Drop Race</a>
+                            <a href="/profile" type="submit" class="btn btn-danger">Drop Race</a>
 
-                </div>
+                    </div>
 
-            @endif
-            @if(!Auth::check())
-                <h4><a href="/login">Log in</a> or <a href="/register">register</a> to sign up for the race</h4>
+                @endif
+                @if(!Auth::check())
+                    <h4><a href="/login">Log in</a> or <a href="/register">register</a> to sign up for the race</h4>
+                @endif
+            @else
+                <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
             @endif
         </div>
 
     </div>
 
+@stop
+
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+            var $submit = $("#signup").hide(),
+                $checkbox = $('input[name="entry\[\]"]').click(function() {
+                    $submit.toggle( $checkbox.is(":checked") );
+                });
+        });
+    </script>
 @stop

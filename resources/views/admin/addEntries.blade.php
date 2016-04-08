@@ -43,7 +43,11 @@
                 </ul>
             </div>
         </div>
-        <a href="/admin/calendar">Finished!</a>
+        @if(count($entries) > 0)
+            <a href="/admin/calendar">Finished!</a>
+        @else
+            <p>You must add at least one entry to continue</p>
+        @endif
     </div>
 
 @stop

@@ -12,7 +12,7 @@ class EntriesController extends Controller
 {
     public function create(Event $event)
     {
-        $entries = Entry::all();
+        $entries = Entry::where('event_id', $event->id)->get();
 
         return view('admin.addEntries', compact('event', 'entries'));
     }

@@ -28,6 +28,8 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/lightbox.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    @yield('scripts')
+
 </body>
 @include('partials.footer')
 </html>

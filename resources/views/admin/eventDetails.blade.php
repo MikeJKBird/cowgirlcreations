@@ -36,10 +36,12 @@
                     @else
                         <td>No</td>
                     @endif
-                    @if($table->stall)
-                        <td>Yes</td>
-                    @else
-                        <td>No</td>
+                    @if($event->stallfee != null)
+                        @if($table->stall)
+                            <td>Yes</td>
+                        @else
+                            <td>No</td>
+                        @endif
                     @endif
                     @if($table->bbqtickets > 0)
                         <td>{{$table->bbqtickets}}</td>

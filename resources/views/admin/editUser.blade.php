@@ -12,7 +12,7 @@
             {{csrf_field()}}
             <input type="hidden" name="_method" value="PATCH">
 
-            <label for="points">Current Points: {{$user->points}}</label>
+            <label for="points">Current Points:</label>
             <input type="text" name="points" value="{{ old('points') }}">
             <br>
 
