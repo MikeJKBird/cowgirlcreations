@@ -22,11 +22,12 @@ class UsersController extends Controller
     {
         $user = Auth::user();
 
-        $events = Enrollment::join('events', 'enrollments.event_id', '=', 'events.id')
+        $enrollments = Enrollment::join('events', 'enrollments.event_id', '=', 'events.id')
+            ->join('entries', 'enrollments.entry_id', '=', 'entries.id')
             ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
             ->where('enrollments.user_id', $user->id)->get();
 
-        return view('user.profile', compact('user', 'events'));
+        return view('user.profile', compact('user', 'enrollments'));
 
     }
 

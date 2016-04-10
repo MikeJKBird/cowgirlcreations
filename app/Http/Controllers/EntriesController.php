@@ -22,7 +22,7 @@ class EntriesController extends Controller
         $entry = new Entry();
 
         $entry->create([
-            'name' => $request->name,
+            'entry_name' => $request->entry_name,
             'price' => $request->price,
             'event_id' => $request->event_id,
         ]);

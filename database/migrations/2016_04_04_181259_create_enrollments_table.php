@@ -14,11 +14,14 @@ class CreateEnrollmentsTable extends Migration
     {
         Schema::create('enrollments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('event_id');
+            $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->integer('horse_id');
+            $table->integer('horse_id')->unsigned();
+            $table->foreign('horse_id')->references('id')->on('horses')->onDelete('cascade');
+            $table->integer('entry_id')->unsigned();
+            $table->foreign('entry_id')->references('id')->on('entries')->onDelete('cascade');
             $table->boolean('camping')->nullable()->default(0);
             $table->boolean('stall')->nullable()->default(0);
             $table->integer('bbqtickets')->nullable();

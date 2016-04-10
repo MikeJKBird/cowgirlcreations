@@ -26,7 +26,7 @@
 
                         <div class="form-group">
                             <label for='caption'>Photo caption:</label>
-                            <input type="text" name='caption' id='caption' class='form-control thumb' value='' required>
+                            <input type="text" name='caption' id='caption' class='form-control thumb' value='{{$photo->caption}}' required>
                         </div>
 
 

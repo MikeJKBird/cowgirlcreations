@@ -4,6 +4,7 @@ Entries
 
 Potential sign up issues
     -->display running total? -needs javascript
+    -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
 Need to display events on a calendar
 

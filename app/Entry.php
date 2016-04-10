@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Entry extends Model
 {
     protected $fillable = [
-        'name', 'price', 'event_id', 'enrollment_id'
+        'entry_name', 'price', 'event_id'
     ];
 
     /**
@@ -21,12 +21,12 @@ class Entry extends Model
     }
 
     /**
-     * Enrollment that has entry
+     * Enrollments for the entry
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function enrollment()
+    public function enrollments()
     {
-        return $this->belongsTo(Enrollment::class);
+        return $this->hasMany(Enrollment::class);
     }
 }

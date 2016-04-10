@@ -13,21 +13,20 @@ class EnrollmentsController extends Controller
 
     public function create(Request $request)
     {
-
-        $enrollment = Enrollment::create([
-            'user_id' => $request->userID,
-            'event_id' => $request->eventID,
-            'horse_id' => $request->horse,
-            'camping' => $request->camping,
-            'stall' => $request->stall,
-            'bbqtickets' => $request->bbqtickets
-        ]);
-
-
         $entryIDs = $request->entry;
         foreach($entryIDs as $entryID) {
-            Entry::where('id', $entryID)->update(['enrollment_id' => $enrollment->id]);
+
+            $enrollment = Enrollment::create([
+                'user_id' => $request->userID,
+                'event_id' => $request->eventID,
+                'horse_id' => $request->horse,
+                'entry_id' => $entryID,
+                'camping' => $request->camping,
+                'stall' => $request->stall,
+                'bbqtickets' => $request->bbqtickets
+            ]);
         }
+
 
         return back();
     }

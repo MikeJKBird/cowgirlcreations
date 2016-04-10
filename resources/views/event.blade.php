@@ -70,7 +70,7 @@
                     @endif
                     <br>
                     @foreach($entries as $entry)
-                        <input type="checkbox" name="entry[]" value="{{$entry->id}}"> {{$entry->name}} : ${{$entry->price}}
+                        <input type="checkbox" name="entry[]" value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
                     @endforeach
                     <br>
                     <input type="submit" value="Sign Up For Race" id="signup">

@@ -11,8 +11,8 @@
                     {{csrf_field()}}
                     <input type="hidden" name="event_id" value="{{$event->id}}">
                     <div class="form-group">
-                        <label for='name'>Entry Name:</label>
-                        <input type="text" name='name' id='name' class='form-control' value='' required>
+                        <label for='entry_name'>Entry Name:</label>
+                        <input type="text" name='entry_name' id='entry_name' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
                         <label for='price'>Price:</label>
@@ -28,7 +28,7 @@
                     @foreach ($entries as $entry)
                         <div class="row">
                             <div class="col-sm-10">
-                                <li class="list-group-item">{{ $entry->name }}: ${{ $entry->price }}
+                                <li class="list-group-item">{{ $entry->entry_name }}: ${{ $entry->price }}
                             </div>
                             <div class="col-sm-2">
                                 <form method="POST" action="/entry/{{$entry->id}}">
@@ -44,7 +44,7 @@
             </div>
         </div>
         @if(count($entries) > 0)
-            <a href="/admin/calendar">Finished!</a>
+            <a href="/admin/calendar" class="btn btn-success">Finished!</a>
         @else
             <p>You must add at least one entry to continue</p>
         @endif

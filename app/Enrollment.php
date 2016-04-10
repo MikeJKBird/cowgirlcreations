@@ -8,7 +8,7 @@ class Enrollment extends Model
 {
 
     protected $fillable = [
-        'user_id', 'event_id', 'horse_id', 'camping', 'stall', 'bbqtickets'
+        'user_id', 'event_id', 'horse_id', 'entry_id', 'camping', 'stall', 'bbqtickets'
     ];
 
     /**
@@ -32,13 +32,13 @@ class Enrollment extends Model
     }
 
     /**
-     * Entries for the given enrollment
+     * Entry for the given enrollment
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function entries()
     {
-        return $this->hasMany(Entry::class);
+        return $this->belongsTo(Entry::class);
     }
 
 

@@ -53,10 +53,10 @@
             </div>
             <div class="col-md-4">
                 <h3>The races you've signed up for:</h3>
-                    @foreach($events as $event)
+                    @foreach($enrollments as $enrollment)
                         <div class="row">
-                            <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$event->id}}">{{$event->name}}</a> with  {{$event->horse_name}}</p>
-                            <form method="POST" action="/removeevent/{{$event->id}}" class="col-md-2">
+                            <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$enrollment->event_id}}">{{$enrollment->name}}</a> riding {{$enrollment->horse_name}} in {{$enrollment->entry_name}}</p>
+                            <form method="POST" action="/removeevent/{{$enrollment->event_id}}" class="col-md-2">
                                 {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="user_id" value="{{$user->id}}">

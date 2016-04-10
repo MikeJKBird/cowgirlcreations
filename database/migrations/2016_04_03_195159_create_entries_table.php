@@ -14,11 +14,9 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('event_id');
+            $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->string('enrollment_id')->nullable();
-            $table->foreign('enrollment_id')->references('id')->on('enrollments')->onDelete('cascade');
-            $table->string('name');
+            $table->string('entry_name');
             $table->integer('price');
             $table->timestamps();
         });

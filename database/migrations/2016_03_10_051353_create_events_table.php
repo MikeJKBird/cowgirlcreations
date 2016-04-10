@@ -22,14 +22,14 @@ class CreateEventsTable extends Migration
             $table->longText('notes');
             $table->string('dresscode');
             $table->string('option');
-            $table->integer('timeonly');
-            $table->integer('latefee');
+            $table->integer('timeonly')->unsigned();
+            $table->integer('latefee')->unsigned();
             $table->integer('arenafee')->nullable();
             $table->integer('campingfee')->nullable();
             $table->integer('stallfee')->nullable();
             $table->integer('bbq')->nullable();
             $table->date('date');
-            $table->integer('multiplier');
+            $table->integer('multiplier')->unsigned();
             $table->string('resultspath')->nullable();
             $table->boolean('uploadedresults')->default(0);
             $table->timestamps();
