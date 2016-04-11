@@ -39,6 +39,10 @@ class ResultsController extends Controller
     {
         if ($request->hasFile('raceresult')) {
 
+            $this->validate($request, [
+                'raceresult' => 'required|mimes:html'
+            ]);
+
             $file = $request->file('raceresult');
             $name = $file->getClientOriginalName();
             $file->move('results', $name);

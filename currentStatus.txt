@@ -1,6 +1,7 @@
 Entries
-    -->enrollment object will add all of these price values together and to the total cost (behind the scenes math)
     -->should show user on event page which entries they have
+
+Refactor event page
 
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
@@ -14,13 +15,6 @@ Need to make adding points to users after a race easier
 -->one strategy, list all enrolled users, and put 1,2,3 representing the position they finished. Backend math the correct score to add to existing
     -->problem, people in multiple entries? Can just input one entry at a time?
 
-Need to start adding math
-    -->add total cost field to enrollment
-    -->select camping/stall/etc adds fee to total
-        -->all costs are on event object, will need to use event_id from enrollment object to find these
-        values (can search only if they are selected to reduce db hits).
-        -->need to have a cumulative total cost
-    -->refamiliarize yourself with payment logic
 
 
 create thumbnail for photo

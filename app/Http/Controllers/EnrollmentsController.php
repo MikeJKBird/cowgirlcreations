@@ -26,9 +26,10 @@ class EnrollmentsController extends Controller
                 'stall' => $request->stall,
                 'bbqtickets' => $request->bbqtickets
             ]);
+            $this->calculateTotalPrice($enrollment);
         }
 
-        $this->calculateTotalPrice($enrollment);
+
 
         return back();
     }
@@ -58,6 +59,7 @@ class EnrollmentsController extends Controller
         $entry = Entry::where('id', $enrollment->entry_id)->first();
 
 
+        $total += $entry->price;
         $total += $event->arenafee;
 
         if ($enrollment->camping){

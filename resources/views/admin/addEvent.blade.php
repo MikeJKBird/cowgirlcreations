@@ -81,7 +81,7 @@
                     </div>
                     <div class="form-group">
                         <label for='multiplier'>Points Multiplier</label>
-                        <input type="number" name='multiplier' id='multiplier' class='form-control' value=''>
+                        <input type="number" name='multiplier' id='multiplier' class='form-control' value='' min="0">
                     </div>
 
                     <div class="form-group">

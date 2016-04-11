@@ -29,28 +29,28 @@
             @foreach($tables as $table)
                 <tr>
 
-                    <td>{{$table->name}}</td>
-                    <td>Member number</td>
+                    <td><a href="/admin/editmember/{{$table->user_id}}">{{$table->name}}</a></td>
+                    <td>{{$table->memberNumber}}</td>
                     <td>{{$table->horse_name}}</td>
                     <td>{{$table->entry_name}}</td>
-                    @if($table->camping)
-                        <td>Yes</td>
-                    @else
-                        <td>No</td>
+                    @if( $event->campingfee != null)
+                        @if($table->camping)
+                            <td>Yes</td>
+                        @else
+                            <td>No</td>
+                        @endif
                     @endif
-                    @if($event->stallfee != null)
+                    @if( $event->stallfee != null)
                         @if($table->stall)
                             <td>Yes</td>
                         @else
                             <td>No</td>
                         @endif
                     @endif
-                    @if($table->bbqtickets > 0)
+                    @if( $event->bbq != null)
                         <td>{{$table->bbqtickets}}</td>
-                    @else
-                        <td>No</td>
                     @endif
-                    <td>{{$table->totalprice}}</td>
+                    <td>${{$table->totalprice}}</td>
                 </tr>
             @endforeach
         </table>
@@ -58,8 +58,8 @@
         @if(!$event->uploadedresults)
         <a href="/admin/addresults/{{$event->id}}"><h3>Add Results</h3></a>
         @else
-        <a href="/admin/addresults/{{$event->id}}"><h3>Change Results</h3></a>
         <a href="/admin/showresults/{{$event->id}}"><h3>View Results</h3></a>
+        <a href="/admin/addresults/{{$event->id}}"><h3>Change Results</h3></a>
         @endif
     </div>
 @stop

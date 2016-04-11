@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-4 col-md-offset-1">
                 <p>Late Fee: ${{$event->latefee}}</p>
-                <p>Arena Fee: ${{$event->arenafee}}</p>
+                <p id="arenafee" data-arena-fee="{{$event->arenafee}}">Arena Fee: ${{$event->arenafee}}</p>
                 @if( $event->campingfee != null)
                 <p>Camping Fee: ${{$event->campingfee}}</p>
                 @endif
@@ -42,6 +42,10 @@
             @if(!$event->uploadedresults)
                 @if(Auth::check())
                     @if( count($user->horses) != 0)
+
+                        <div>
+                            <p id="price">$<span id="totalprice" class="odometer"></span></p>
+                        </div>
 
                 <form action="/eventsignup" method="POST">
                     {{csrf_field()}}
@@ -73,7 +77,7 @@
                         <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
                     @endforeach
                     <br>
-                    <input type="submit" value="Sign Up For Race" id="signup">
+                    <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">
                 </form>
                     @else
                         <a href="/profile">Please add a horse to your profile to sign up</a>
@@ -94,9 +98,7 @@
                 <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
             @endif
         </div>
-        <div>
-            <p id="totalprice" class="odometer"></p>
-        </div>
+
     </div>
 
 @stop
@@ -104,7 +106,16 @@
 @section('scripts')
     <script src="/js/odometer.min.js"></script>
     {{-- Resets all add-on values --}}
+    {{-- UI for showing/hiding sign up button --}}
     <script>
+        var $total = $('#arenafee').data('arena-fee');
+        var $bbqcost = 0;
+        var $entrytotal = 0;
+        var $camping = $('#camping').data('camping-price');
+        var $stall = $('#stall').data('stall-price');
+        var $bbq = $('#bbqtickets').data('bbq-price');
+        var $cbs = $('input[name="entry\[\]"]');
+
         $(document).ready(function() {
             $(':checkbox:checked').prop('checked',false);
             $('#bbqtickets').val(0);
@@ -114,29 +125,13 @@
                     return false;
                 }
             });
-        });
-    </script>
-
-    {{-- UI for showing/hiding sign up button --}}
-    <script>
-        $(document).ready(function() {
 
             var $submit = $("#signup").hide(),
                 $checkbox = $('input[name="entry\[\]"]').click(function() {
                     $submit.toggle( $checkbox.is(":checked") );
                 });
         });
-    </script>
 
-    {{-- Calculating the running total for the enrollment --}}
-    <script>
-            var $total = 0;
-            var $bbqcost = 0;
-            var $entrytotal = 0;
-            var $camping = $('#camping').data('camping-price');
-            var $stall = $('#stall').data('stall-price');
-            var $bbq = $('#bbqtickets').data('bbq-price');
-            var $cbs = $('input[name="entry\[\]"]');
 
             var calculateCamping = function() {
                 if($('#camping').is(':checked')) {
@@ -148,6 +143,7 @@
                     $('#totalprice').text($total + $bbqcost + $entrytotal);
                 }
             }
+
             var calculateStall = function() {
                 if($('#stall').is(':checked')) {
                     $total += $stall;
@@ -177,14 +173,10 @@
                 });
                 $("#totalprice").text($total + $bbqcost + $entrytotal);
             }
-
-
+            $("#totalprice").text($total + $bbqcost + $entrytotal);
             $cbs.click(calcUsage);
-
             $( "#camping" ).on( "click", calculateCamping );
             $("#stall").on( "click", calculateStall);
             $("#bbqtickets").on("change", calculateBbq);
-
-
     </script>
 @stop
