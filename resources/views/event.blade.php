@@ -66,11 +66,11 @@
                     @endif
                     @if( $event->bbq != null)
                         <label for="bbqtickets">BBQ Tickets</label>
-                        <input type="number" name="bbqtickets" id="bbqtickets" value="0">
+                        <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="0">
                     @endif
                     <br>
                     @foreach($entries as $entry)
-                        <input type="checkbox" name="entry[]" value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
+                        <input type="checkbox" name="entry[]" data-entry-price value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
                     @endforeach
                     <br>
                     <input type="submit" value="Sign Up For Race" id="signup">
@@ -123,33 +123,43 @@
     {{-- Calculating the running total for the enrollment --}}
     <script>
             var $total = 0;
+            var $bbqcost = 0
             var $camping = $('#camping').data('camping-price');
             var $stall = $('#stall').data('stall-price');
+            var $bbq = $('#bbqtickets').data('bbq-price');
 
             var calculateCamping = function() {
                 if($('#camping').is(':checked')) {
                     $total += $camping;
-                    $('#totalprice').text($total);
+                    $('#totalprice').text($total + $bbqcost);
                 }
                 else if($('#camping').not(':checked')) {
                     $total -= $camping;
-                    $('#totalprice').text($total);
+                    $('#totalprice').text($total + $bbqcost);
                 }
             }
             var calculateStall = function() {
                 if($('#stall').is(':checked')) {
                     $total += $stall;
-                    $('#totalprice').text($total);
+                    $('#totalprice').text($total + $bbqcost);
                 }
                 else if($('#stall').not(':checked')) {
                     $total -= $stall;
-                    $('#totalprice').text($total);
+                    $('#totalprice').text($total + $bbqcost);
                 }
+            }
+
+            var calculateBbq = function() {
+                $qty = $('#bbqtickets').val();
+                $bbqcost = $qty * $bbq;
+                $('#totalprice').text($total + $bbqcost);
             }
 
 
             $( "#camping" ).on( "click", calculateCamping );
             $("#stall").on( "click", calculateStall);
+            $("#bbqtickets").on("change", calculateBbq);
+
 
     </script>
 @stop
