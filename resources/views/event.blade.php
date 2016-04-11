@@ -95,14 +95,14 @@
             @endif
         </div>
         <div>
-            <p id="totalprice"></p>
+            <p id="totalprice" class="odometer"></p>
         </div>
     </div>
 
 @stop
 
 @section('scripts')
-
+    <script src="/js/odometer.min.js"></script>
     {{-- Unchecks all checkboxes --}}
     <script>
         $(document).ready(function() {
@@ -110,6 +110,7 @@
         });
 
     </script>
+
     {{-- UI for showing/hiding sign up button --}}
     <script>
         $(document).ready(function() {
@@ -131,28 +132,28 @@
             var calculateCamping = function() {
                 if($('#camping').is(':checked')) {
                     $total += $camping;
-                    $('#totalprice').text($total + $bbqcost);
+                    $('.odometer').text($total + $bbqcost);
                 }
                 else if($('#camping').not(':checked')) {
                     $total -= $camping;
-                    $('#totalprice').text($total + $bbqcost);
+                    $('.odometer').text($total + $bbqcost);
                 }
             }
             var calculateStall = function() {
                 if($('#stall').is(':checked')) {
                     $total += $stall;
-                    $('#totalprice').text($total + $bbqcost);
+                    $('.odometer').text($total + $bbqcost);
                 }
                 else if($('#stall').not(':checked')) {
                     $total -= $stall;
-                    $('#totalprice').text($total + $bbqcost);
+                    $('.odometer').text($total + $bbqcost);
                 }
             }
 
             var calculateBbq = function() {
                 $qty = $('#bbqtickets').val();
                 $bbqcost = $qty * $bbq;
-                $('#totalprice').text($total + $bbqcost);
+                $('.odometer').text($total + $bbqcost);
             }
 
 

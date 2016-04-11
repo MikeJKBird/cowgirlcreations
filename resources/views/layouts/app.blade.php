@@ -15,6 +15,8 @@
 
     <link href="/css/lightbox.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/all.css" rel="stylesheet">
+
 </head>
 <body id="app-layout">
     @include('partials.nav')
