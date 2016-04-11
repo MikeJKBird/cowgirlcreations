@@ -66,11 +66,11 @@
                     @endif
                     @if( $event->bbq != null)
                         <label for="bbqtickets">BBQ Tickets</label>
-                        <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="0">
+                        <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="" min="0">
                     @endif
                     <br>
                     @foreach($entries as $entry)
-                        <input type="checkbox" name="entry[]" data-entry-price value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
+                        <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
                     @endforeach
                     <br>
                     <input type="submit" value="Sign Up For Race" id="signup">
@@ -103,12 +103,18 @@
 
 @section('scripts')
     <script src="/js/odometer.min.js"></script>
-    {{-- Unchecks all checkboxes --}}
+    {{-- Resets all add-on values --}}
     <script>
         $(document).ready(function() {
             $(':checkbox:checked').prop('checked',false);
+            $('#bbqtickets').val(0);
+            $(window).keydown(function(event){
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
         });
-
     </script>
 
     {{-- UI for showing/hiding sign up button --}}
@@ -121,41 +127,59 @@
                 });
         });
     </script>
+
     {{-- Calculating the running total for the enrollment --}}
     <script>
             var $total = 0;
-            var $bbqcost = 0
+            var $bbqcost = 0;
+            var $entrytotal = 0;
             var $camping = $('#camping').data('camping-price');
             var $stall = $('#stall').data('stall-price');
             var $bbq = $('#bbqtickets').data('bbq-price');
+            var $cbs = $('input[name="entry\[\]"]');
 
             var calculateCamping = function() {
                 if($('#camping').is(':checked')) {
                     $total += $camping;
-                    $('.odometer').text($total + $bbqcost);
+                    $('#totalprice').text($total + $bbqcost + $entrytotal);
                 }
                 else if($('#camping').not(':checked')) {
                     $total -= $camping;
-                    $('.odometer').text($total + $bbqcost);
+                    $('#totalprice').text($total + $bbqcost + $entrytotal);
                 }
             }
             var calculateStall = function() {
                 if($('#stall').is(':checked')) {
                     $total += $stall;
-                    $('.odometer').text($total + $bbqcost);
+                    $('#totalprice').text($total + $bbqcost + $entrytotal);
                 }
                 else if($('#stall').not(':checked')) {
                     $total -= $stall;
-                    $('.odometer').text($total + $bbqcost);
+                    $('#totalprice').text($total + $bbqcost + $entrytotal);
                 }
             }
 
             var calculateBbq = function() {
                 $qty = $('#bbqtickets').val();
                 $bbqcost = $qty * $bbq;
-                $('.odometer').text($total + $bbqcost);
+                $('#totalprice').text($total + $bbqcost + $entrytotal);
             }
 
+            function displayVals() {
+                calcUsage();
+            }
+
+            function calcUsage() {
+                $entrytotal = 0;
+                $cbs.each(function() {
+                    if (this.checked)
+                        $entrytotal = parseInt($entrytotal) + parseInt($(this).attr('data-price'));
+                });
+                $("#totalprice").text($total + $bbqcost + $entrytotal);
+            }
+
+
+            $cbs.click(calcUsage);
 
             $( "#camping" ).on( "click", calculateCamping );
             $("#stall").on( "click", calculateStall);
