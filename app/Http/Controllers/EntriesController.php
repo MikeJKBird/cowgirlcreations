@@ -41,4 +41,5 @@ class EntriesController extends Controller
 
         return back();
     }
+
 }

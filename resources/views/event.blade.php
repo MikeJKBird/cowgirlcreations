@@ -58,11 +58,11 @@
 
                     @if( $event->campingfee != null)
                         <label for="camping">Add Camping</label>
-                        <input type="checkbox" name="camping" id="camping">
+                        <input type="checkbox" name="camping" id="camping" data-camping-price="{{$event->campingfee}}" value=1>
                     @endif
                     @if( $event->stallfee != null)
                         <label for="stall">Add Stall</label>
-                        <input type="checkbox" name="stall" id="stall">
+                        <input type="checkbox" name="stall" id="stall" data-stall-price="{{$event->stallfee}}" value=1>
                     @endif
                     @if( $event->bbq != null)
                         <label for="bbqtickets">BBQ Tickets</label>
@@ -94,18 +94,62 @@
                 <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
             @endif
         </div>
-
+        <div>
+            <p id="totalprice"></p>
+        </div>
     </div>
 
 @stop
 
 @section('scripts')
+
+    {{-- Unchecks all checkboxes --}}
     <script>
         $(document).ready(function() {
+            $(':checkbox:checked').prop('checked',false);
+        });
+
+    </script>
+    {{-- UI for showing/hiding sign up button --}}
+    <script>
+        $(document).ready(function() {
+
             var $submit = $("#signup").hide(),
                 $checkbox = $('input[name="entry\[\]"]').click(function() {
                     $submit.toggle( $checkbox.is(":checked") );
                 });
         });
+    </script>
+    {{-- Calculating the running total for the enrollment --}}
+    <script>
+            var $total = 0;
+            var $camping = $('#camping').data('camping-price');
+            var $stall = $('#stall').data('stall-price');
+
+            var calculateCamping = function() {
+                if($('#camping').is(':checked')) {
+                    $total += $camping;
+                    $('#totalprice').text($total);
+                }
+                else if($('#camping').not(':checked')) {
+                    $total -= $camping;
+                    $('#totalprice').text($total);
+                }
+            }
+            var calculateStall = function() {
+                if($('#stall').is(':checked')) {
+                    $total += $stall;
+                    $('#totalprice').text($total);
+                }
+                else if($('#stall').not(':checked')) {
+                    $total -= $stall;
+                    $('#totalprice').text($total);
+                }
+            }
+
+
+            $( "#camping" ).on( "click", calculateCamping );
+            $("#stall").on( "click", calculateStall);
+
     </script>
 @stop

@@ -13,6 +13,7 @@
                 <th>Racer</th>
                 <th>Member Number</th>
                 <th>Horse</th>
+                <th>Race</th>
                 @if( $event->campingfee != null)
                     <th>Camping</th>
                 @endif
@@ -31,6 +32,7 @@
                     <td>{{$table->name}}</td>
                     <td>Member number</td>
                     <td>{{$table->horse_name}}</td>
+                    <td>{{$table->entry_name}}</td>
                     @if($table->camping)
                         <td>Yes</td>
                     @else
@@ -48,6 +50,7 @@
                     @else
                         <td>No</td>
                     @endif
+                    <td>{{$table->totalprice}}</td>
                 </tr>
             @endforeach
         </table>

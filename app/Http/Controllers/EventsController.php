@@ -136,7 +136,7 @@ class EventsController extends Controller
 
         $eventID = $event->id;
 
-        return redirect("/admin/entries/$eventID");
+        return redirect("/admin/calendar/$eventID");
     }
 
     /**

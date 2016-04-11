@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="/home">
-                Barrel Racing
+                Cowgirl Creations
             </a>
         </div>
 

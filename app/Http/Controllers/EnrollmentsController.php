@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enrollment;
 use App\Entry;
+use App\Event;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -27,6 +28,7 @@ class EnrollmentsController extends Controller
             ]);
         }
 
+        $this->calculateTotalPrice($enrollment);
 
         return back();
     }
@@ -47,5 +49,31 @@ class EnrollmentsController extends Controller
         Enrollment::findOrFail($enrollmentID)->delete();
 
         return back();
+    }
+
+    public function calculateTotalPrice(Enrollment $enrollment)
+    {
+        $total = 0;
+        $event = Event::where('id', $enrollment->event_id)->first();
+        $entry = Entry::where('id', $enrollment->entry_id)->first();
+
+
+        $total += $event->arenafee;
+
+        if ($enrollment->camping){
+            $total += $event->campingfee;
+        }
+        if($enrollment->stall){
+            $total += $event->stallfee;
+        }
+        if($enrollment->bbqtickets != null){
+
+            $numbbqtickets = $enrollment->bbqtickets;
+            $bbqticketprice = $event->bbq;
+            $bbq = $numbbqtickets * $bbqticketprice;
+            $total += $bbq;
+        }
+
+        $enrollment->update(['totalprice' => $total]);
     }
 }
