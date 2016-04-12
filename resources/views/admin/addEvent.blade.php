@@ -20,35 +20,35 @@
                     </div>
                     <div class="form-group">
                         <label for='cosanction'>Co-Sanctioned</label>
-                        <input type="text" name='cosanction' id='cosanction' class='form-control' value=''>
+                        <input type="text" name='cosanction' id='cosanction' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
                         <label for='deadline'>Deadline</label>
-                        <input type="text" name='deadline' id='deadline' class='form-control' value=''>
+                        <input type="text" name='deadline' id='deadline' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
                         <label for='producer'>Producer</label>
-                        <input type="text" name='producer' id='producer' class='form-control' value=''>
+                        <input type="text" name='producer' id='producer' class='form-control' value='' required>
                     </div>
 
                     <div class="form-group">
                         <label for='dresscode'>Dress Code</label>
-                        <input type="text" name='dresscode' id='dresscode' class='form-control' value=''>
+                        <input type="text" name='dresscode' id='dresscode' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
                         <label for='option'>Option</label>
-                        <input type="text" name='option' id='option' class='form-control' value=''>
+                        <input type="text" name='option' id='option' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
                         <label for='timeonly'>Time Only ($)</label>
-                        <input type="text" name='timeonly' id='timeonly' class='form-control' value=''>
+                        <input type="text" name='timeonly' id='timeonly' class='form-control' value='' required>
                     </div>
                 </div>
                 <div class="row col-sm-4 col-sm-offset-1">
 
                     <div class="form-group">
                         <label for='latefee'>Late Fee ($)</label>
-                        <input type="text" name='latefee' id='latefee' class='form-control' value=''>
+                        <input type="text" name='latefee' id='latefee' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
                         <label for='arenafee'>Arena Fee ($)</label>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <label for='notes'>Notes</label>
-                        <textarea name='notes' id='notes' class='form-control' value=''></textarea>
+                        <textarea name='notes' id='notes' class='form-control' value='' required></textarea>
                     </div>
                     <div class="form-group">
                         <label for='date'>Date</label>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="form-group">
                         <label for='multiplier'>Points Multiplier</label>
-                        <input type="number" name='multiplier' id='multiplier' class='form-control' value='' min="0">
+                        <input type="number" name='multiplier' id='multiplier' class='form-control' value='' min="1" required>
                     </div>
 
                     <div class="form-group">

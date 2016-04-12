@@ -45,6 +45,20 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'location' => 'required',
+            'cosanction' => 'required',
+            'deadline' => 'required',
+            'producer' => 'required',
+            'notes' => 'required',
+            'dresscode' => 'required',
+            'option' => 'required',
+            'timeonly' => 'required',
+            'latefee' => 'required',
+            'date' => 'required',
+            'multiplier' => 'required|min:1'
+        ]);
 
         $event = new Event;
         $date = Carbon::createFromFormat('m/d/Y H:i A', $request->date)->toDateTimeString();
@@ -63,7 +77,6 @@ class EventsController extends Controller
             'arenafee' => $request->arenafee,
             'campingfee' => $request->campingfee,
             'stallfee' => $request->stallfee,
-            'divisions' => $request->divisions,
             'bbq' => $request->bbq,
             'date' => $date,
             'multiplier' => $request->multiplier

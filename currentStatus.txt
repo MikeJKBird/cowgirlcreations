@@ -1,8 +1,6 @@
 Entries
     -->should show user on event page which entries they have
 
-Refactor event page
-
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
