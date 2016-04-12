@@ -1,14 +1,22 @@
+Points
+    -->need to figure out how to best handle point submission form
+        -->What controller?
+        -->Use explode to get user id
+
+    -->Will she want points divided up by category?
+
 Entries
     -->should show user on event page which entries they have
 
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
+
+
 Need to display events on a calendar
 
 Need to make adding points to users after a race easier
     -->list of users who signed up would be easier, but need to add users who might not sign up online
-    -->have points multiplier displayed
     -->participation gets added for every participant
 -->one strategy, list all enrolled users, and put 1,2,3 representing the position they finished. Backend math the correct score to add to existing
     -->problem, people in multiple entries? Can just input one entry at a time?

@@ -65,12 +65,18 @@
             <form action="" method="POST">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PATCH">
+                <input type="hidden" name="multiplier" value="{{$event->multiplier}}">
+
                 @foreach($tables as $table)
-                    <label for="points">{{$table->name}} in {{$table->entry_name}}: Points</label>
-                    <input type="text" name="points" value="{{ old('points') }}">
+                    <label for="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}">{{$table->name}} in {{$table->entry_name}} on {{$table->horse_name}}- Points:</label>
+                    <input type="text" name="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}" value="">
+
+                    <label for="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}participate">Participate?</label>
+                    <input type="checkbox" name="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}participate" checked="checked">
                     <hr>
                 @endforeach
-                <input type="submit" value="Update Information">
+
+                <input type="submit" value="Add Points">
             </form>
 
 

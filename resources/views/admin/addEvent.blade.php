@@ -6,8 +6,18 @@
     <div class="container">
 
             <h2>Add an event</h2>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-            <form method="POST" action="/events">
+
+        <form method="POST" action="/events">
                 {{csrf_field()}}
                 <div class="row col-sm-4 col-sm-offset-1">
                     <div class="form-group">
