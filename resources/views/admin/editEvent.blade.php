@@ -20,8 +20,12 @@
                             <input type="text" name='location' id='location' class='form-control' value='{{$event->location}}' required>
                         </div>
                         <div class="form-group">
-                            <label for='cosanction'>Co-Sanctioned</label>
-                            <input type="text" name='cosanction' id='cosanction' class='form-control' value='{{$event->cosanction}}'>
+                            <label for='cosanction'>Co-sanction</label>
+                            <select name='cosanction' id='cosanction' class='form-control' value='' required>
+                                @foreach($cosanctions as $cosanction)
+                                    <option value="{{$cosanction->id}}">{{$cosanction->cosanction_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for='deadline'>Deadline</label>

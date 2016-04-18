@@ -1,3 +1,11 @@
+Todays task:
+
+cosanction is displayed as checkbox besides every entry on event sign up form
+    -->need to create checkbox value combining entry id and cosanction id, then explode it in controller and sign accordingly
+    -->need to add cosanction cost to running total
+need to display cosanction option on admin event details
+
+
 Points
     -->need to figure out how to best handle point submission form
         -->What controller?

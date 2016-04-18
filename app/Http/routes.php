@@ -38,7 +38,11 @@ Route::group(['middleware' => ['web', 'admin']], function () {
     Route::post('sponsors', 'SponsorsController@store');
     Route::delete('sponsors/{id}', 'SponsorsController@destroy');
 
-    Route::get('admin/event', 'AdminController@event');
+    Route::get('admin/cosanctions', 'CosanctionsController@create');
+    Route::post('cosanctions', 'CosanctionsController@store');
+    Route::delete('cosanctions/{id}', 'CosanctionsController@destroy');
+
+    Route::get('admin/event', 'EventsController@create');
     Route::post('events', 'EventsController@store');
     Route::get('admin/editevent/{event}', 'EventsController@edit');
     Route::patch('admin/updateevent/{event}','EventsController@update');

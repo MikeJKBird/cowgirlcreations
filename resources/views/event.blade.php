@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
                 <p>Located at: {{$event->location}}</p>
-                <p>Co-sanctioned: {{$event->cosanction}}</p>
+                <p>Co-sanctioned: {{$cosanction->cosanction_name}}</p>
                 <p>Occuring: {{$event->date->toDayDateTimeString()}}</p>
                 <p>Pre-Entry Deadline: {{$event->deadline}} </p>
                 <p>Producer: {{$event->producer}}</p>
@@ -44,7 +44,7 @@
                     @if( count($user->horses) != 0)
 
                         <div>
-                            <p id="currentprice">$<span id="totalprice" class="odometer"></span></p>
+                            <p id="currentprice">Current Total: $<span id="totalprice" class="odometer"></span></p>
                         </div>
 
                 <form action="/eventsignup" method="POST">
@@ -75,6 +75,8 @@
                     <br>
                     @foreach($entries as $entry)
                         <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
+
+                        <input type="checkbox">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
                     @endforeach
                     <br>
                     <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">

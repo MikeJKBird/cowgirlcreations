@@ -24,6 +24,7 @@
                 <li><a href="/admin/sponsors">List of Sponsors</a></li>
                 <li><a href="/admin/photos">Photos</a></li>
                 <li><a href="/admin/members">List of Members</a></li>
+                <li><a href="/admin/cosanctions">Co-Sanctions</a></li>
             </ul>
         </div>
     </div>

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'name', 'location', 'cosanction', 'deadline', 'producer',
+        'name', 'location', 'deadline', 'producer', 'cosanction_id',
         'notes', 'dresscode', 'option', 'timeonly', 'latefee',
         'arenafee', 'campingfee', 'stallfee', 'bbq', 'date', 'multiplier',
         'resultspath', 'uploadedresults'
@@ -40,4 +40,13 @@ class Event extends Model
     {
         return $this->hasMany(Entry::class);
     }
+
+    /**
+     * Cosanction for the event
+     */
+    public function cosanction()
+    {
+        return $this->belongsTo(Cosanction::class);
+    }
+
 }

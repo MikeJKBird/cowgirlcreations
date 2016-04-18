@@ -37,15 +37,6 @@ class AdminController extends Controller
         return view('admin.calendar', compact('events'));
     }
 
-    /**
-     * View to add a new event
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function event()
-    {
-        return view('admin.addEvent');
-    }
 
     /**
      * Loads the specified event page

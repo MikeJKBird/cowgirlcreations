@@ -29,10 +29,6 @@
                         <input type="text" name='location' id='location' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
-                        <label for='cosanction'>Co-Sanctioned</label>
-                        <input type="text" name='cosanction' id='cosanction' class='form-control' value='' required>
-                    </div>
-                    <div class="form-group">
                         <label for='deadline'>Deadline</label>
                         <input type="text" name='deadline' id='deadline' class='form-control' value='' required>
                     </div>
@@ -40,7 +36,14 @@
                         <label for='producer'>Producer</label>
                         <input type="text" name='producer' id='producer' class='form-control' value='' required>
                     </div>
-
+                    <div class="form-group">
+                        <label for='cosanction'>Co-sanction</label>
+                        <select name='cosanction' id='cosanction' class='form-control' value='' required>
+                            @foreach($cosanctions as $cosanction)
+                                <option value="{{$cosanction->id}}">{{$cosanction->cosanction_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for='dresscode'>Dress Code</label>
                         <input type="text" name='dresscode' id='dresscode' class='form-control' value='' required>

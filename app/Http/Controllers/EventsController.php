@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cosanction;
 use App\Enrollment;
 use App\Horse;
 use Carbon\Carbon;
@@ -28,13 +29,15 @@ class EventsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new event.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $cosanctions = Cosanction::get();
+
+        return view('admin.addEvent', compact('cosanctions'));
     }
 
     /**
@@ -69,6 +72,7 @@ class EventsController extends Controller
             'cosanction' => $request->cosanction,
             'deadline' => $request->deadline,
             'producer' => $request->producer,
+            'cosanction_id' => $request->cosanction,
             'notes' => $request->notes,
             'dresscode' => $request->dresscode,
             'option' => $request->option,
@@ -83,6 +87,8 @@ class EventsController extends Controller
         ]);
 
         $eventID = $event->id;
+
+
 
         return redirect("admin/entries/$eventID");
     }
@@ -106,9 +112,10 @@ class EventsController extends Controller
             }
         }
         $entries = $event->entries()->get();
+        $cosanction = $event->cosanction()->first();
 
 
-        return view('event',compact('event', 'user', 'signedup', 'entries'));
+        return view('event',compact('event', 'user', 'signedup', 'entries', 'cosanction'));
     }
 
     /**
@@ -133,7 +140,10 @@ class EventsController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('admin/editEvent', compact('event'));
+
+        $cosanctions = Cosanction::get();
+
+        return view('admin/editEvent', compact('event', 'cosanctions'));
     }
 
     /**
