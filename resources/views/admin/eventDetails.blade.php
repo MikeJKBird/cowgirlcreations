@@ -24,12 +24,12 @@
                     @if( $event->bbq != null)
                         <th>BBQ Tickets</th>
                     @endif
+                    <th>Cosanction</th>
                     <th>Total</th>
                 </tr>
 
                 @foreach($tables as $table)
                     <tr>
-
                         <td><a href="/admin/editmember/{{$table->user_id}}">{{$table->name}}</a></td>
                         <td>{{$table->memberNumber}}</td>
                         <td>{{$table->horse_name}}</td>
@@ -50,6 +50,11 @@
                         @endif
                         @if( $event->bbq != null)
                             <td>{{$table->bbqtickets}}</td>
+                        @endif
+                        @if($table->cosanction)
+                            <td>Yes!</td>
+                        @else
+                            <td>No!</td>
                         @endif
                         <td>${{$table->totalprice}}</td>
                     </tr>

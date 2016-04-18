@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cosanction;
 use App\Enrollment;
 use App\Entry;
 use App\Event;
@@ -15,7 +16,14 @@ class EnrollmentsController extends Controller
     public function create(Request $request)
     {
         $entryIDs = $request->entry;
+
+
         foreach($entryIDs as $entryID) {
+            if($entryID == $request->cosanction) {
+                $cosanctioned = true;
+            } else {
+                $cosanctioned = false;
+            }
 
             $enrollment = Enrollment::create([
                 'user_id' => $request->userID,
@@ -24,7 +32,9 @@ class EnrollmentsController extends Controller
                 'entry_id' => $entryID,
                 'camping' => $request->camping,
                 'stall' => $request->stall,
-                'bbqtickets' => $request->bbqtickets
+                'bbqtickets' => $request->bbqtickets,
+                'carryover' => $request->carryover,
+                'cosanction' => $cosanctioned
             ]);
             $this->calculateTotalPrice($enrollment);
         }
@@ -57,6 +67,7 @@ class EnrollmentsController extends Controller
         $total = 0;
         $event = Event::where('id', $enrollment->event_id)->first();
         $entry = Entry::where('id', $enrollment->entry_id)->first();
+        $cosanction = Cosanction::where('id', $event->cosanction_id)->first();
 
 
         $total += $entry->price;
@@ -69,11 +80,13 @@ class EnrollmentsController extends Controller
             $total += $event->stallfee;
         }
         if($enrollment->bbqtickets != null){
-
             $numbbqtickets = $enrollment->bbqtickets;
             $bbqticketprice = $event->bbq;
             $bbq = $numbbqtickets * $bbqticketprice;
             $total += $bbq;
+        }
+        if($enrollment->cosanction){
+            $total += $cosanction->cosanction_price;
         }
 
         $enrollment->update(['totalprice' => $total]);

@@ -76,7 +76,9 @@
                     @foreach($entries as $entry)
                         <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
 
-                        <input type="checkbox">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
+                        <input type="checkbox" name="carryover">Carryover
+                        <input type="checkbox" name="cosanction" data-price={{$cosanction->cosanction_price}} value="{{$entry->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
+                        <hr>
                     @endforeach
                     <br>
                     <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">

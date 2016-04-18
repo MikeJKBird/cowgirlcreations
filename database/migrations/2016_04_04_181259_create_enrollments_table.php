@@ -25,6 +25,8 @@ class CreateEnrollmentsTable extends Migration
             $table->boolean('camping')->nullable()->default(0);
             $table->boolean('stall')->nullable()->default(0);
             $table->integer('bbqtickets')->nullable();
+            $table->boolean('carryover')->nullable();
+            $table->boolean('cosanction')->nullable();
             $table->integer('totalprice')->unsigned()->nullable();
             $table->timestamps();
         });
