@@ -5,13 +5,13 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h3>Add Entries for {{$event->name}}</h3>
+                <h3>Add Divisions for {{$event->name}}</h3>
 
                 <form action="/entries" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <input type="hidden" name="event_id" value="{{$event->id}}">
                     <div class="form-group">
-                        <label for='entry_name'>Entry Name:</label>
+                        <label for='entry_name'>Division Name:</label>
                         <input type="text" name='entry_name' id='entry_name' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
@@ -23,7 +23,7 @@
                     </div>
                 </form>
 
-                <h3>Current Entries</h3>
+                <h3>Current Divisions</h3>
                 <ul class="list-group">
                     @foreach ($entries as $entry)
                         <div class="row">
@@ -46,7 +46,7 @@
         @if(count($entries) > 0)
             <a href="/admin/calendar" class="btn btn-success">Finished!</a>
         @else
-            <p>You must add at least one entry to continue</p>
+            <p>You must add at least one division to continue</p>
         @endif
     </div>
 

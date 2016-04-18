@@ -10,7 +10,6 @@
         </div>
     </div>
     <div class="container">
-        <h3>Phone: 123-456-7890</h3>
         <h3>Email: 123@fake.com</h3>
         <h3><a href="https://www.facebook.com/groups/cowgirlcreations/">Facebook</a></h3>
     </div>
