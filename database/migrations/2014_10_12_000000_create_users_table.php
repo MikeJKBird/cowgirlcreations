@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('points')->nullable()->unsigned();
             $table->string('memberNumber')->nullable();
             $table->boolean('isadmin')->default(false);
+            $table->string('birthday')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

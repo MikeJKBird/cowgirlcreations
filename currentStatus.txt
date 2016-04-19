@@ -1,5 +1,9 @@
+Create Event
+    -->deadline should be carbon instance
+    -->will automatically stop allowing users to sign up or drop race
 
-
+Have upcoming events on homepage just show events up to a certain date (a month ahead)
+    -->use carbon to test the date of the event in a loop
 
 Points
     -->need to figure out how to best handle point submission form
@@ -16,12 +20,8 @@ Potential sign up issues
 
 
 Need to display events on a calendar
-
-Need to make adding points to users after a race easier
-    -->list of users who signed up would be easier, but need to add users who might not sign up online
-    -->participation gets added for every participant
--->one strategy, list all enrolled users, and put 1,2,3 representing the position they finished. Backend math the correct score to add to existing
-    -->problem, people in multiple entries? Can just input one entry at a time?
+    -->fullcalendar.io
+    
 
 
 

@@ -62,4 +62,5 @@ Route::group(['middleware' => ['web', 'admin']], function () {
     Route::get('admin/photos', 'PhotosController@edit');
     Route::post('admin/photos', 'PhotosController@add');
     Route::patch('photo/{photo}', 'PhotosController@update');
+    Route::delete('deletephoto/{id}', 'PhotosController@destroy');
 });

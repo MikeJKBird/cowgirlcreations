@@ -44,11 +44,31 @@ class PhotosController extends Controller
 
     }
 
+    /**
+     * Updates a photo's description
+     *
+     * @param  Request $request [description]
+     * @param  Photo   $photo   [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, Photo $photo)
     {
         $photo->update($request->all());
 
         return back();
     }
+
+    /**
+     * Destroys the photo with a given id
+     *
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function destroy($id) {
+        Photo::findOrFail($id)->delete();
+
+        return back();
+    }
+
 
 }

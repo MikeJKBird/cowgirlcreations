@@ -71,7 +71,7 @@
 
                     @foreach($tables as $table)
                         @if(strpos($table->entries,$entry->entry_name))
-                            <label for="{{$table->user_id}}-{{$table->horse_id}}">{{$table->name}} in {{$table->entries}} on {{$table->horse_name}}- Points:</label>
+                            <label for="{{$table->user_id}}-{{$table->horse_id}}">{{$table->name}} on {{$table->horse_name}}- Position:</label>
                             <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}" value="">
 
                             <label for="{{$table->user_id}}-{{$table->horse_id}}participate">Participate?</label>
@@ -81,7 +81,6 @@
                     @endforeach
 
                 @endforeach
-
 
 
                 <input type="submit" value="Add Points">

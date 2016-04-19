@@ -15,6 +15,11 @@
                 @endif
                 <p>Your email is: {{$user->email}}</p>
                 <p>Your points are: {{$user->points}}</p>
+                @if($user->birthday != null)
+                    <p>Your birthday is: {{$user->birthday}}</p>
+                @else
+                    <p>You can add your birthday <a href="/editprofile">here</a></p>
+                @endif
 
             </div>
             <div class="col-md-4 text-center">

@@ -34,6 +34,11 @@
                             <button type="submit" class="btn btn-primary">Update Photo</button>
                         </div>
                     </form>
+                    <form method="POST" action="/deletephoto/{{$photo->id}}">
+                        {{method_field('DELETE')}}
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
 
             @endforeach
@@ -43,22 +48,8 @@
 
 
 
-            {{--<h3>Current Sponsors</h3>--}}
-            {{--<ul class="list-group">--}}
-                {{--@foreach ($sponsors as $sponsor)--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-sm-10">--}}
-                            {{--<li class="list-group-item"><a href="http://{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-sm-2">--}}
-                            {{--<form method="POST" action="/sponsors/{{$sponsor->id}}">--}}
-                                {{--<input type="hidden" name="_method" value="DELETE"><button type="submit" class="btn btn-danger">Delete</button>--}}
-                            {{--</form>--}}
-                            {{--</li>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--@endforeach--}}
-            {{--</ul>--}}
+
+
         </div>
     </div>
 @stop
