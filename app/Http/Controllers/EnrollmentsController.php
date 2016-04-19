@@ -21,7 +21,7 @@ class EnrollmentsController extends Controller
         $totalentry = "";
 
         foreach($entries as $entry) {
-          $totalentry .= $entry .", ";
+          $totalentry .= " " . $entry .", ";
           if($carryovers != null){
               foreach($carryovers as $carryover) {
                 if($carryover == $entry) {

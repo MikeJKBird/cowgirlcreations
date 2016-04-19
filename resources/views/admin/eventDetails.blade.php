@@ -66,14 +66,23 @@
                 <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="multiplier" value="{{$event->multiplier}}">
 
-                @foreach($tables as $table)
-                    <label for="{{$table->user_id}}-{{$table->horse_id}}">{{$table->name}} in {{$table->entries}} on {{$table->horse_name}}- Points:</label>
-                    <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}" value="">
+                @foreach($event->entries as $entry)
+                    <h3>{{$entry->entry_name}}</h3>
 
-                    <label for="{{$table->user_id}}-{{$table->horse_id}}participate">Participate?</label>
-                    <input type="checkbox" name="{{$table->user_id}}-{{$table->horse_id}}participate" checked="checked">
-                    <hr>
+                    @foreach($tables as $table)
+                        @if(strpos($table->entries,$entry->entry_name))
+                            <label for="{{$table->user_id}}-{{$table->horse_id}}">{{$table->name}} in {{$table->entries}} on {{$table->horse_name}}- Points:</label>
+                            <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}" value="">
+
+                            <label for="{{$table->user_id}}-{{$table->horse_id}}participate">Participate?</label>
+                            <input type="checkbox" name="{{$table->user_id}}-{{$table->horse_id}}participate" checked="checked">
+                            <hr>
+                        @endif
+                    @endforeach
+
                 @endforeach
+
+
 
                 <input type="submit" value="Add Points">
             </form>
