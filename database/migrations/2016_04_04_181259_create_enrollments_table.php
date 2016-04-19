@@ -20,13 +20,10 @@ class CreateEnrollmentsTable extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->integer('horse_id')->unsigned();
             $table->foreign('horse_id')->references('id')->on('horses')->onDelete('cascade');
-            $table->integer('entry_id')->unsigned();
-            $table->foreign('entry_id')->references('id')->on('entries')->onDelete('cascade');
+            $table->string('entries')->nullable();
             $table->boolean('camping')->nullable()->default(0);
             $table->boolean('stall')->nullable()->default(0);
             $table->integer('bbqtickets')->nullable();
-            $table->boolean('carryover')->nullable();
-            $table->boolean('cosanction')->nullable();
             $table->integer('totalprice')->unsigned()->nullable();
             $table->timestamps();
         });

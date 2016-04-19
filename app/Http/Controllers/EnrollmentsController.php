@@ -15,34 +15,39 @@ class EnrollmentsController extends Controller
 
     public function create(Request $request)
     {
-        $entryIDs = $request->entry;
+        $entries = $request->entry;
+        $carryovers = $request->carryover;
+        $cosanctions = $request->cosanction;
+        $totalentry = "";
 
-
-        foreach($entryIDs as $entryID) {
-            if($entryID == $request->cosanction) {
-                $cosanctioned = true;
-            } else {
-                $cosanctioned = false;
+        foreach($entries as $entry) {
+          $totalentry .= $entry .", ";
+          foreach($carryovers as $carryover) {
+            if($carryover == $entry) {
+              $totalentry .= "carryover, ";
             }
+          }
+          foreach($cosanctions as $cosanction) {
+            if($cosanction == $entry) {
+              $totalentry .= "cosanction, ";
+            }
+          }
+        }
 
             $enrollment = Enrollment::create([
                 'user_id' => $request->userID,
                 'event_id' => $request->eventID,
                 'horse_id' => $request->horse,
-                'entry_id' => $entryID,
+                'entries' => $totalentry,
                 'camping' => $request->camping,
                 'stall' => $request->stall,
                 'bbqtickets' => $request->bbqtickets,
-                'carryover' => $request->carryover,
-                'cosanction' => $cosanctioned
+                'totalprice' => $request->usercost
             ]);
-            $this->calculateTotalPrice($enrollment);
-        }
-
-
 
         return back();
     }
+
     /**
      * Delete the given enrollment
      *
@@ -62,33 +67,4 @@ class EnrollmentsController extends Controller
         return back();
     }
 
-    public function calculateTotalPrice(Enrollment $enrollment)
-    {
-        $total = 0;
-        $event = Event::where('id', $enrollment->event_id)->first();
-        $entry = Entry::where('id', $enrollment->entry_id)->first();
-        $cosanction = Cosanction::where('id', $event->cosanction_id)->first();
-
-
-        $total += $entry->price;
-        $total += $event->arenafee;
-
-        if ($enrollment->camping){
-            $total += $event->campingfee;
-        }
-        if($enrollment->stall){
-            $total += $event->stallfee;
-        }
-        if($enrollment->bbqtickets != null){
-            $numbbqtickets = $enrollment->bbqtickets;
-            $bbqticketprice = $event->bbq;
-            $bbq = $numbbqtickets * $bbqticketprice;
-            $total += $bbq;
-        }
-        if($enrollment->cosanction){
-            $total += $cosanction->cosanction_price;
-        }
-
-        $enrollment->update(['totalprice' => $total]);
-    }
 }

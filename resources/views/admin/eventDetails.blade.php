@@ -24,7 +24,6 @@
                     @if( $event->bbq != null)
                         <th>BBQ Tickets</th>
                     @endif
-                    <th>Cosanction</th>
                     <th>Total</th>
                 </tr>
 
@@ -33,7 +32,7 @@
                         <td><a href="/admin/editmember/{{$table->user_id}}">{{$table->name}}</a></td>
                         <td>{{$table->memberNumber}}</td>
                         <td>{{$table->horse_name}}</td>
-                        <td>{{$table->entry_name}}</td>
+                        <td>{{$table->entries}}</td>
                         @if( $event->campingfee != null)
                             @if($table->camping)
                                 <td>Yes</td>
@@ -50,11 +49,6 @@
                         @endif
                         @if( $event->bbq != null)
                             <td>{{$table->bbqtickets}}</td>
-                        @endif
-                        @if($table->cosanction)
-                            <td>Yes!</td>
-                        @else
-                            <td>No!</td>
                         @endif
                         <td>${{$table->totalprice}}</td>
                     </tr>
@@ -73,11 +67,11 @@
                 <input type="hidden" name="multiplier" value="{{$event->multiplier}}">
 
                 @foreach($tables as $table)
-                    <label for="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}">{{$table->name}} in {{$table->entry_name}} on {{$table->horse_name}}- Points:</label>
-                    <input type="text" name="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}" value="">
+                    <label for="{{$table->user_id}}-{{$table->horse_id}}">{{$table->name}} in {{$table->entries}} on {{$table->horse_name}}- Points:</label>
+                    <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}" value="">
 
-                    <label for="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}participate">Participate?</label>
-                    <input type="checkbox" name="{{$table->user_id}}-{{$table->entry_id}}-{{$table->horse_id}}participate" checked="checked">
+                    <label for="{{$table->user_id}}-{{$table->horse_id}}participate">Participate?</label>
+                    <input type="checkbox" name="{{$table->user_id}}-{{$table->horse_id}}participate" checked="checked">
                     <hr>
                 @endforeach
 

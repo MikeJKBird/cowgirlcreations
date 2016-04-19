@@ -20,13 +20,5 @@ class Entry extends Model
         return $this->belongsTo(Event::class);
     }
 
-    /**
-     * Enrollments for the entry
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function enrollments()
-    {
-        return $this->hasMany(Enrollment::class);
-    }
+
 }

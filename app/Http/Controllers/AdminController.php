@@ -49,8 +49,7 @@ class AdminController extends Controller
 
         $tables = Enrollment::join('users', 'enrollments.user_id', '=', 'users.id')
             ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
-            ->join('entries', 'enrollments.entry_id', '=', 'entries.id')
-            ->where('enrollments.event_id', $event->id)->orderby('entry_name', 'desc')->get();
+            ->where('enrollments.event_id', $event->id)->get();
 
         return view('admin/eventDetails', compact('event', 'enrollments', 'users', 'tables'));
     }

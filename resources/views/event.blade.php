@@ -51,6 +51,7 @@
                     {{csrf_field()}}
                     <input type="hidden" name="userID" value="{{$user->id}}">
                     <input type="hidden" name="eventID" value="{{$event->id}}">
+                    <input type="hidden" name="usercost" value="">
 
 
                     <select name="horse">
@@ -74,10 +75,10 @@
                     @endif
                     <br>
                     @foreach($entries as $entry)
-                        <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->id}}"> {{$entry->entry_name}} : ${{$entry->price}}
+                        <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->entry_name}}"> {{$entry->entry_name}} : ${{$entry->price}}
 
-                        <input type="checkbox" name="carryover">Carryover
-                        <input type="checkbox" name="cosanction" data-price={{$cosanction->cosanction_price}} value="{{$entry->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
+                        <input type="checkbox" name="carryover[]" value="{{$entry->entry_name}}">Carryover
+                        <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$entry->entry_name}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
                         <hr>
                     @endforeach
                     <br>

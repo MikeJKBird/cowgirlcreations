@@ -23,7 +23,6 @@ class UsersController extends Controller
         $user = Auth::user();
 
         $enrollments = Enrollment::join('events', 'enrollments.event_id', '=', 'events.id')
-            ->join('entries', 'enrollments.entry_id', '=', 'entries.id')
             ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
             ->where('enrollments.user_id', $user->id)->get();
 

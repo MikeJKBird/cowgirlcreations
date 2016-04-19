@@ -6,7 +6,8 @@ var $camping = $('#camping').data('camping-price');
 var $stall = $('#stall').data('stall-price');
 var $bbq = $('#bbqtickets').data('bbq-price');
 var $cbs = $('input[name="entry\[\]"]');
-var $cosanction = $('input[name="cosanction"]');
+var $cosanction = $('input[name="cosanction\[\]"]');
+var $usercost = $('input[name="usercost"]');
 
 $(document).ready(function() {
     $(':checkbox:checked').prop('checked',false);
@@ -75,9 +76,15 @@ function calcUsage1() {
     $("#totalprice").text($total + $bbqcost + $entrytotal + $cosanctiontotal);
 }
 
+function updateCost() {
+    // $usercost.val(parseInt($totalprice));
+    $usercost.val($total + $bbqcost + $entrytotal + $cosanctiontotal);
+}
+
 $("#totalprice").text($total + $bbqcost + $entrytotal);
 $cbs.click(calcUsage);
 $cosanction.click(calcUsage1);
 $( "#camping" ).on( "click", calculateCamping );
 $("#stall").on( "click", calculateStall);
 $("#bbqtickets").on("change", calculateBbq);
+$cbs.click(updateCost);

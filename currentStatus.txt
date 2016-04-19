@@ -1,8 +1,4 @@
-Admin Event Details
-    -->price displayed is not correct, it counts stall and camping fee for every enrollment
-    -->need to merge enrollments with same rider and horse
-        -->figure out how to display carryover and cosanction along side entry
-    
+
 
 
 Points
@@ -10,7 +6,6 @@ Points
         -->What controller?
         -->Use explode to get user id
 
-    -->Will she want points divided up by category?
 
 Entries
     -->should show user on event page which entries they have
