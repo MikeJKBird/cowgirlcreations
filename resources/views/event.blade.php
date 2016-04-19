@@ -75,11 +75,16 @@
                     @endif
                     <br>
                     @foreach($entries as $entry)
+                    <hr>
                         <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->entry_name}}"> {{$entry->entry_name}} : ${{$entry->price}}
 
-                        <input type="checkbox" name="carryover[]" value="{{$entry->entry_name}}">Carryover
-                        <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$entry->entry_name}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
-                        <hr>
+                        @if($entry->entry_name != "Open")
+                            <input type="checkbox" name="carryover[]" value="{{$entry->entry_name}}">Carryover
+                        @endif
+
+                        @if($cosanction->cosanction_price>0)
+                            <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$entry->entry_name}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
+                        @endif
                     @endforeach
                     <br>
                     <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">

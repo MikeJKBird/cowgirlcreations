@@ -22,15 +22,19 @@ class EnrollmentsController extends Controller
 
         foreach($entries as $entry) {
           $totalentry .= $entry .", ";
-          foreach($carryovers as $carryover) {
-            if($carryover == $entry) {
-              $totalentry .= "carryover, ";
-            }
+          if($carryovers != null){
+              foreach($carryovers as $carryover) {
+                if($carryover == $entry) {
+                  $totalentry .= "carryover, ";
+                }
+              }
           }
-          foreach($cosanctions as $cosanction) {
-            if($cosanction == $entry) {
-              $totalentry .= "cosanction, ";
-            }
+          if($cosanctions != null){
+              foreach($cosanctions as $cosanction) {
+                if($cosanction == $entry) {
+                  $totalentry .= "cosanction, ";
+                }
+              }
           }
         }
 
