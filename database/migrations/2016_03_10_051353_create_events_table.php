@@ -16,7 +16,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('location');
-            $table->string('deadline');
+            $table->date('deadline');
             $table->string('producer');
             $table->integer('cosanction_id');
             $table->longText('notes');

@@ -65,12 +65,13 @@ class EventsController extends Controller
 
         $event = new Event;
         $date = Carbon::createFromFormat('m/d/Y H:i A', $request->date)->toDateTimeString();
+        $deadline = Carbon::createFromFormat('m/d/Y H:i A', $request->deadline)->toDateTimeString();
 
         $event = Event::create([
             'name' => $request->name,
             'location' => $request->location,
             'cosanction' => $request->cosanction,
-            'deadline' => $request->deadline,
+            'deadline' => $deadline,
             'producer' => $request->producer,
             'cosanction_id' => $request->cosanction,
             'notes' => $request->notes,
@@ -113,9 +114,10 @@ class EventsController extends Controller
         }
         $entries = $event->entries()->get();
         $cosanction = $event->cosanction()->first();
+        $now = Carbon::now();
 
 
-        return view('event',compact('event', 'user', 'signedup', 'entries', 'cosanction'));
+        return view('event',compact('event', 'user', 'signedup', 'entries', 'cosanction','now'));
     }
 
     /**

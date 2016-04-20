@@ -30,7 +30,12 @@
                     </div>
                     <div class="form-group">
                         <label for='deadline'>Deadline</label>
-                        <input type="text" name='deadline' id='deadline' class='form-control' value='' required>
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type="text" name='deadline' id='deadline' class='form-control' value='' required>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for='producer'>Producer</label>
@@ -85,7 +90,7 @@
                     </div>
                     <div class="form-group">
                         <label for='date'>Date</label>
-                        <div class='input-group date' id='datetimepicker1'>
+                        <div class='input-group date' id='datetimepicker2'>
                             <input type="text" name='date' id='date' class='form-control' value='' required>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
@@ -107,6 +112,11 @@
     <script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker({
+
+            });
+        });
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
 
             });
         });

@@ -1,6 +1,6 @@
-Create Event
-    -->deadline should be carbon instance
-    -->will automatically stop allowing users to sign up or drop race
+in event, change @if($event->date > $now) to @if($event->deadline > $now) after migrate:refresh, for sign up or drop race
+
+deadline will automatically stop allowing users to sign up or drop race
 
 Have upcoming events on homepage just show events up to a certain date (a month ahead)
     -->use carbon to test the date of the event in a loop
@@ -21,7 +21,7 @@ Potential sign up issues
 
 Need to display events on a calendar
     -->fullcalendar.io
-    
+
 
 
 

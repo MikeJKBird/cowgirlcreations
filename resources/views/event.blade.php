@@ -39,7 +39,7 @@
         </div>
         <div class="text-center">
             <hr>
-            @if(!$event->uploadedresults)
+            @if($event->date > $now)
                 @if(Auth::check())
                     @if( count($user->horses) != 0)
 
@@ -93,7 +93,7 @@
                         <a href="/profile">Please add a horse to your profile to sign up</a>
                     @endif
                 @endif
-                @if(Auth::check() && $signedup)
+                @if(Auth::check() && $signedup && $event->date > $now)
                     <div class="pull-right">
 
                             <a href="/profile" type="submit" class="btn btn-danger">Drop Race</a>
@@ -104,7 +104,8 @@
                 @if(!Auth::check())
                     <h4><a href="/login">Log in</a> or <a href="/register">register</a> to sign up for the race</h4>
                 @endif
-            @else
+            @endif
+            @if($event->uploadedresults)
                 <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
             @endif
         </div>
