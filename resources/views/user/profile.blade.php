@@ -61,12 +61,14 @@
                     @foreach($enrollments as $enrollment)
                         <div class="row">
                             <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$enrollment->event_id}}">{{$enrollment->name}}</a> riding {{$enrollment->horse_name}}</p>
-                            <form method="POST" action="/removeevent/{{$enrollment->event_id}}" class="col-md-2">
-                                {{csrf_field()}}
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="user_id" value="{{$user->id}}">
-                                <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
-                            </form>
+                            @if($enrollment->deadline > $now)
+                                <form method="POST" action="/removeevent/{{$enrollment->event_id}}" class="col-md-2">
+                                    {{csrf_field()}}
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="user_id" value="{{$user->id}}">
+                                    <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
+                                </form>
+                            @endif
                         </div>
                     @endforeach
 

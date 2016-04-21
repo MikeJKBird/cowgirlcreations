@@ -6,6 +6,7 @@ use App\Enrollment;
 use App\Event;
 use App\Horse;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,12 +22,13 @@ class UsersController extends Controller
     public function showprofile()
     {
         $user = Auth::user();
+        $now = Carbon::now();
 
         $enrollments = Enrollment::join('events', 'enrollments.event_id', '=', 'events.id')
             ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
             ->where('enrollments.user_id', $user->id)->get();
 
-        return view('user.profile', compact('user', 'enrollments'));
+        return view('user.profile', compact('user', 'enrollments', 'now'));
 
     }
 

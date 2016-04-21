@@ -1,5 +1,3 @@
-in event, change @if($event->date > $now) to @if($event->deadline > $now) after migrate:refresh, for sign up or drop race
-
 deadline will automatically stop allowing users to sign up or drop race
 
 Have upcoming events on homepage just show events up to a certain date (a month ahead)

@@ -39,7 +39,7 @@
         </div>
         <div class="text-center">
             <hr>
-            @if($event->date > $now)
+            @if($event->deadline > $now)
                 @if(Auth::check())
                     @if( count($user->horses) != 0)
 
@@ -93,7 +93,7 @@
                         <a href="/profile">Please add a horse to your profile to sign up</a>
                     @endif
                 @endif
-                @if(Auth::check() && $signedup && $event->date > $now)
+                @if(Auth::check() && $signedup && $event->deadline > $now)
                     <div class="pull-right">
 
                             <a href="/profile" type="submit" class="btn btn-danger">Drop Race</a>
