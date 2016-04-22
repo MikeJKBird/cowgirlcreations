@@ -16,6 +16,7 @@
 <body class="no-footer">
     <a href='/home'>
         <div id="welcome-page">
+        <img src="/img/logo_white.png" />
             <h1 class="text-center">Cowgirl Creations</h1>
         </div>
     </a>

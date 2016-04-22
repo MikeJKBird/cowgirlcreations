@@ -22,7 +22,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('photos', 'PagesController@photos');
 
-    Route::get('contact', 'PagesController@contact');
+    Route::get('forms', 'PagesController@forms');
 
 });
 

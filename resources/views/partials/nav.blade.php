@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="/home">
-                Cowgirl Creations
+                <img src="/img/logo_black.png" />
             </a>
         </div>
 
@@ -22,7 +22,7 @@
                 <li><a href="/calendar">Events</a></li>
                 <li><a href="/standings">Standings</a></li>
                 <li><a href="/photos">Hats and Artwork</a></li>
-                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/forms">Forms</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

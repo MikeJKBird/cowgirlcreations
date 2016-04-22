@@ -1,4 +1,3 @@
-deadline will automatically stop allowing users to sign up or drop race
 
 Have upcoming events on homepage just show events up to a certain date (a month ahead)
     -->use carbon to test the date of the event in a loop

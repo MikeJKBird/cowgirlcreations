@@ -1,8 +1,7 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "welcome";
+@import "nav";
 
-.navbar {
-  margin-bottom: 0;
-}
 html {
   position: relative;
   min-height: 100%;
@@ -36,25 +35,7 @@ iframe {
   margin-bottom: 0px;
 }
 
-#welcome-page {
-  background-image: url('/img/horses_05.jpg');
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-}
-#welcome-page a:hover, a:visited, a:link, a:active{
 
-  text-decoration: none;
-}
-
-#welcome-page h1 {
-  font-size: 4em;
-  color:white;
-  text-shadow: 2px 2px black;
-  margin: 0px;
-  padding-top: 50vh;
-  text-decoration: none;
-}
 
 #currentprice {
   font-size: 2em;

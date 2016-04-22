@@ -73,8 +73,8 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function contact()
+    public function forms()
     {
-        return view('contact');
+        return view('forms');
     }
 }

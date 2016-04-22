@@ -5749,8 +5749,37 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+#welcome-page {
+  background-image: url("/img/horses_05.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 40vh; }
+
+#welcome-page a:hover, a:visited, a:link, a:active {
+  text-decoration: none; }
+
+#welcome-page h1 {
+  font-size: 4em;
+  color: white;
+  text-shadow: 2px 2px black;
+  margin: 0px;
+  text-decoration: none; }
+
+#welcome-page img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 .navbar {
   margin-bottom: 0; }
+
+.navbar-brand img {
+  width: 35px;
+  height: 35px;
+  padding-bottom: 12px; }
 
 html {
   position: relative;
@@ -5782,23 +5811,6 @@ iframe {
 
 .no-footer {
   margin-bottom: 0px; }
-
-#welcome-page {
-  background-image: url("/img/horses_05.jpg");
-  background-size: cover;
-  height: 100vh;
-  width: 100vw; }
-
-#welcome-page a:hover, a:visited, a:link, a:active {
-  text-decoration: none; }
-
-#welcome-page h1 {
-  font-size: 4em;
-  color: white;
-  text-shadow: 2px 2px black;
-  margin: 0px;
-  padding-top: 50vh;
-  text-decoration: none; }
 
 #currentprice {
   font-size: 2em;
