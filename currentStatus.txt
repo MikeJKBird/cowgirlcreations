@@ -1,6 +1,5 @@
-
-Have upcoming events on homepage just show events up to a certain date (a month ahead)
-    -->use carbon to test the date of the event in a loop
+Event page
+Whats going on with the need for an extra </div> after the 2nd column?
 
 Points
     -->need to figure out how to best handle point submission form

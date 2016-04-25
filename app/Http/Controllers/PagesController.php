@@ -8,6 +8,7 @@ use App\Event;
 use App\User;
 use App\Photo;
 use App\Http\Requests;
+use Carbon\Carbon;
 
 /**
  * PagesController
@@ -29,7 +30,10 @@ class PagesController extends Controller
      */
     public function home()
     {
-        $events = Event::all();
+        $now = Carbon::now();
+        $upcoming = $now->addDays(30);
+
+        $events = Event::where('date', '<', $upcoming)->get();
         $sponsors = Sponsor::orderby('value', 'desc')->get();
 
         return view('home', compact('events', 'sponsors'));

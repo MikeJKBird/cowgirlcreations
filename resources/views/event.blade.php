@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container">
+<div class="container">
         <div class="text-center">
             <h1>{{ $event->name }}</h1>
             <hr>
@@ -13,28 +13,125 @@
 
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
-                <p>Located at: {{$event->location}}</p>
-                <p>Co-sanctioned: {{$cosanction->cosanction_name}}</p>
-                <p>Occuring: {{$event->date->toDayDateTimeString()}}</p>
-                <p>Pre-Entry Deadline: {{$event->deadline}} </p>
-                <p>Producer: {{$event->producer}}</p>
-                <p>Dress Code: {{$event->dresscode}}</p>
-                <p>Option: {{$event->option}}</p>
-                <p>Time Only: ${{$event->timeonly}}</p>
-            </div>
             <div class="col-md-4 col-md-offset-1">
-                <p>Late Fee: ${{$event->latefee}}</p>
-                <p id="arenafee" data-arena-fee="{{$event->arenafee}}">Arena Fee: ${{$event->arenafee}}</p>
-                @if( $event->campingfee != null)
-                <p>Camping Fee: ${{$event->campingfee}}</p>
-                @endif
-                @if( $event->stallfee != null)
-                <p>Stall Fee: ${{$event->stallfee}}</p>
-                @endif
-                <p>BBQ: ${{$event->bbq}}</p>
+                <table class="table">
+                    <tr>
+                        <td>
+                            Located at:
+                        </td>
+                        <td>
+                            {{$event->location}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Co-sanctioned:
+                        </td>
+                        <td>
+                            {{$cosanction->cosanction_name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Occuring:
+                        </td>
+                        <td>
+                            {{$event->date->toDayDateTimeString()}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pre-Entry Deadline:
+                        </td>
+                        <td>
+                            {{$event->deadline}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Producer:
+                        </td>
+                        <td>
+                            {{$event->producer}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Dress Code:
+                        </td>
+                        <td>
+                            {{$event->dresscode}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Option:
+                        </td>
+                        <td>
+                            {{$event->option}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-3">
+                <table class="table">
+                    <tr>
+                        <td>
+                            Time Only:
+                        </td>
+                        <td>
+                            ${{$event->timeonly}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Late Fee:
+                        </td>
+                        <td>
+                            ${{$event->latefee}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="arenafee" data-arena-fee="{{$event->arenafee}}">
+                            Arena Fee:
+                        </td>
+                        <td>
+                            ${{$event->arenafee}}
+                        </td>
+                    </tr>
+                    @if( $event->campingfee != null)
+                        <tr>
+                            <td>
+                                Camping Fee:
+                            </td>
+                            <td>
+                                ${{$event->campingfee}}
+                            </td>
+                        </tr>
+                    @endif
+                    @if( $event->stallfee != null)
+                        <tr>
+                            <td>
+                                Stall Fee:
+                            </td>
+                            <td>
+                                ${{$event->stallfee}}
+                            </td>
+                        </tr>
+                    @endif
+                    <tr>
+                        <td>
+                            BBQ:
+                        </td>
+                        <td>
+                            ${{$event->bbq}}
+                        </td>
+                    </tr>
+                </table
+            </div>
+        </div>
+            <div class="col-md-4">
                 <p>Notes: {{$event->notes}}</p>
-
             </div>
         </div>
         <div class="text-center">
