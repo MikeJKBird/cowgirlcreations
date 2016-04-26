@@ -14,11 +14,7 @@ Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
 
-
 Need to display events on a calendar
-    -->fullcalendar.io
-
-
 
 
 create thumbnail for photo

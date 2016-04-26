@@ -8,6 +8,9 @@
             <p>Sign up now!</p>
         </div>
     </div>
+
+    <div id='calendar'></div>
+
     <div class="container">
 
 
@@ -18,4 +21,23 @@
         @endforeach
     </div>
 
+
+
+@stop
+
+@section('scripts')
+<script src='/fullcalendar/fullcalendar.js'></script>
+<script>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'title',
+                center: 'today prev,next',
+                right: ''
+            },
+            contentHeight: 600,
+            fixedWeekCount: false
+        });
+    });
+</script>
 @stop

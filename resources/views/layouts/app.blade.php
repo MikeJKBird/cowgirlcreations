@@ -17,6 +17,11 @@
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/all.css" rel="stylesheet">
 
+
+    <link rel='stylesheet' href='/fullcalendar/fullcalendar.css' />
+    <script src='/fullcalendar/lib/moment.min.js'></script>
+    <script src='/fullcalendar/lib/jquery.min.js'></script>
+
 </head>
 <body id="app-layout">
     @include('partials.nav')
@@ -26,7 +31,7 @@
 
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/lightbox.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
