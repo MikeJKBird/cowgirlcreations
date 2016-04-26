@@ -28,12 +28,14 @@
     $(document).ready(function() {
         $('#calendar').fullCalendar({
             header: {
-                left: 'title',
-                center: 'today prev,next',
+                left: '',
+                center: 'title prev,next',
                 right: ''
             },
-            contentHeight: 600,
+            contentHeight: 500,
             fixedWeekCount: false,
+            eventColor: '#f1b83a',
+            eventTextColor: 'black',
             {!!$eventData!!}
         });
     });

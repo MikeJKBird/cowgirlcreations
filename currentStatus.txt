@@ -1,8 +1,6 @@
-Event page
-Whats going on with the need for an extra </div> after the 2nd column?
-
 Points
     -->need to figure out how to best handle point submission form
+        -->Vital: need to know how points are assigned to racers/horses/both
         -->What controller?
         -->Use explode to get user id
 
@@ -13,8 +11,6 @@ Entries
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
-
-Need to display events on a calendar
 
 
 create thumbnail for photo

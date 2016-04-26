@@ -5812,6 +5812,9 @@ iframe {
 .no-footer {
   margin-bottom: 0px; }
 
+#calendar a {
+  text-align: center; }
+
 #currentprice {
   font-size: 2em;
   color: rgba(0, 182, 0, 0.97); }
