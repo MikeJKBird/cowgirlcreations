@@ -9,25 +9,22 @@
         </div>
     </div>
 
-    <div id='calendar'></div>
+
 
     <div class="container">
+        <div id='calendar'></div>
 
-
-        <h3>Events</h3>
-        @foreach ($events as $event)
-            <a href="calendar/{{$event->id}}">{{ $event->name }}</a>: {{$event->date->toFormattedDateString()}}
-            <hr>
-        @endforeach
     </div>
-
 
 
 @stop
 
 @section('scripts')
 <script src='/fullcalendar/fullcalendar.js'></script>
+
 <script>
+
+
     $(document).ready(function() {
         $('#calendar').fullCalendar({
             header: {
@@ -36,7 +33,8 @@
                 right: ''
             },
             contentHeight: 600,
-            fixedWeekCount: false
+            fixedWeekCount: false,
+            {!!$eventData!!}
         });
     });
 </script>

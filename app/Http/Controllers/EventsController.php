@@ -25,7 +25,16 @@ class EventsController extends Controller
         $events = Event::all();
 
 
-        return view('calendar', compact('events'));
+        $eventData = 'events:[';
+
+        foreach($events as $event){
+             $date = Carbon::createFromFormat('Y-m-d h:i:s', $event->date)->toDateString();
+
+            $eventData .= '{title: \'' . $event->name .'\', start: \'' . $date . '\', url: \'/calendar/' .$event->id . '\'},';
+        }
+        $eventData .= ']';
+
+        return view('calendar', compact('events', 'eventData'));
     }
 
     /**

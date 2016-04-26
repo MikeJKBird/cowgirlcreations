@@ -39,15 +39,6 @@ class PagesController extends Controller
         return view('home', compact('events', 'sponsors'));
     }
 
-    /**
-     * Loads the calendar of events
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function calendar()
-    {
-        return view('calendar');
-    }
 
     /**
      * Loads the standings of the members
