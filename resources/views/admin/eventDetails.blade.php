@@ -24,6 +24,7 @@
                     @if( $event->bbq != null)
                         <th>BBQ Tickets</th>
                     @endif
+                    <th>Time Only Runs</th>
                     <th>Total</th>
                 </tr>
 
@@ -50,6 +51,7 @@
                         @if( $event->bbq != null)
                             <td>{{$table->bbqtickets}}</td>
                         @endif
+                        <td>{{$table->timeonlyruns}}</td>
                         <td>${{$table->totalprice}}</td>
                     </tr>
                 @endforeach
