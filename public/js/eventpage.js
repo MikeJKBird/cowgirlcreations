@@ -35,6 +35,7 @@ var calculateCamping = function() {
         $total -= $camping;
         $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal);
     }
+    updateCost();
 }
 
 var calculateStall = function() {
@@ -46,12 +47,14 @@ var calculateStall = function() {
         $total -= $stall;
         $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal);
     }
+    updateCost();
 }
 
 var calculateBbq = function() {
     $qty = $('#bbqtickets').val();
     $bbqcost = $qty * $bbq;
     $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal);
+    updateCost();
 }
 
 function displayVals() {
@@ -74,6 +77,7 @@ function calcUsage1() {
             $cosanctiontotal = parseInt($cosanctiontotal) + parseInt($(this).attr('data-price'));
     });
     $("#totalprice").text($total + $bbqcost + $entrytotal + $cosanctiontotal);
+    updateCost();
 }
 
 function updateCost() {

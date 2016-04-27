@@ -123,7 +123,7 @@ class EventsController extends Controller
         }
         $entries = $event->entries()->get();
         $cosanction = $event->cosanction()->first();
-        $now = Carbon::now();
+        $now = Carbon::now('America/Vancouver');
 
 
         return view('event',compact('event', 'user', 'signedup', 'entries', 'cosanction','now'));

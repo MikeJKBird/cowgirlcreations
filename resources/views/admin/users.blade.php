@@ -13,6 +13,8 @@
                 <th>Email</th>
                 <th>Member Number</th>
                 <th>Points</th>
+                <th>Birthday</th>
+                </th>
                 <th>Edit Member</th>
             </tr>
         @foreach ($users as $user)
@@ -21,6 +23,7 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->memberNumber }}</td>
                 <td>{{ $user->points }}</td>
+                <td>{{ $user->birthday }}</td>
                 <td><a href="/admin/editmember/{{$user->id}}">Edit</a></td>
             </tr>
         @endforeach

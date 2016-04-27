@@ -18,7 +18,7 @@
                         <input type="number" name='cosanction_price' id='cosanction_price' class='form-control' value='' min="0" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Add Entry</button>
+                        <button type="submit" class="btn btn-primary">Add Co-Sanction</button>
                     </div>
                 </form>
 

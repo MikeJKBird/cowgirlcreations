@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="/calendar">Events</a></li>
+                <li><a href="/calendar">Calendar</a></li>
                 <li><a href="/standings">Standings</a></li>
                 <li><a href="/photos">Hats and Artwork</a></li>
                 <li><a href="/forms">Forms</a></li>

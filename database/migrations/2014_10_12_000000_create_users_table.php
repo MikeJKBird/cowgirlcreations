@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('points')->nullable()->unsigned();
+            $table->integer('points')->default(0)->unsigned();
             $table->string('memberNumber')->nullable();
             $table->boolean('isadmin')->default(false);
             $table->string('birthday')->nullable();

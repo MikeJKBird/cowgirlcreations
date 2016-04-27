@@ -19,7 +19,7 @@
                         <input type="number" name='price' id='price' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Add Entry</button>
+                        <button type="submit" class="btn btn-primary">Add Division</button>
                     </div>
                 </form>
 
