@@ -179,7 +179,7 @@
                                     @endforeach
                                     </table>
                                     <label for="timeonlys">Time Only Runs</label>
-                                    <input type="number" name="timeonlys" id="timeonlys" data-timeonlys-price={{$event->timeonly}} value="0" min="0">
+                                    <input type="number" name="timeonlys" id="timeonlys" data-timeonlys-price={{$event->timeonly}} value="" min="0">
 
                             </div>
                             <div class="col-md-3 text-left">
@@ -196,7 +196,7 @@
                                 @endif
                                 @if( $event->bbq != null)
                                     <label for="bbqtickets">BBQ Tickets</label>
-                                    <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="0" min="0">
+                                    <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="" min="0">
                                 @endif
 
 

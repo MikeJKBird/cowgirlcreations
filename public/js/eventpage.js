@@ -14,6 +14,7 @@ var $usercost = $('input[name="usercost"]');
 $(document).ready(function() {
     $(':checkbox:checked').prop('checked',false);
     $('#bbqtickets').val(0);
+    $('#timeonlys').val(0);
     $(window).keydown(function(event){
         if(event.keyCode == 13) {
             event.preventDefault();
@@ -57,7 +58,7 @@ var calculateTimeOnlys = function() {
 }
 
 
-function calcUsage() {
+function calcEntriesCost() {
     $entrytotal = 0;
     $cbs.each(function() {
         if (this.checked)
@@ -65,7 +66,7 @@ function calcUsage() {
     });
 }
 
-function calcUsage1() {
+function calcCosanctionCost() {
     $cosanctiontotal = 0;
     $cosanction.each(function() {
         if (this.checked)
@@ -82,8 +83,8 @@ $(document).click(function() {
     updateCost();
 });
 
-$cbs.click(calcUsage);
-$cosanction.click(calcUsage1);
+$cbs.click(calcEntriesCost);
+$cosanction.click(calcCosanctionCost);
 $( "#camping" ).on( "click", calculateCamping );
 $("#stall").on( "click", calculateStall);
 $("#bbqtickets").on("change", calculateBbq);

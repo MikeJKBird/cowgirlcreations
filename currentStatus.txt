@@ -11,6 +11,9 @@ Entries
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
+Forms/files need to be able to be uploaded by admin, and then downloaded by users
+    -->should be able to add and delete
+    -->anyone can download
 
 
 create thumbnail for photo
