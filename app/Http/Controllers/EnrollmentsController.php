@@ -37,7 +37,6 @@ class EnrollmentsController extends Controller
               }
           }
         }
-
             $enrollment = Enrollment::create([
                 'user_id' => $request->userID,
                 'event_id' => $request->eventID,
@@ -46,7 +45,7 @@ class EnrollmentsController extends Controller
                 'camping' => $request->camping,
                 'stall' => $request->stall,
                 'bbqtickets' => $request->bbqtickets,
-                'timeonlyruns' =>$request->timeonlys,
+                'timeonlyruns' => $request->timeonlys,
                 'totalprice' => $request->usercost
             ]);
 

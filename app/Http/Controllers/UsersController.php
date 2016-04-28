@@ -22,7 +22,7 @@ class UsersController extends Controller
     public function showprofile()
     {
         $user = Auth::user();
-        $now = Carbon::now();
+        $now = Carbon::now('America/Vancouver');
 
         $enrollments = Enrollment::join('events', 'enrollments.event_id', '=', 'events.id')
             ->join('horses', 'enrollments.horse_id', '=', 'horses.id')

@@ -31,44 +31,31 @@ $(document).ready(function() {
 var calculateCamping = function() {
     if($('#camping').is(':checked')) {
         $total += $camping;
-        $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
     }
     else if($('#camping').not(':checked')) {
         $total -= $camping;
-        $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
     }
-    updateCost();
 }
 
 var calculateStall = function() {
     if($('#stall').is(':checked')) {
         $total += $stall;
-        $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
     }
     else if($('#stall').not(':checked')) {
         $total -= $stall;
-        $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
     }
-    updateCost();
 }
 
 var calculateBbq = function() {
     $qty = $('#bbqtickets').val();
     $bbqcost = $qty * $bbq;
-    $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
-    updateCost();
 }
 
 var calculateTimeOnlys = function() {
     $qty = $('#timeonlys').val();
     $timeonlycost = $qty * $timeonlys;
-    $('#totalprice').text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
-    updateCost();
 }
 
-// function displayVals() {
-//     calcUsage();
-// }
 
 function calcUsage() {
     $entrytotal = 0;
@@ -76,7 +63,6 @@ function calcUsage() {
         if (this.checked)
             $entrytotal = parseInt($entrytotal) + parseInt($(this).attr('data-price'));
     });
-    $("#totalprice").text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
 }
 
 function calcUsage1() {
@@ -85,20 +71,20 @@ function calcUsage1() {
         if (this.checked)
             $cosanctiontotal = parseInt($cosanctiontotal) + parseInt($(this).attr('data-price'));
     });
-    $("#totalprice").text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
-    updateCost();
 }
 
 function updateCost() {
-    // $usercost.val(parseInt($totalprice));
+    $("#totalprice").text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
     $usercost.val($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
 }
 
-$("#totalprice").text($total + $bbqcost + $entrytotal + $cosanctiontotal + $timeonlycost);
+$(document).click(function() {
+    updateCost();
+});
+
 $cbs.click(calcUsage);
 $cosanction.click(calcUsage1);
 $( "#camping" ).on( "click", calculateCamping );
 $("#stall").on( "click", calculateStall);
 $("#bbqtickets").on("change", calculateBbq);
 $("#timeonlys").on("change", calculateTimeOnlys);
-$cbs.click(updateCost);

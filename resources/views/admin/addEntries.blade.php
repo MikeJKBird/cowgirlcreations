@@ -15,7 +15,7 @@
                         <input type="text" name='entry_name' id='entry_name' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
-                        <label for='price'>Price:</label>
+                        <label for='price'>Price: ($)</label>
                         <input type="number" name='price' id='price' class='form-control' value='' required>
                     </div>
                     <div class="form-group">
