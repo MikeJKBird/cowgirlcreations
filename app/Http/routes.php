@@ -8,6 +8,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('profile', 'UsersController@showprofile');
     Route::get('editprofile', 'UsersController@editprofile');
     Route::patch('profile/{user}','UsersController@updateprofile');
+    Route::get('/racesentered', 'UsersController@racesEntered');
 
     Route::post('/newhorse', 'HorsesController@store');
     Route::delete('horses/{id}', 'HorsesController@destroy');

@@ -11,7 +11,24 @@ Entries
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
+FORM PAGE - admin uploads document, any user can download it
+    —>displayed with description
 
+    co-sanction is nullable and can be entered similar to a carry over, except for every run
+
+    On member profile info, when no member number or points, display 0 to encourage them to join
+
+    arena fee usually per rider, not per horse
+
+    add new page under profile for races entered
+
+    For admin’s member update, have default be existing member number
+
+    Look into bleeding cowboy font for H1
+
+    Admin will enter rankings instead of points
+
+    points are for everyone, and placement are additional
 
 create thumbnail for photo
 

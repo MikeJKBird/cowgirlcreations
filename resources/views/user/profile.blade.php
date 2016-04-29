@@ -6,7 +6,7 @@
         <h1>Welcome {{$user->name}}!</h1>
         <hr>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-offset-1">
                 <h3>Info</h3>
                 @if($user->memberNumber != null)
                     <p>Your member number is: {{$user->memberNumber}}</p>
@@ -22,7 +22,7 @@
                 @endif
 
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 col-md-offset-1 text-center">
                 @if(count($user->horses)>0)
                     <h3>Horses:</h3>
                     @foreach($user->horses as $horse)
@@ -56,23 +56,7 @@
                 </form>
                 <hr>
             </div>
-            <div class="col-md-4">
-                <h3>The races you've signed up for:</h3>
-                    @foreach($enrollments as $enrollment)
-                        <div class="row">
-                            <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$enrollment->event_id}}">{{$enrollment->name}}</a> riding {{$enrollment->horse_name}}</p>
-                            @if($enrollment->deadline > $now)
-                                <form method="POST" action="/removeevent/{{$enrollment->event_id}}" class="col-md-2">
-                                    {{csrf_field()}}
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="user_id" value="{{$user->id}}">
-                                    <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
-                                </form>
-                            @endif
-                        </div>
-                    @endforeach
 
-            </div>
         </div>
     </div>
 @stop
