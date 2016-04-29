@@ -3,6 +3,8 @@ Points
         -->Vital: need to know how points are assigned to racers/horses/both
         -->What controller?
         -->Use explode to get user id
+        Admin will enter rankings instead of points
+        points are for everyone, and placement are additional
 
 
 Entries
@@ -20,9 +22,7 @@ FORM PAGE - admin uploads document, any user can download it
 
     Look into bleeding cowboy font for H1
 
-    Admin will enter rankings instead of points
 
-    points are for everyone, and placement are additional
 
 create thumbnail for photo
 

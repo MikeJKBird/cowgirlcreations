@@ -6,7 +6,7 @@
         <h1>Welcome {{$user->name}}!</h1>
         <hr>
         <div class="row">
-            <div class="col-md-4 col-md-offset-1">
+            <div class="col-md-4">
                 <h3>Info</h3>
                 @if($user->memberNumber != null)
                     <p>Your member number is: {{$user->memberNumber}}</p>
@@ -20,16 +20,17 @@
                 @else
                     <p>You can add your birthday <a href="/editprofile">here</a></p>
                 @endif
+                <p><a href="/racesentered">View your races</a></p>
 
             </div>
-            <div class="col-md-4 col-md-offset-1 text-center">
+            <div class="col-md-4">
                 @if(count($user->horses)>0)
                     <h3>Horses:</h3>
                     @foreach($user->horses as $horse)
-                        <div class="col-md-6 col-md-offset-2">
+                        <div class="col-md-6">
                             {{$horse->horse_name}}
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-md-offset-2">
                             <form method="POST" action="/horses/{{$horse->id}}">
                                 {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE">
@@ -39,8 +40,8 @@
                         <br>
                     @endforeach
                 @endif
-                <hr>
-
+            </div>
+            <div class="col-md-4">
                 <h4>Add a new Horse</h4>
                 <form method="POST" action="/newhorse">
                     {{csrf_field()}}

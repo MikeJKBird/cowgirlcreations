@@ -11,7 +11,7 @@
 
             @foreach($enrollments as $enrollment)
             <div class="row">
-                <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$enrollment->event_id}}">{{$enrollment->name}}</a> riding {{$enrollment->horse_name}}</p>
+                <p class="col-md-9"><a href="/calendar/{{$enrollment->event_id}}">{{$enrollment->name}}</a> riding {{$enrollment->horse_name}}</p>
                 @if($enrollment->deadline > $now)
                 <form method="POST" action="/removeevent/{{$enrollment->event_id}}" class="col-md-2">
                     {{csrf_field()}}
@@ -26,6 +26,8 @@
             <h3>You aren't signed up for any races right now!</h3>
             <h4><a href="/calendar">Click here to view the calendar</a></h4>
         @endif
+        <hr />
+        <p><a href="/profile" class="btn btn-primary">Back to profile</a></p>
 
     </div>
 </div>

@@ -20,7 +20,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="/admin/event">Add New Event</a></li>
-                <li><a href="/admin/calendar">Calendar of Events</a></li>
+                <li><a href="/admin/calendar">List of Events</a></li>
                 <li><a href="/admin/sponsors">List of Sponsors</a></li>
                 <li><a href="/admin/photos">Photos</a></li>
                 <li><a href="/admin/members">List of Members</a></li>

@@ -5,11 +5,14 @@
 <div class="container">
     <div class="row">
         <div class="text-center">
-            <h1>{{ $event->name }}</h1>
-            <hr>
-            @if(Auth::check() && $signedup)
-                <h3>Signed up!</h3>
+            <div class="col-md-6 col-md-offset-3">
+                <h1>{{ $event->name }}</h1>
                 <hr>
+            </div>
+            @if(Auth::check() && $signedup)
+            <div class="col-md-6 col-md-offset-3">
+                <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Signed up!</h3>
+            </div>
             @endif
             @if(Auth::check() && $signedup && $event->deadline > $now)
                 <div class="pull-right">
@@ -140,8 +143,8 @@
             </div>
         </div>
         <div class="text-center">
-            <hr>
             @if($event->deadline > $now)
+                <hr>
                 @if(Auth::check())
                     @if( count($user->horses) != 0)
                         <div class="row">
@@ -225,6 +228,7 @@
             @endif
             @if($event->uploadedresults)
                 <a href="/results/{{$event->id}}"><h3>View Results!</h3></a>
+                <br />
             @endif
         </div>
 
