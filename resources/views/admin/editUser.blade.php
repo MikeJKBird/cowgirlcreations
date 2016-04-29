@@ -19,7 +19,7 @@
                     <br>
 
                     <label for="memberNumber">Member Number:</label>
-                    <input type="text" name="memberNumber" value="{{ old('memberNumber') }}">
+                    <input type="text" name="memberNumber" value="{{$user->memberNumber}}">
                     <br>
 
                     <input type="submit" value="Update Information">
