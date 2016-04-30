@@ -20,7 +20,7 @@
                 @else
                     <p>You can add your birthday <a href="/editprofile">here</a></p>
                 @endif
-                <p><a href="/racesentered">View your races</a></p>
+                <p><a href="/racesentered" class="btn btn-primary">View your races</a></p>
 
             </div>
             <div class="col-md-4">
