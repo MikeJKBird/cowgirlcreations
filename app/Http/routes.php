@@ -64,4 +64,6 @@ Route::group(['middleware' => ['web', 'admin']], function () {
     Route::post('admin/photos', 'PhotosController@add');
     Route::patch('photo/{photo}', 'PhotosController@update');
     Route::delete('deletephoto/{id}', 'PhotosController@destroy');
+
+    Route::get('admin/addFile', 'UploadedFilesController@create');
 });
