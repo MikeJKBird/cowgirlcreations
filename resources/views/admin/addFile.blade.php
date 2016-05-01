@@ -10,7 +10,19 @@
             {{csrf_field()}}
             {{method_field('PATCH')}}
             Select results to upload:
-            <input type="file" name="" id="">
+
+            <div class="form-group">
+                <label for='filename'>Name:</label>
+                <input type="text" name='filename' id='filename' class='form-control thumb' value='' required>
+            </div>
+
+            <div class="form-group">
+                <label for='description'>Description:</label>
+                <input type="text" name='description' id='description' class='form-control thumb' value='' required>
+            </div>
+
+            <input type="file" name="file" id="">
+
             <input type="submit" value="Add File" name="submit">
         </form>
 
