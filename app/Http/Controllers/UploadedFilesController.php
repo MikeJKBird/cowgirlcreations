@@ -21,14 +21,17 @@ class UploadedFilesController extends Controller
 
     public function store(Request $request)
     {
-        if ($request->hasFile('raceresult')) {
+        if ($request->hasFile('file')) {
             $uploadedFile = new UploadedFile;
             $file = $request->file('file');
+            $name = $request->name;
+            $file->move('files', $name);
 
             $uploadedFile = UploadedFile::create([
-                'filename' = $request->name,
-                'description' = $request->description,
-            ])
+                'filename' => $request->name,
+                'description' => $request->description,
+                'path' => $request->name
+            ]);
         }
         return back();
     }
