@@ -23,6 +23,12 @@ class SponsorsController extends Controller
     }
 
 
+    /**
+     * Save a sponsor
+     * 
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request)
     {
         $sponsor = new Sponsor;
@@ -49,4 +55,3 @@ class SponsorsController extends Controller
         return back();
     }
 }
-

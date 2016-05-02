@@ -17,10 +17,10 @@
                 @endforeach
             </ul>
         </div>
-        <div class="row col-md-5">
-            <p class="lead text-center">This is Cowgirl Creations. stuff stuff stuff</p>
+        <div class="row col-md-5 text-center">
+            <p class="lead">This is Cowgirl Creations. stuff stuff stuff</p>
             <h3>Email: 123@fake.com</h3>
-            <h3><a href="https://www.facebook.com/groups/cowgirlcreations/">Facebook</a></h3>
+            <h3><a href="https://www.facebook.com/groups/cowgirlcreations/" target="_blank">Facebook</a></h3>
         </div>
         <div class="row col-md-3  col-md-offset-1">
             <h3 class="">Our Upcoming events</h3>

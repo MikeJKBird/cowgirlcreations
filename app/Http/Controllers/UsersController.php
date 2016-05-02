@@ -58,6 +58,18 @@ class UsersController extends Controller
         return redirect("/profile");
     }
 
+    public function racesEntered()
+    {
+        $user = Auth::user();
+        $now = Carbon::now('America/Vancouver');
+
+        $enrollments = Enrollment::join('events', 'enrollments.event_id', '=', 'events.id')
+            ->join('horses', 'enrollments.horse_id', '=', 'horses.id')
+            ->where('enrollments.user_id', $user->id)->get();
+
+        return view('user.racesEntered', compact('user', 'enrollments', 'now'));
+    }
+
 
     //***** Admin
 

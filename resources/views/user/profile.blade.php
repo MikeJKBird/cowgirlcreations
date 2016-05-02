@@ -20,16 +20,17 @@
                 @else
                     <p>You can add your birthday <a href="/editprofile">here</a></p>
                 @endif
+                <p><a href="/racesentered" class="btn btn-primary">View your races</a></p>
 
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4">
                 @if(count($user->horses)>0)
                     <h3>Horses:</h3>
                     @foreach($user->horses as $horse)
-                        <div class="col-md-6 col-md-offset-2">
+                        <div class="col-md-6">
                             {{$horse->horse_name}}
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-md-offset-2">
                             <form method="POST" action="/horses/{{$horse->id}}">
                                 {{csrf_field()}}
                                 <input type="hidden" name="_method" value="DELETE">
@@ -39,8 +40,8 @@
                         <br>
                     @endforeach
                 @endif
-                <hr>
-
+            </div>
+            <div class="col-md-4">
                 <h4>Add a new Horse</h4>
                 <form method="POST" action="/newhorse">
                     {{csrf_field()}}
@@ -56,23 +57,7 @@
                 </form>
                 <hr>
             </div>
-            <div class="col-md-4">
-                <h3>The races you've signed up for:</h3>
-                    @foreach($enrollments as $enrollment)
-                        <div class="row">
-                            <p class="col-md-9 col-md-offset-1"><a href="/calendar/{{$enrollment->event_id}}">{{$enrollment->name}}</a> riding {{$enrollment->horse_name}}</p>
-                            @if($enrollment->deadline > $now)
-                                <form method="POST" action="/removeevent/{{$enrollment->event_id}}" class="col-md-2">
-                                    {{csrf_field()}}
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="user_id" value="{{$user->id}}">
-                                    <button type="submit" class="btn btn-xs btn-danger">Drop Race</button>
-                                </form>
-                            @endif
-                        </div>
-                    @endforeach
 
-            </div>
         </div>
     </div>
 @stop
