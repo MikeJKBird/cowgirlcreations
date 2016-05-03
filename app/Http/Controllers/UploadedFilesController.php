@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\UploadedFile;
 
 class UploadedFilesController extends Controller
 {
@@ -34,5 +35,12 @@ class UploadedFilesController extends Controller
             ]);
         }
         return back();
+    }
+
+    public function index()
+    {
+        $files = UploadedFile::get();
+
+        return view('forms', compact('files'));
     }
 }

@@ -63,13 +63,5 @@ class PagesController extends Controller
         return view('photos', compact('photos'));
     }
 
-    /**
-     * Loads the contact page
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function forms()
-    {
-        return view('forms');
-    }
+
 }
