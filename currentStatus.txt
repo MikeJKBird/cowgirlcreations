@@ -15,6 +15,16 @@ Entries
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Forms/files need to be able to be uploaded by admin, and then downloaded by users
+    -->should be able to add and delete
+    -->anyone can download
+=======
+FORM PAGE - admin uploads document, any user can download it
+    —>displayed with description
+>>>>>>> 1279c9eb900134fa8fa7255bd1484d7f928cc74a
 
 co-sanction is nullable and can be entered similar to a carry over, except for every run
 
@@ -22,6 +32,7 @@ arena fee usually per rider, not per horse
 
 Look into bleeding cowboy font for H1
 
+>>>>>>> 6962b062c62909650e897fac71a59b2f7a041a42
 
 
 create thumbnail for photo
