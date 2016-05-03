@@ -12,7 +12,6 @@ class UploadedFilesController extends Controller
     /**
      * Loads the admin page to add a filename
      *
-     * [create description]
      * @return [type] [description]
      */
     public function create()
@@ -20,23 +19,36 @@ class UploadedFilesController extends Controller
         return view('admin/addFile');
     }
 
+    /**
+     * Creates a new uploaded file
+     *
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request)
     {
         if ($request->hasFile('file')) {
             $uploadedFile = new UploadedFile;
             $file = $request->file('file');
             $name = $request->name;
-            $file->move('files', $name);
+            $file->move('files');
+            $path = $file->getClientOriginalName();
 
             $uploadedFile = UploadedFile::create([
                 'filename' => $request->name,
                 'description' => $request->description,
-                'path' => $request->name
+                'path' => $path
             ]);
+            return back();
         }
         return back();
     }
 
+    /**
+     * Show a view of all uploaded files
+     * 
+     * @return [type] [description]
+     */
     public function index()
     {
         $files = UploadedFile::get();

@@ -6,6 +6,8 @@ Points
         Admin will enter rankings instead of points
         points are for everyone, and placement are additional
 
+files
+    -->Need to figure out controller logic
 
 Entries
     -->should show user on event page which entries they have
@@ -13,14 +15,12 @@ Entries
 Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
-FORM PAGE - admin uploads document, any user can download it
-    —>displayed with description
 
-    co-sanction is nullable and can be entered similar to a carry over, except for every run
+co-sanction is nullable and can be entered similar to a carry over, except for every run
 
-    arena fee usually per rider, not per horse
+arena fee usually per rider, not per horse
 
-    Look into bleeding cowboy font for H1
+Look into bleeding cowboy font for H1
 
 
 

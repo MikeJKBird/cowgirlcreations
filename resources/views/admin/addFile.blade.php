@@ -6,9 +6,8 @@
 
         <h3>Upload File</h3>
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="/addFile" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
-            {{method_field('PATCH')}}
             Select results to upload:
 
             <div class="form-group">
