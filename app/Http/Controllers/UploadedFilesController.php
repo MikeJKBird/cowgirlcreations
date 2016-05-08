@@ -57,4 +57,11 @@ class UploadedFilesController extends Controller
 
         return view('forms', compact('files'));
     }
+
+    public function destroy($id)
+    {
+        UploadedFile::findOrFail($id)->delete();
+
+        return back();
+    }
 }

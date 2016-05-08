@@ -67,4 +67,5 @@ Route::group(['middleware' => ['web', 'admin']], function () {
 
     Route::get('admin/addFile', 'UploadedFilesController@create');
     Route::post('/addFile', 'UploadedFilesController@store');
+    Route::delete('uploadedFile/{id}', 'UploadedFilesController@destroy');
 });

@@ -32,6 +32,9 @@
             <th>
                 File description
             </th>
+            <th>
+                Delete File
+            </th>
 
         @foreach($uploadedFiles as $file)
             <tr>
@@ -40,6 +43,13 @@
                 </td>
                 <td>
                     {{$file->description}}
+                </td>
+                <td>
+                    <form method="POST" action="/uploadedFile/{{$file->id}}">
+                        {{csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
 
