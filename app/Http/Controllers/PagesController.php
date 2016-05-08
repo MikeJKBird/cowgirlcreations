@@ -33,7 +33,8 @@ class PagesController extends Controller
         $now = Carbon::now();
         $upcoming = $now->addDays(30);
 
-        $events = Event::where('date', '<', $upcoming)->get();
+        $events = Event::where('date', '<', $upcoming)->where('date','>', $now)->get();
+        
         $sponsors = Sponsor::orderby('value', 'desc')->get();
 
         return view('home', compact('events', 'sponsors'));

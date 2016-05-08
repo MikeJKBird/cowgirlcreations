@@ -30,12 +30,12 @@ class UploadedFilesController extends Controller
         if ($request->hasFile('file')) {
             $uploadedFile = new UploadedFile;
             $file = $request->file('file');
-            $name = $request->name;
-            $file->move('files');
+            $name = $file->getClientOriginalName();
+            $file->move('files', $name);
             $path = $file->getClientOriginalName();
 
             $uploadedFile = UploadedFile::create([
-                'filename' => $request->name,
+                'filename' => $request->filename,
                 'description' => $request->description,
                 'path' => $path
             ]);
@@ -46,7 +46,7 @@ class UploadedFilesController extends Controller
 
     /**
      * Show a view of all uploaded files
-     * 
+     *
      * @return [type] [description]
      */
     public function index()
