@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\UploadedFile;
+use Illuminate\Support\Facades\File;
 
 class UploadedFilesController extends Controller
 {
@@ -60,7 +61,10 @@ class UploadedFilesController extends Controller
 
     public function destroy($id)
     {
-        UploadedFile::findOrFail($id)->delete();
+        $file = UploadedFile::findOrFail($id);
+        $filename = $file->path;
+        File::delete('files/' . $filename);
+        $file->delete();
 
         return back();
     }

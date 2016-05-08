@@ -6,6 +6,7 @@ use App\Photo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\File;
 
 class PhotosController extends Controller
 {
@@ -64,8 +65,12 @@ class PhotosController extends Controller
      * @param  [type] $id [description]
      * @return [type]     [description]
      */
-    public function destroy($id) {
-        Photo::findOrFail($id)->delete();
+    public function destroy($id)
+    {
+        $file = Photo::findOrFail($id);
+        $filename = $file->name;
+        File::delete('img/' . $filename);
+        $file->delete();
 
         return back();
     }
