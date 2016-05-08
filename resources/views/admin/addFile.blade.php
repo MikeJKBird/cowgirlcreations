@@ -24,6 +24,27 @@
 
             <input type="submit" value="Add File" name="submit">
         </form>
+        <hr />
+        <table class="table">
+            <th>
+                File name
+            </th>
+            <th>
+                File description
+            </th>
+
+        @foreach($uploadedFiles as $file)
+            <tr>
+                <td>
+                    {{$file->filename}}
+                </td>
+                <td>
+                    {{$file->description}}
+                </td>
+            </tr>
+
+        @endforeach
+        </table>
 
 
     </div>

@@ -16,7 +16,9 @@ class UploadedFilesController extends Controller
      */
     public function create()
     {
-        return view('admin/addFile');
+        $uploadedFiles = UploadedFile::get();
+
+        return view('admin/addFile', compact('uploadedFiles'));
     }
 
     /**
