@@ -30,9 +30,8 @@ class PagesController extends Controller
      */
     public function home()
     {
-        $now = Carbon::now();
-        $upcoming = $now->addDays(30);
-
+        $now = Carbon::now('America/Vancouver');
+        $upcoming = Carbon::now()->addDays(30);
         $events = Event::where('date', '<', $upcoming)->where('date','>', $now)->get();
         
         $sponsors = Sponsor::orderby('value', 'desc')->get();

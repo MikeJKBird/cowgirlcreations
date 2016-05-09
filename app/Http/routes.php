@@ -50,6 +50,7 @@ Route::group(['middleware' => ['web', 'admin']], function () {
     Route::get('admin/editevent/{event}', 'EventsController@edit');
     Route::patch('admin/updateevent/{event}','EventsController@update');
     Route::delete('events/{id}', 'EventsController@destroy');
+    Route::post('addpoints', 'EventsController@addpoints');
 
     Route::get('admin/calendar', 'AdminController@calendar');
     Route::get('admin/calendar/{event}', 'AdminController@eventdetails');

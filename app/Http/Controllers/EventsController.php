@@ -186,5 +186,31 @@ class EventsController extends Controller
         return back();
     }
 
+    public function addpoints(Request $request)
+    {
+        $test =[];
+        $info = $request->all();
+        $multiplier = $info['multiplier'];
+        foreach($info as $key =>$input) {
+            if(strpos($key, 'participate')) {
+                if ($input){
+                    $explode = explode("-", $key);
+                    $id = array_shift($explode);
+                    $user = User::findOrFail($id);
+                    $user->points += (1 * $multiplier);
+                    $user->save();
+                    array_push($test, $user);
+                }
+
+            }
+        }
+    dd($test);
+
+
+
+
+        return back();
+    }
+
 
 }

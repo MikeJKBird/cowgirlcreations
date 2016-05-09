@@ -63,7 +63,8 @@
             <h3>Enter Points</h3>
             <h5>Points Multiplier: {{$event->multiplier}}</h5>
 
-            <form action="" method="POST">
+        <h1>OLD WAY</h1>
+            <form action="/addpoints" method="POST">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="multiplier" value="{{$event->multiplier}}">
@@ -87,6 +88,28 @@
 
                 <input type="submit" value="Add Points">
             </form>
+        <h1>NEW WAY</h1>
+            @foreach($event->entries as $entry)
+                <h2>{{$entry->entry_name}}</h2>
+
+                <form action="/addpoints" method="POST">
+                    {{csrf_field()}}
+                    <input type="hidden" name="multiplier" value="{{$event->multiplier}}">
+
+                        @foreach($tables as $table)
+                            @if(strpos($table->entries,$entry->entry_name))
+                                <label for="{{$table->user_id}}-{{$table->horse_id}}score">{{$table->name}} on {{$table->horse_name}}- Position:</label>
+                                <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}score" value="">
+
+                                <label for="{{$table->user_id}}-{{$table->horse_id}}participate">Participate?</label>
+                                <input type="checkbox" name="{{$table->user_id}}-{{$table->horse_id}}participate" checked="checked" value=1>
+                                <br>
+                            @endif
+                        @endforeach
+                    <input type="submit" value="Add Points">
+                </form>
+            @endforeach
+        <hr>
 
 
             <a href="/admin/showresults/{{$event->id}}"><h3>View Results</h3></a>
