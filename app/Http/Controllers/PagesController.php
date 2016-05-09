@@ -65,4 +65,10 @@ class PagesController extends Controller
     }
 
 
+    public function lightemup()
+    {
+        return view('lightEmUp');
+    }
+
+
 }

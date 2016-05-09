@@ -25,6 +25,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('forms', 'UploadedFilesController@index');
 
+    Route::get('lightemup', 'PagesController@lightemup');
+
 });
 
 //Admin

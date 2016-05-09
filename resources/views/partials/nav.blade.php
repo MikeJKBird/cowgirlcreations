@@ -23,6 +23,7 @@
                 <li><a href="/standings">Standings</a></li>
                 <li><a href="/photos">Hats and Artwork</a></li>
                 <li><a href="/forms">Forms</a></li>
+                <li><a href="/lightemup">Light Em Up</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

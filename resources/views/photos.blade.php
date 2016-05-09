@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="jumbotron" style="background-image: url(img/horses_02.jpg); background-size: cover;">
+    <div class="jumbotron" style="background-image: url(img/banner03.jpg); background-size: cover;">
         <div class="container">
             <h1>Photo Gallery!</h1>
             <p>Look at this stuff!</p>
