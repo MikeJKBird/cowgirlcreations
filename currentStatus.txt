@@ -1,12 +1,3 @@
-Points
-    -->need to figure out how to best handle point submission form
-        -->Vital: need to know how points are assigned to racers/horses/both
-        -->What controller?
-        -->Use explode to get user id
-        Admin will enter rankings instead of points
-        points are for everyone, and placement are additional
-
-
 Entries
     -->should show user on event page which entries they have
 

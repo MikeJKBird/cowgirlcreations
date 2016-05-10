@@ -194,8 +194,8 @@ class EventsController extends Controller
         foreach($info as $key =>$input) {
             if(strpos($key, 'participate')) {
                 if ($input){
-                    $explode = explode("-", $key);
-                    $id = array_shift($explode);
+                    $exploded_key = explode("-", $key);
+                    $id = array_shift($exploded_key);
                     $user = User::findOrFail($id);
                     $user->points += (1 * $multiplier);
                     $user->save();
@@ -203,11 +203,18 @@ class EventsController extends Controller
                 }
 
             }
+            if(strpos($key, 'position')) {
+                if ($input){
+                    $exploded_key = explode("-", $key);
+                    $id = array_shift($exploded_key);
+                    $user = User::findOrFail($id);
+                    $user->points += ((6-$input) * $multiplier);
+                    $user->save();
+                    array_push($test, $user);
+                }
+
+            }
         }
-    dd($test);
-
-
-
 
         return back();
     }

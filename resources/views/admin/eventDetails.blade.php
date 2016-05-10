@@ -98,8 +98,8 @@
 
                         @foreach($tables as $table)
                             @if(strpos($table->entries,$entry->entry_name))
-                                <label for="{{$table->user_id}}-{{$table->horse_id}}score">{{$table->name}} on {{$table->horse_name}}- Position:</label>
-                                <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}score" value="">
+                                <label for="{{$table->user_id}}-{{$table->horse_id}}position">{{$table->name}} on {{$table->horse_name}}- Position:</label>
+                                <input type="text" name="{{$table->user_id}}-{{$table->horse_id}}position" value="">
 
                                 <label for="{{$table->user_id}}-{{$table->horse_id}}participate">Participate?</label>
                                 <input type="checkbox" name="{{$table->user_id}}-{{$table->horse_id}}participate" checked="checked" value=1>
