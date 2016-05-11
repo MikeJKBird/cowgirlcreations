@@ -3,8 +3,6 @@
     <head>
         <title>Be right back.</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
         <style>
             html, body {
                 height: 100%;
@@ -14,10 +12,14 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                color: #B0BEC5;
+                color: white;
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+                background-image: url('/img/horses_05.jpg');
+                background-size: cover;
+                height: 100vh;
+                width: 100vw;
             }
 
             .container {
@@ -34,13 +36,14 @@
             .title {
                 font-size: 72px;
                 margin-bottom: 40px;
+                text-shadow: 0px 0px 5px black;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">Coming Soon</div>
             </div>
         </div>
     </body>

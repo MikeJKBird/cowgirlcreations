@@ -29,7 +29,7 @@
         $('#calendar').fullCalendar({
             header: {
                 left: '',
-                center: 'title prev,next',
+                center: 'prev title next',
                 right: ''
             },
             contentHeight: 500,

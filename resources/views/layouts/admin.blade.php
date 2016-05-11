@@ -23,9 +23,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link href="/css/app.css" rel="stylesheet">
-    <style>
-       body {background-color: lightblue;}
-    </style>
 </head>
 <body id="app-layout">
 @include('partials.adminNav')

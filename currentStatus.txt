@@ -5,8 +5,6 @@ Potential sign up issues
     -->should be more obvious user has enrolled -->maybe detail about the enrollment
 
 
-co-sanction is nullable and can be entered similar to a carry over, except for every run
-
 arena fee usually per rider, not per horse
 
 Look into bleeding cowboy font for H1
