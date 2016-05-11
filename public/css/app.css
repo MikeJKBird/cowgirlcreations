@@ -5814,7 +5814,8 @@ iframe {
   max-height: 200px; }
 
 .photo-gallery-item {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  height: 200px; }
 
 .footer {
   position: absolute;
