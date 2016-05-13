@@ -16,6 +16,7 @@
     <link href="/css/lightbox.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/all.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
 
 
     <link rel='stylesheet' href='/fullcalendar/fullcalendar.css' />
