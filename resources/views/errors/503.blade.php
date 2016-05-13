@@ -15,7 +15,7 @@
                 color: white;
                 display: table;
                 font-weight: 100;
-                font-family: 'Lato';
+                font-family: 'Rye', cursive;
                 background-image: url('/img/horses_05.jpg');
                 background-size: cover;
                 height: 100vh;
