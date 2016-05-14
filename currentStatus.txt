@@ -1,3 +1,35 @@
+Add sponsor logo to upload
+    -->Sponsors name is displayed below logo
+
+Sponsor links must test for http://
+
+
+For event, do not display carryover for open & open1
+
+Add multiple co-sanctions
+
+
+Cut landing page, direct to homepage
+
+
+Add "What's new" page, integrate facebook feed
+    -->https://developers.facebook.com/docs/plugins/page-plugin
+
+
+Uploaded files
+    -->underline links and li them
+
+
+Light em up
+    -->video for desktops, poster for mobile
+
+Home page
+    -->Make main text editable through admin panel
+
+
+
+
+
 Entries
     -->should show user on event page which entries they have
 
