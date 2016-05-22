@@ -9,7 +9,7 @@
     </div>
     <div class="container">
 
-        <div class="row col-md-6 col-md-push-3 col-xs-12 text-center">
+        <div class="row col-md-6 col-md-push-3 col-xs-12">
             <p class="lead">This is Cowgirl Creations. stuff stuff stuff</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu pulvinar orci. Pellentesque sed ligula gravida, auctor nulla in, elementum ex. Vivamus ornare enim vitae porta dignissim. Aenean et dolor turpis. Fusce gravida quis neque quis pretium. Quisque tempus, magna vel eleifend commodo, massa arcu elementum tortor, rhoncus dictum metus purus ac dui. Praesent laoreet sed ex ac tristique. Integer facilisis, orci ut viverra tincidunt, massa mauris vestibulum ex, sit amet mollis ex massa sit amet ex. Cras augue augue, vestibulum quis diam eget, hendrerit congue orci. Aliquam consectetur sit amet turpis at luctus. </p>
            <h3>Email: 123@fake.com</h3>
