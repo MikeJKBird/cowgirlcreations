@@ -11,7 +11,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="/home">
+            <a class="navbar-brand" href="/">
                 <img src="/img/logo_black.png" />
             </a>
         </div>
@@ -24,7 +24,7 @@
                 <li><a href="/forms">Forms</a></li>
                 <li><a href="/lightemup">Light Em Up</a></li>
                 <li><a href="/photos">Photo Gallery</a></li>
-                <li><a href="#">What's new</a></li>
+                <li><a href="/news">What's new</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

@@ -69,5 +69,10 @@ class PagesController extends Controller
         return view('lightEmUp');
     }
 
+    public function news()
+    {
+        return view('news');
+    }
+
 
 }

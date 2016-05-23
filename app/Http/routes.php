@@ -5,7 +5,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'PagesController@home');
-    Route::get('/home', 'PagesController@home');
     Route::get('profile', 'UsersController@showprofile');
     Route::get('editprofile', 'UsersController@editprofile');
     Route::patch('profile/{user}','UsersController@updateprofile');
@@ -27,6 +26,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('forms', 'UploadedFilesController@index');
 
     Route::get('lightemup', 'PagesController@lightemup');
+
+    Route::get('news', 'PagesController@news');
 
 });
 

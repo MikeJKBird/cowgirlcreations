@@ -9,12 +9,7 @@ For event, do not display carryover for open & open1
 Add multiple co-sanctions
 
 
-Cut landing page, direct to homepage
-    -->done route, just delete landing page, and fix navigation, then delete extra route
-
-
-Add "What's new" page, integrate facebook feed
-    -->https://developers.facebook.com/docs/plugins/page-plugin
+Style "What's new" page
 
 
 Uploaded files
