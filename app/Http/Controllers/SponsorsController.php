@@ -25,19 +25,28 @@ class SponsorsController extends Controller
 
     /**
      * Save a sponsor
-     * 
+     *
      * @param  Request $request [description]
-     * @return [type]           [description]
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
+
+        $url = $request->website;
+
+
+        if(substr( $url, 0, 4 ) != "http"){
+            $url = "http://" . $url;
+        }
+
         $sponsor = new Sponsor;
 
         $sponsor->create([
             'name' => $request->name,
-            'website' => $request->website,
+            'website' => $url,
             'value' => $request->value
         ]);
+
         return redirect()->back();
     }
 

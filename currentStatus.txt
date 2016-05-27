@@ -1,13 +1,17 @@
 Add sponsor logo to upload
     -->Sponsors name is displayed below logo
 
-Sponsor links must test for http://
-
 
 For event, do not display carryover for open & open1
+    -->fixed on event page, confirm
+
 
 Add multiple co-sanctions
-
+    -->cosanction is already a model, so need to create a many-to-many relationship with event
+    -->on event creation, a select box must be used to select multiple cosanctions
+    -->on event page, will need to loop through all cosanctions connected with event
+        -->display all with every division
+    -->on event detail page, will need to list name of selected cosantion(s)
 
 Style "What's new" page
 
