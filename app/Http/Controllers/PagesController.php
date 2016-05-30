@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Sponsor;
+use App\Text;
 use Illuminate\Http\Request;
 use App\Event;
 use App\User;
@@ -18,11 +19,6 @@ use Carbon\Carbon;
 class PagesController extends Controller
 {
 
-    public function welcome()
-    {
-        return view('welcome');
-    }
-
     /**
      * Loads the home page
      *
@@ -33,10 +29,10 @@ class PagesController extends Controller
         $now = Carbon::now('America/Vancouver');
         $upcoming = Carbon::now()->addDays(30);
         $events = Event::where('date', '<', $upcoming)->where('date','>', $now)->get();
-        
+        $text = Text::first();
         $sponsors = Sponsor::orderby('value', 'desc')->get();
 
-        return view('home', compact('events', 'sponsors'));
+        return view('home', compact('events', 'sponsors', 'text'));
     }
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enrollment;
 use App\Sponsor;
+use App\Text;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,18 @@ class AdminController extends Controller
      */
     public function main()
     {
-        return view('admin.main');
+        $text = Text::first();
+
+        return view('admin.main', compact('text'));
+    }
+
+    public function updateHomepageText(Request $request)
+    {
+        $text = Text::first();
+
+        $text->update($request->all());
+
+        return back();
     }
 
     /**

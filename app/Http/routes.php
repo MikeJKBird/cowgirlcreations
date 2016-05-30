@@ -34,6 +34,7 @@ Route::group(['middleware' => 'web'], function () {
 //Admin
 Route::group(['middleware' => ['web', 'admin']], function () {
     Route::get('admin', 'AdminController@main');
+    Route::patch('admin/updateHomepageText', 'AdminController@updateHomepageText');
 
     Route::get('admin/members', 'UsersController@index');
     Route::get('admin/editmember/{user}', 'UsersController@edit');

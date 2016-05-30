@@ -10,12 +10,12 @@
         </div>
     </div>
     <div class="container">
-        @foreach($files as $file)
-            <a href="/files/{{$file->path}}" download="{{$file->filename}}">{{$file->filename}}</a>
-            <p>
-                {{$file->description}}
-            </p>
-        @endforeach
-
+        <ul>
+            @foreach($files as $file)
+                <li>
+                    <a href="/files/{{$file->path}}" download="{{$file->filename}}">{{$file->filename}}</a> -  {{$file->description}}
+                </li>
+            @endforeach
+        </ul>
     </div>
 @stop

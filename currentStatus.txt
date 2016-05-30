@@ -13,21 +13,9 @@ Add multiple co-sanctions
         -->display all with every division
     -->on event detail page, will need to list name of selected cosantion(s)
 
-Style "What's new" page
-
-
-Uploaded files
-    -->underline links and li them
-
 
 Light em up
-    -->video for desktops, poster for mobile
-
-Home page
-    -->Make main text editable through admin panel
-
-
-
+    -->refactor css and adjust removeAttribute accordingly
 
 
 Entries

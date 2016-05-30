@@ -11,10 +11,16 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
+    <div class="jumbotron" style="background-image: url(img/banner03.jpg); background-size: cover;">
+        <div class="container">
+            <h1>News!</h1>
+            <p>Keep up to date</p>
+        </div>
+    </div>
     <div class="container text-center">
-        <h1>News!</h1>
 
-        <div class="fb-page" data-href="https://www.facebook.com/CowgirlCreations/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/CowgirlCreations/"><a href="https://www.facebook.com/CowgirlCreations/">Cowgirl Creations</a></blockquote></div></div>
+
+        <div class="fb-page" data-href="https://www.facebook.com/Cowgirlcreations" data-tabs="timeline" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/Cowgirlcreations"><a href="https://www.facebook.com/Cowgirlcreations">Cowgirl Creations</a></blockquote></div></div>
         <br>
     </div>
 @stop
