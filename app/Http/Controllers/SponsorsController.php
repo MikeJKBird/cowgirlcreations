@@ -32,22 +32,40 @@ class SponsorsController extends Controller
     public function store(Request $request)
     {
 
-        $url = $request->website;
+
+//        $this->validate($request, [
+//            'logo' => 'mimes:jpg,jpeg,png,bmp,gif'
+//        ]);
+
+        if ($request->hasFile('logo')) {
+
+            $file = $request->file('logo');
+
+            $name = $file->getClientOriginalName();
+
+            $file->move('img', $name);
+
+            $url = $request->website;
 
 
-        if(substr( $url, 0, 4 ) != "http"){
-            $url = "http://" . $url;
+            if (substr($url, 0, 4) != "http") {
+                $url = "http://" . $url;
+            }
+
+            $sponsor = new Sponsor;
+
+            $sponsor->create([
+                'name' => $request->name,
+                'website' => $url,
+                'value' => $request->value,
+                'logo' => $name
+            ]);
+
+            return redirect()->back();
         }
-
-        $sponsor = new Sponsor;
-
-        $sponsor->create([
-            'name' => $request->name,
-            'website' => $url,
-            'value' => $request->value
-        ]);
-
-        return redirect()->back();
+        else {
+            return redirect()->back();
+        }
     }
 
 

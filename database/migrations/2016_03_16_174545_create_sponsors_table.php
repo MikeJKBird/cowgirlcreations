@@ -17,6 +17,7 @@ class CreateSponsorsTable extends Migration
             $table->string('name');
             $table->string('website');
             $table->integer('value')->unsigned();
+            $table->string('logo');
             $table->timestamps();
         });
     }

@@ -49,8 +49,8 @@ class PhotosController extends Controller
      * Updates a photo's description
      *
      * @param  Request $request [description]
-     * @param  Photo   $photo   [description]
-     * @return [type]           [description]
+     * @param  Photo $photo [description]
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Photo $photo)
     {
@@ -63,7 +63,7 @@ class PhotosController extends Controller
      * Destroys the photo with a given id
      *
      * @param  [type] $id [description]
-     * @return [type]     [description]
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

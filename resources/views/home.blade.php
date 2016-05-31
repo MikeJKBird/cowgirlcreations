@@ -21,7 +21,7 @@
             <h3>Sponsors</h3>
             <ul class="list-group">
                 @foreach ($sponsors as $sponsor)
-                    <li class="list-group-item"><a href="{{$sponsor->website}}" target="_blank">{{ $sponsor->name }}</a></li>
+                    <li class="list-group-item"><a href="{{$sponsor->website}}" target="_blank"><img class="sponsor-pic" src="/img/{{$sponsor->logo}}">{{ $sponsor->name }}</a></li>
                 @endforeach
             </ul>
         </div>

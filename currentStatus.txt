@@ -1,7 +1,3 @@
-Add sponsor logo to upload
-    -->Sponsors name is displayed below logo
-
-
 For event, do not display carryover for open & open1
     -->fixed on event page, confirm
 

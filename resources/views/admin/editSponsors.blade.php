@@ -6,7 +6,7 @@
         <div class="row col-sm-6 col-sm-offset-3">
             <h2>Sponsors</h2>
             <h3>New Sponsor</h3>
-            <form method="POST" action="/sponsors">
+            <form method="POST" action="/sponsors" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for='name'>Sponsor Name:</label>
@@ -18,8 +18,15 @@
                 </div>
                 <div class="form-group">
                     <label for='value'>Value</label>
-                    <input type="number" name='value' id='value' class='form-control' value=''>
+                    <input type="number" name='value' id='value' class='form-control' value='' required>
                 </div>
+
+                <div class="form-group">
+                    <label for='logo'>Logo</label>
+                    <input type="file" name="logo" id="" >
+                </div>
+
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add Sponsor</button>
                 </div>
