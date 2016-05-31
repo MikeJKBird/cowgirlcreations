@@ -45,7 +45,7 @@
                         <label for='cosanction'>Co-sanction</label>
                         <select name='cosanction' id='cosanction' class='form-control' value='' required>
                             @foreach($cosanctions as $cosanction)
-                                <option value="{{$cosanction->id}}">{{$cosanction->cosanction_name}}</option>
+                                <option value="{{$cosanction->id}}">{{$cosanction->cosanction_name}} (${{$cosanction->cosanction_price}})</option>
                             @endforeach
                         </select>
                     </div>

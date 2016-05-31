@@ -1,6 +1,3 @@
-For event, do not display carryover for open & open1
-    -->fixed on event page, confirm
-
 
 Add multiple co-sanctions
     -->cosanction is already a model, so need to create a many-to-many relationship with event

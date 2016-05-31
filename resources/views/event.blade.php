@@ -169,7 +169,7 @@
                                                 <input type="checkbox" name="entry[]" class="entries" data-price={{$entry->price}} value="{{$entry->entry_name}}"> {{$entry->entry_name}} : ${{$entry->price}}
                                             </td>
                                             <td>
-                                                @if($entry->entry_name != "Open" || $entry->entry_name != "Open1")
+                                                @if($entry->entry_name != "Open" && $entry->entry_name != "Open1")
                                                     <input type="checkbox" name="carryover[]" value="{{$entry->entry_name}}">Carryover
                                                 @endif
                                             </td>
