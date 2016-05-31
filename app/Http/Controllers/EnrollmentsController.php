@@ -15,6 +15,8 @@ class EnrollmentsController extends Controller
 
     public function create(Request $request)
     {
+
+
         $entries = $request->entry;
         $carryovers = $request->carryover;
         $cosanctions = $request->cosanction;
@@ -31,9 +33,10 @@ class EnrollmentsController extends Controller
           }
           if($cosanctions != null){
               foreach($cosanctions as $cosanction) {
-                if($cosanction == $entry) {
-                  $totalentry .= "cosanction, ";
-                }
+                $cosanctionObject = Cosanction::where('id', $cosanction)->first();
+
+                  $totalentry .= " " . $cosanctionObject->cosanction_name;
+
               }
           }
         }

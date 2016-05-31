@@ -57,10 +57,10 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required',
             'location' => 'required',
-            'cosanction' => 'required',
             'deadline' => 'required',
             'producer' => 'required',
             'notes' => 'required',
@@ -79,10 +79,8 @@ class EventsController extends Controller
         $event = Event::create([
             'name' => $request->name,
             'location' => $request->location,
-            'cosanction' => $request->cosanction,
             'deadline' => $deadline,
             'producer' => $request->producer,
-            'cosanction_id' => $request->cosanction,
             'notes' => $request->notes,
             'dresscode' => $request->dresscode,
             'option' => $request->option,
@@ -95,6 +93,8 @@ class EventsController extends Controller
             'date' => $date,
             'multiplier' => $request->multiplier
         ]);
+
+        $event->cosanction()->sync($request->input('cosanction'));
 
         $eventID = $event->id;
 

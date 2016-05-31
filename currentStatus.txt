@@ -1,12 +1,3 @@
-
-Add multiple co-sanctions
-    -->cosanction is already a model, so need to create a many-to-many relationship with event
-    -->on event creation, a select box must be used to select multiple cosanctions
-    -->on event page, will need to loop through all cosanctions connected with event
-        -->display all with every division
-    -->on event detail page, will need to list name of selected cosantion(s)
-
-
 Light em up
     -->refactor css and adjust removeAttribute accordingly
 

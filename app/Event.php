@@ -42,11 +42,11 @@ class Event extends Model
     }
 
     /**
-     * Cosanction for the event
+     * Cosanctions for the event
      */
     public function cosanction()
     {
-        return $this->belongsTo(Cosanction::class);
+        return $this->belongsToMany(Cosanction::class);
     }
 
 }

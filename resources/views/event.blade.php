@@ -148,7 +148,7 @@
                 @if(Auth::check())
                     @if( count($user->horses) != 0)
                         <div class="row">
-                            <div class="col-md-5 text-left">
+                            <div class="col-md-6 text-left">
                                 <form action="/eventsignup" method="POST">
                                     {{csrf_field()}}
                                     <input type="hidden" name="userID" value="{{$user->id}}">
@@ -174,9 +174,12 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                @if($cosanction->cosanction_price>0)
-                                                    <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$entry->entry_name}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
-                                                @endif
+
+                                                @foreach($event->cosanction as $cosanction)
+                                                    @if($cosanction->cosanction_price>0)
+                                                        <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$cosanction->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
+                                                    @endif
+                                                @endforeach
                                             </td>
                                         </tr>
                                     @endforeach
@@ -204,7 +207,7 @@
 
 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                     <p id="currentprice">Current Total: $<span id="totalprice" class="odometer"></span></p>
                                     <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">
                                 </form>
