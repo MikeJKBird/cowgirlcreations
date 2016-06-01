@@ -139,7 +139,7 @@
                 </table>
             </div>
             <div class="col-md-4">
-                <p>Notes: {{$event->notes}}</p>
+                <p>Notes: {!! nl2br(e($event->notes)) !!}</p>
             </div>
         </div>
         <div class="text-center">
@@ -177,7 +177,7 @@
 
                                                 @foreach($event->cosanction as $cosanction)
                                                         <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$cosanction->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
-                                                    
+
                                                 @endforeach
                                             </td>
                                         </tr>

@@ -1,3 +1,10 @@
+Add option for notes for rider's entry
+
+Change stall from boolean to int
+
+
+
+
 Light em up
     -->refactor css and adjust removeAttribute accordingly
 
