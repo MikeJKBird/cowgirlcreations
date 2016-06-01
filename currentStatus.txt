@@ -2,6 +2,7 @@ Add option for notes for rider's entry
 
 Change stall from boolean to int
 
+Change event to 2 columns with notes having entire side
 
 
 
