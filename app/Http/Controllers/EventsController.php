@@ -167,7 +167,7 @@ class EventsController extends Controller
     public function update(Request $request, Event $event)
     {
 
-        $event->sync($request->all());
+        $event->update($request->all());
 
         $eventID = $event->id;
 
