@@ -176,9 +176,8 @@
                                             <td>
 
                                                 @foreach($event->cosanction as $cosanction)
-                                                    @if($cosanction->cosanction_price>0)
                                                         <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$cosanction->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
-                                                    @endif
+                                                    
                                                 @endforeach
                                             </td>
                                         </tr>
