@@ -13,7 +13,7 @@
 
             <p>{!! nl2br(e($text->homepage)) !!}</p>
 
-            <h3>Email: 123@fake.com</h3>
+            <h3>Email: cowgirlcreations@yahoo.com</h3>
             <h3><a href="https://www.facebook.com/groups/cowgirlcreations/" target="_blank">Facebook</a></h3>
         </div>
 
