@@ -6,16 +6,12 @@ Why does updating event not sync cosanctions?!?!?!
 
 Edit profile?!?!?!
 
-Remove points from profile
 
 Add option for notes for rider's entry
 
 have standings be editable text, similar to homepage
 
 Add number of nights for stall in event "Nights for stall" -default 0
-
-Change event to 2 columns with notes having entire side
-
 
 
 

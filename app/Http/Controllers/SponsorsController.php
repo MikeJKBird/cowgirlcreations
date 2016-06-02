@@ -51,16 +51,15 @@ class SponsorsController extends Controller
             if (substr($url, 0, 4) != "http") {
                 $url = "http://" . $url;
             }
-            dd($request);
 
             $sponsor = new Sponsor;
 
-            $sponsor->create([
-                'name' => $request->name,
-                'website' => $url,
-                'value' => $request->value,
-                'logo' => $name
-            ]);
+//            $sponsor->create([
+//                'name' => $request->name,
+//                'website' => $url,
+//                'value' => $request->value,
+//                'logo' => $name
+//            ]);
 
             return redirect()->back();
         }

@@ -14,7 +14,6 @@
                     <p>Still waiting to have your member number assigned!</p>
                 @endif
                 <p>Your email is: {{$user->email}}</p>
-                <p>Your points are: {{$user->points}}</p>
                 @if($user->birthday != null)
                     <p>Your birthday is: {{$user->birthday}}</p>
                 @else
