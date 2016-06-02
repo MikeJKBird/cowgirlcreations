@@ -4,9 +4,6 @@ Why does updating event not sync cosanctions?!?!?!
 
 
 
-Edit profile?!?!?!
-
-
 Add option for notes for rider's entry
 
 have standings be editable text, similar to homepage

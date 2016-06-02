@@ -53,7 +53,7 @@ class SponsorsController extends Controller
                 $url = "http://" . $url;
             }
 
-            $sponsor = Sponsor::create([
+            $sponsor->create([
                 'name' => $request->name,
                 'website' => $url,
                 'value' => $request->value,
@@ -61,7 +61,8 @@ class SponsorsController extends Controller
             ]);
 
 
-            return redirect('admin/sponsors');
+            return back();
+
         }
         else {
             return redirect()->back();
