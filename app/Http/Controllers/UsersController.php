@@ -41,7 +41,7 @@ class UsersController extends Controller
     {
         $user = Auth::user();
 
-        return view ('user.editprofile', compact('user'));
+        return view ('user.editProfile', compact('user'));
     }
 
     /**

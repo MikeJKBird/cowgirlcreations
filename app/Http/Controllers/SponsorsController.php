@@ -61,7 +61,7 @@ class SponsorsController extends Controller
             ]);
 
 
-            return redirect()->back();
+            return redirect('admin.editSponsors');
         }
         else {
             return redirect()->back();
