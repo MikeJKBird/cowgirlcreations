@@ -18,10 +18,10 @@
                         <label for='email'>Email Address</label>
                         <input type="text" name='email' id='email' class='form-control' value='{{$user->email}}'>
                     </div>
-                    {{--<div class="form-group">--}}
-                        {{--<label for='birthday'>Birthday</label>--}}
-                        {{--<input type="text" name='birthday' id='birthday' class='form-control' value='{{$user->birthday}}'>--}}
-                    {{--</div>--}}
+                    <div class="form-group">
+                        <label for='birthday'>Birthday</label>
+                        <input type="text" name='birthday' id='birthday' class='form-control' value='{{$user->birthday}}'>
+                    </div>
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Update Information</button>
