@@ -54,12 +54,12 @@ class SponsorsController extends Controller
 
             $sponsor = new Sponsor;
 
-//            $sponsor->create([
-//                'name' => $request->name,
-//                'website' => $url,
-//                'value' => $request->value,
-//                'logo' => $name
-//            ]);
+            $sponsor = Sponsor::create([
+                'name' => $request->name,
+                'website' => $url,
+                'value' => $request->value,
+                'logo' => $name
+            ]);
 
             return redirect()->back();
         }
