@@ -1,23 +1,33 @@
+Why does updating event not sync cosanctions?!?!?!
+    -->then add bcbra to june 18/19 event -->can just edit db in the meantime
+
+
+
+
+Edit profile?!?!?!
+
+Remove points from profile
+
 Add option for notes for rider's entry
 
-Change stall from boolean to int
+have standings be editable text, similar to homepage
+
+Add number of nights for stall in event "Nights for stall" -default 0
 
 Change event to 2 columns with notes having entire side
+
+
+
+
+
+
+
 
 
 
 Light em up
     -->refactor css and adjust removeAttribute accordingly
 
-
-Entries
-    -->should show user on event page which entries they have
-
-Potential sign up issues
-    -->should be more obvious user has enrolled -->maybe detail about the enrollment
-
-
-arena fee usually per rider, not per horse
 
 Look into bleeding cowboy font for H1
 

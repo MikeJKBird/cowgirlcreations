@@ -51,6 +51,7 @@ class SponsorsController extends Controller
             if (substr($url, 0, 4) != "http") {
                 $url = "http://" . $url;
             }
+            dd($request);
 
             $sponsor = new Sponsor;
 

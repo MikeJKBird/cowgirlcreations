@@ -22,7 +22,7 @@
         </div>
     </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-1">
+            <div class="col-md-5 col-md-offset-1">
                 <table class="table">
                     <tr>
                         <td>
@@ -30,14 +30,6 @@
                         </td>
                         <td>
                             {{$event->location}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Co-sanctioned:
-                        </td>
-                        <td>
-                            {{$cosanction->cosanction_name}}
                         </td>
                     </tr>
                     <tr>
@@ -80,10 +72,6 @@
                             {{$event->option}}
                         </td>
                     </tr>
-                </table>
-            </div>
-            <div class="col-md-3">
-                <table class="table">
                     <tr>
                         <td>
                             Time Only:
@@ -138,7 +126,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <p>Notes: {!! nl2br(e($event->notes)) !!}</p>
             </div>
         </div>
@@ -183,11 +171,13 @@
                                         </tr>
                                     @endforeach
                                     </table>
-                                    <label for="timeonlys">Time Only Runs</label>
-                                    <input type="number" name="timeonlys" id="timeonlys" data-timeonlys-price={{$event->timeonly}} value="" min="0">
 
                             </div>
-                            <div class="col-md-3 text-left">
+                            <div class="col-md-6 text-left">
+                                <br />
+
+                                <label for="timeonlys">Time Only Runs</label>
+                                <input type="number" name="timeonlys" id="timeonlys" data-timeonlys-price={{$event->timeonly}} value="" min="0">
                                 <br />
                                 @if( $event->campingfee != null)
                                     <label for="camping">Add Camping</label>
@@ -204,9 +194,6 @@
                                     <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="" min="0">
                                 @endif
 
-
-                            </div>
-                            <div class="col-md-3">
                                     <p id="currentprice">Current Total: $<span id="totalprice" class="odometer"></span></p>
                                     <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">
                                 </form>
