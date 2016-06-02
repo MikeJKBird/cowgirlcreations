@@ -38,6 +38,7 @@ class SponsorsController extends Controller
 //        ]);
 
         if ($request->hasFile('logo')) {
+            $sponsor = new Sponsor;
 
             $file = $request->file('logo');
 
@@ -52,14 +53,13 @@ class SponsorsController extends Controller
                 $url = "http://" . $url;
             }
 
-            $sponsor = new Sponsor;
-
             $sponsor = Sponsor::create([
                 'name' => $request->name,
                 'website' => $url,
                 'value' => $request->value,
                 'logo' => $name
             ]);
+
 
             return redirect()->back();
         }
