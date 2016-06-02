@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cSponsor extends Model
+class Sponsor extends Model
 {
     protected $fillable = [
         'name', 'website', 'value', 'logo'
