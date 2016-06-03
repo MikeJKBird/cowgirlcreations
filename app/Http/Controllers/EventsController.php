@@ -30,8 +30,9 @@ class EventsController extends Controller
 
         foreach($events as $event){
              $date = Carbon::createFromFormat('Y-m-d h:i:s', $event->date)->toDateString();
+            $newName = str_replace('\'',"\\'", $event->name);
 
-            $eventData .= '{title: \'' . $event->name .'\', start: \'' . $date . '\', url: \'/calendar/' .$event->id . '\'}';
+            $eventData .= '{title: \'' . $newName .'\', start: \'' . $date . '\', url: \'/calendar/' .$event->id . '\'}';
             if ($i < $count) {
                 $eventData .= ',';
             }
