@@ -24,13 +24,18 @@ class EventsController extends Controller
     {
         $events = Event::all();
 
-
+        $count = count($events);
+        $i = 1;
         $eventData = 'events:[';
 
         foreach($events as $event){
              $date = Carbon::createFromFormat('Y-m-d h:i:s', $event->date)->toDateString();
 
-            $eventData .= '{title: \'' . $event->name .'\', start: \'' . $date . '\', url: \'/calendar/' .$event->id . '\'},';
+            $eventData .= '{title: \'' . $event->name .'\', start: \'' . $date . '\', url: \'/calendar/' .$event->id . '\'}';
+            if ($i < $count) {
+                $eventData .= ',';
+            }
+            $i++;
         }
         $eventData .= ']';
 
