@@ -7,16 +7,12 @@
         <h1>{{$user->name}}</h1>
         <div class="row">
             <div class="col-md-6">
-                <h3>Current Points: {{$user->points}}</h3>
                 <h3>Member Number: {{$user->memberNumber}}</h3>
 
                 <form action="/admin/updatemember/{{$user->id}}" method="POST">
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="PATCH">
 
-                    <label for="points">Current Points:</label>
-                    <input type="text" name="points" value="{{ old('points') }}">
-                    <br>
 
                     <label for="memberNumber">Member Number:</label>
                     <input type="text" name="memberNumber" value="{{$user->memberNumber}}">

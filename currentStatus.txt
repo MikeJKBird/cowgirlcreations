@@ -16,9 +16,6 @@ Light em up
     -->refactor css and adjust removeAttribute accordingly
 
 
-Look into bleeding cowboy font for H1
-
-
 
 create thumbnail for photo
 
