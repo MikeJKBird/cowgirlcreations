@@ -49,7 +49,8 @@ class EnrollmentsController extends Controller
                 'stall' => $request->stall,
                 'bbqtickets' => $request->bbqtickets,
                 'timeonlyruns' => $request->timeonlys,
-                'totalprice' => $request->usercost
+                'totalprice' => $request->usercost,
+                'usernotes' => $request->usernotes
             ]);
 
         return back();

@@ -26,6 +26,7 @@
                     @endif
                     <th>Time Only Runs</th>
                     <th>Total</th>
+                    <th>Notes</th>
                 </tr>
 
                 @foreach($tables as $table)
@@ -53,6 +54,7 @@
                         @endif
                         <td>{{$table->timeonlyruns}}</td>
                         <td>${{$table->totalprice}}</td>
+                        <td>{{$table->usernotes}}</td>
                     </tr>
                 @endforeach
             </table>

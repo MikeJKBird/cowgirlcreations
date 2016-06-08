@@ -1,12 +1,6 @@
 Why does updating event not sync cosanctions?!?!?!
 
-Add option for notes for rider's entry
-
 Add number of nights for stall in event "Nights for stall" -default 0
-
-
-
-
 
 
 

@@ -193,8 +193,10 @@
                                     <label for="bbqtickets">BBQ Tickets</label>
                                     <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="" min="0">
                                 @endif
+                                <label for="usernotes">Additional Notes</label>
+                                <textarea name="usernotes" id="usernotes"></textarea>
 
-                                    <p id="currentprice">Current Total: $<span id="totalprice" class="odometer"></span></p>
+                                <p id="currentprice">Current Total: $<span id="totalprice" class="odometer"></span></p>
                                     <input type="submit" class="btn btn-success" value="Sign Up For Race" id="signup">
                                 </form>
                             </div>
