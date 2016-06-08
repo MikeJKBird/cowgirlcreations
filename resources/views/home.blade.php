@@ -19,7 +19,7 @@
 
         <div class="row col-md-3 col-md-pull-6 col-xs-12">
             <h3>Sponsors</h3>
-            <ul class="list-group">
+            <ul class="list-group" id="sponsorlist">
                 @foreach ($sponsors as $sponsor)
                     <li class="list-group-item"><a href="{{$sponsor->website}}" target="_blank"><img class="sponsor-pic" src="/img/{{$sponsor->logo}}">{{ $sponsor->name }}</a></li>
                 @endforeach

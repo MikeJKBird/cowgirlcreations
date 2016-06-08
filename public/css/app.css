@@ -5851,6 +5851,10 @@ iframe {
   font-size: 2em;
   color: rgba(0, 182, 0, 0.97); }
 
+#sponsorlist {
+  overflow-y: scroll;
+  height: 500px; }
+
 @media (min-width: 992px) {
   .pull-right-md {
     float: right; } }

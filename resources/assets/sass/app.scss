@@ -89,6 +89,11 @@ iframe {
   //left: 31vw;
 }
 
+#sponsorlist {
+  overflow-y:scroll;
+  height: 500px;
+}
+
 @media (min-width: 992px) {
   .pull-right-md {
     float: right;

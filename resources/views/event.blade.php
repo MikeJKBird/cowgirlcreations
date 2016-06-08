@@ -173,7 +173,7 @@
                                     </table>
 
                             </div>
-                            <div class="col-md-6 text-left">
+                            <div class="col-md-5 col-md-offset-1 text-left">
                                 <br />
 
                                 <label for="timeonlys">Time Only Runs</label>
@@ -192,6 +192,7 @@
                                 @if( $event->bbq != null)
                                     <label for="bbqtickets">BBQ Tickets</label>
                                     <input type="number" name="bbqtickets" id="bbqtickets" data-bbq-price={{$event->bbq}} value="" min="0">
+                                    <br />
                                 @endif
                                 <label for="usernotes">Additional Notes</label>
                                 <textarea name="usernotes" id="usernotes"></textarea>
