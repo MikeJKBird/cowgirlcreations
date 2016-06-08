@@ -1,12 +1,6 @@
 Why does updating event not sync cosanctions?!?!?!
-    -->then add bcbra to june 18/19 event -->can just edit db in the meantime
-
-
-
 
 Add option for notes for rider's entry
-
-have standings be editable text, similar to homepage
 
 Add number of nights for stall in event "Nights for stall" -default 0
 

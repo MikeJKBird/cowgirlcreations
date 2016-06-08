@@ -10,13 +10,7 @@
     </div>
     <div class="container">
         <div class="row col-md-6 col-md-offset-3">
-            <ol class="list-group">
-                @foreach($racers as $racer)
-                    @if($racer->points > 0)
-                        <li class="list-group-item">{{ $racer->name }}: {{$racer->points}} points</li>
-                    @endif
-                @endforeach
-            </ol>
+            <p>{!! nl2br(e($text->standings)) !!}</p>
         </div>
     </div>
 @stop

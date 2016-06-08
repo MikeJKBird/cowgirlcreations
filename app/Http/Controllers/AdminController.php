@@ -27,7 +27,27 @@ class AdminController extends Controller
         return view('admin.main', compact('text'));
     }
 
+    /**
+     * Updates Homepage text
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function updateHomepageText(Request $request)
+    {
+        $text = Text::first();
+
+        $text->update($request->all());
+
+        return back();
+    }
+
+    /**
+     * Updates Standings
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateStandings(Request $request)
     {
         $text = Text::first();
 

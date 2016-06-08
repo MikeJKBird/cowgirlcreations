@@ -43,8 +43,8 @@ class PagesController extends Controller
      */
     public function standings()
     {
-        $racers = User::orderBy('points', 'DESC')->get();
-        return view('standings', compact('racers'));
+        $text = Text::first();
+        return view('standings', compact('text'));
     }
 
     /**
