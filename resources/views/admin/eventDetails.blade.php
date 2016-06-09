@@ -6,7 +6,7 @@
     <div class="container">
         <h1>{{$event->name}}</h1>
         @if(!$event->uploadedresults)
-            <a href="/admin/editevent/{{$event->id}}"><h4>Edit Event</h4></a>
+
             <h3>People who have signed up!</h3>
 
             <table class="table table-striped">

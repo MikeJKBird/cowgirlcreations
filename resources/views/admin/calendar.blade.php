@@ -16,7 +16,10 @@
                          Results uploaded <i class="fa fa-2x fa-check"></i>
                     @endif
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
+                    <button class="btn btn-warning"><a href="/admin/editevent/{{$event->id}}">Edit</a></button>
+                </div>
+                <div class="col-md-1">
                     <form method="POST" action="/events/{{$event->id}}">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="DELETE">

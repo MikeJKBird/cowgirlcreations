@@ -2,7 +2,12 @@ Why does updating event not sync cosanctions?!?!?!
 
 Add number of nights for stall in event "Nights for stall" -default 0
 
+Can you add "Entry information coming soon" to Light Em Up Page
 
+On the "People who have signed up" it is showing multiple co-sanctions of the same one??
+
+The correct times of the race aren't coming up correctly on the description on the race.
+    -->put in 11 am race start and it shows up as 12 am??
 
 
 
