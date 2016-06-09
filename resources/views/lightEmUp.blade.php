@@ -9,7 +9,7 @@
         <img id="flyer" style="display:none;" onclick="hideFlyer()" src="img/lightemup.jpg">
         <h3 onclick="showFlyer()" id=""more-info>More Info</h3>
         <h3><a href="/forms">Forms</a></h3>
-        <h3><a href="#">Sign up</a></h3>
+        <h3>Entry Information Coming Soon</h3>
 
 
     </div>

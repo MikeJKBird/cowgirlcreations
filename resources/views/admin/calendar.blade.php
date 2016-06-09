@@ -17,7 +17,7 @@
                     @endif
                 </div>
                 <div class="col-md-1">
-                    <button class="btn btn-warning"><a href="/admin/editevent/{{$event->id}}">Edit</a></button>
+                    <a href="/admin/editevent/{{$event->id}}"><button class="btn btn-warning">Edit</button></a>
                 </div>
                 <div class="col-md-1">
                     <form method="POST" action="/events/{{$event->id}}">
