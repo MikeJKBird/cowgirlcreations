@@ -29,7 +29,7 @@ class EventsController extends Controller
         $eventData = 'events:[';
 
         foreach($events as $event){
-            $date = Carbon::createFromFormat('Y-m-d h:i:s', $event->date)->toDateTimeString();
+            $date = Carbon::createFromFormat('Y-m-d H:i:s', $event->date)->toDateTimeString();
             $newName = str_replace('\'',"\\'", $event->name);
 
             $eventData .= '{title: \'' . $newName .'\', start: \'' . $date . '\', url: \'/calendar/' .$event->id . '\'}';
