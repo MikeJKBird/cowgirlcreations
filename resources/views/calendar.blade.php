@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="jumbotron" style="background-image: url(img/banner02.jpg); background-size: cover;">
+    <div class="jumbotron" style="background-image: url(img/calendar_banner.jpeg); background-size: cover;">
         <div class="container">
             <h1>Calendar!</h1>
             <p>Sign up now!</p>

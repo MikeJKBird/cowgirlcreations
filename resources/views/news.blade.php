@@ -11,7 +11,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
-    <div class="jumbotron" style="background-image: url(img/banner03.jpg); background-size: cover;">
+    <div class="jumbotron" style="background-image: url(img/news_banner.jpeg); background-size: cover;">
         <div class="container">
             <h1>News!</h1>
             <p>Keep up to date</p>

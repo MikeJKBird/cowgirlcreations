@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="jumbotron" style="background-image: url(img/banner01.jpg); background-size: cover;">
+    <div class="jumbotron" style="background-image: url(img/homepage_banner.jpeg); background-size: cover;">
         <div class="container">
             <h1>Cowgirl Creations!</h1>
             <p>Barrel Racing and more!</p>
