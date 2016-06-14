@@ -174,7 +174,7 @@ class EventsController extends Controller
     {
 
         $event->update($request->all());
-
+        $event->cosanction()->sync($request->cosanction);
         $eventID = $event->id;
 
         return redirect("/admin/entries/$eventID");
