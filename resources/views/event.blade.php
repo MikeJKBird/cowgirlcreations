@@ -136,7 +136,7 @@
                 @if(Auth::check())
                     @if( count($user->horses) != 0)
                         <div class="row">
-                            <div class="col-md-6 text-left">
+                            <div class="col-md-8 text-left">
                                 <form action="/eventsignup" method="POST">
                                     {{csrf_field()}}
                                     <input type="hidden" name="userID" value="{{$user->id}}">
@@ -150,7 +150,7 @@
                                         @endforeach
                                     </select>
                                     <br />
-                                    <table class='table'>
+                                    <table class='table table-striped'>
                                     @foreach($entries as $entry)
                                         <tr>
                                             <td>
@@ -164,7 +164,7 @@
                                             <td>
 
                                                 @foreach($event->cosanction as $cosanction)
-                                                        <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$cosanction->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}}
+                                                        <input type="checkbox" name="cosanction[]" data-price={{$cosanction->cosanction_price}} value="{{$cosanction->id}}">{{$cosanction->cosanction_name}} : ${{$cosanction->cosanction_price}} |
 
                                                 @endforeach
                                             </td>
@@ -173,7 +173,7 @@
                                     </table>
 
                             </div>
-                            <div class="col-md-5 col-md-offset-1 text-left">
+                            <div class="col-md-3 col-md-offset-1 text-left">
                                 <br />
 
                                 <label for="timeonlys">Time Only Runs</label>
