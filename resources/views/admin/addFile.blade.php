@@ -21,8 +21,9 @@
             </div>
 
             <input type="file" name="file" id="">
+            <br>
 
-            <input type="submit" value="Add File" name="submit">
+            <input type="submit" value="Add File" class="btn btn-success" name="submit">
         </form>
         <hr />
         <table class="table">

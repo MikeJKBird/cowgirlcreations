@@ -10,12 +10,17 @@
         </div>
     </div>
     <div class="container">
-        <ul>
+        <table class="table table-striped">
             @foreach($files as $file)
-                <li>
-                    <a href="/files/{{$file->path}}" download="{{$file->filename}}">{{$file->filename}}</a> -  {{$file->description}}
-                </li>
+                <tr>
+                    <td>
+                        <a href="/files/{{$file->path}}" download="{{$file->filename}}">{{$file->filename}}</a>
+                    </td>
+                    <td>
+                        {{$file->description}}
+                    </td>
+                </tr>
             @endforeach
-        </ul>
+        </table>
     </div>
 @stop
