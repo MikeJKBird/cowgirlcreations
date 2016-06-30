@@ -1,6 +1,10 @@
 Add number of nights for stall in event "Nights for stall" -default 0
 
 On the "People who have signed up" it is showing multiple co-sanctions of the same one??
+    -->logic is set up for single cosanction for each entry
+    -->cosanctions and entries inputs are in different arrays
+        -->currently no relation between entry and cosanction
+            -->could add entry name to cosanction input data and check for it
 
 
 
