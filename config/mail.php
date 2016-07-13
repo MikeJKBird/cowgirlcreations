@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'cowgirlcreations@yahoo.com', 'name' => 'Sherri-Lynn Prest'],
 
     /*
     |--------------------------------------------------------------------------
