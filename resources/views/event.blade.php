@@ -188,9 +188,9 @@
                                     <label for="stall">Add Stall</label>
                                     <input type="checkbox" name="stall" id="stall" data-stall-price="{{$event->stallfee}}" value=1>
                                     <br />
-                                    <label for="stallquantity">Number of nights for stall</label>
-                                    <input type="number" name="stallquantity" id="stallquantity" value="" min="0">
-                                    <br />
+                                    {{--<label for="stallquantity">Number of nights for stall</label>--}}
+                                    {{--<input type="number" name="stallquantity" id="stallquantity" value="" min="0">--}}
+                                    {{--<br />--}}
 
                                 @endif
                                 @if( $event->bbq != null)
