@@ -13,7 +13,7 @@
 
     <div class="jumbotron" style="background-image: url(img/news_banner.jpeg); background-size: cover;">
         <div class="container">
-            <h1>News!</h1>
+            <h1>News</h1>
             <p>Keep up to date</p>
         </div>
     </div>
