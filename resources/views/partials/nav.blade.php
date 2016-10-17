@@ -22,7 +22,7 @@
                 <li><a href="/calendar">Calendar</a></li>
                 <li><a href="/standings">Standings</a></li>
                 <li><a href="/forms">Forms</a></li>
-                <li><a href="/lightemup">Light Em Up</a></li>
+                <li><a href="/lightemup">The Glow</a></li>
                 <li><a href="/photos">Photo Gallery</a></li>
                 <li><a href="/news">What's new</a></li>
             </ul>
