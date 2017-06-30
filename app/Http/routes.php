@@ -3,7 +3,7 @@
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
+    Route::get('/home', 'PagesController@home');
     Route::get('/', 'PagesController@home');
     Route::get('profile', 'UsersController@showprofile');
     Route::get('editprofile', 'UsersController@editprofile');
